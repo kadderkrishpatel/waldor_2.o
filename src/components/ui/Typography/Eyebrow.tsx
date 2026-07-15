@@ -1,0 +1,30 @@
+import { cn } from "@/src/lib/utils";
+
+interface EyebrowProps {
+  children: React.ReactNode;
+  className?: string;
+  variant?: "primary" | "secondary";
+}
+
+const variants = {
+  primary: "text-[#333C39]",
+  secondary: "text-[#C5A375]",
+};
+
+export default function Eyebrow({
+  children,
+  className,
+  variant = "primary",
+}: EyebrowProps) {
+  return (
+    <p
+      className={cn(
+        "font-hanken text-xs font-bold uppercase tracking-[0.16em]",
+        variants[variant],
+        className,
+      )}
+    >
+      {children}
+    </p>
+  );
+}

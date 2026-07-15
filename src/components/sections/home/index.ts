@@ -1,0 +1,11 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as AboutSection } from "./AboutSection";
+export { default as TreatmentSection } from "./TreatmentSection";
+export { default as WhyChooseUsSection } from "./WhyChooseUsSection";
+export { default as ExperienceSection } from "./ExperienceSection";
+export { default as DoctorSection } from "./DoctorSection";
+export { default as TransformationSection } from "./TransformationSection";
+export { default as SignatureTreatmentSection } from "./SignatureTreatmentSection";
+export { default as SuccessStoriesSection } from "./SuccessStoriesSection";
+export { default as HowItWorksSection } from "./HowItWorksSection";
+export { default as BlogSection } from "./BlogSection";
