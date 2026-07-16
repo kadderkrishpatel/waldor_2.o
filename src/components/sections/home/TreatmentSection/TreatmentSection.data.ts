@@ -2,6 +2,8 @@ import { TreatmentSectionProps } from "./TreatmentSection.types";
 
 export const treatmentData: TreatmentSectionProps = {
   eyebrow: "YOUR SKIN. AS A CANVAS",
+  topDecorationImg: "/assets/waldor/begin-top-left.png",
+  bottomDecorationImg: "/assets/waldor/begin-bottom.png",
   heading: {
     before: "Where shall we",
     highlight: "begin?",

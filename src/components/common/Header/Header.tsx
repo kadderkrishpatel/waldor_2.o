@@ -17,6 +17,9 @@ export default function Header() {
             alt="Waldor Clinic"
             width={160}
             height={40}
+            className="h-[18px] w-auto"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="eager"
           />
         </Link>
 

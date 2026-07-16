@@ -17,13 +17,22 @@ export default function ExperienceCard({
     <div
       className={`z-2 absolute w-[300px] rounded-[20px] bg-[#F8F2EA] p-7 shadow-xl flex flex-col gap-[20px] ${className}`}
     >
-      <Image src={icon} alt={title} width={48} height={48} />
+      <Image
+        src={icon}
+        alt={title}
+        width={48}
+        height={48}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        loading="eager"
+      />
 
       <h3 className="font-heading fmt-5 text-[28px] leading-[36px] text-[#2F302B]">
         {title}
       </h3>
 
-      <p className="font-hanken text-[15px] leading-7 text-[#7C6A56]">{description}</p>
+      <p className="font-hanken text-[15px] leading-7 text-[#7C6A56]">
+        {description}
+      </p>
     </div>
   );
 }

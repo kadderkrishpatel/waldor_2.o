@@ -35,7 +35,8 @@ export const heroData: HeroSectionProps = {
     },
     {
       label: "Google Ratings",
-      value: "4.9 ★★★★★",
+      value: "4.9",
+      specialValue: "★★★★★",
       showDivider: true,
     },
     {

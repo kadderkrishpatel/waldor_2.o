@@ -17,4 +17,6 @@ export interface ExperienceSectionProps {
   description: string;
   image: string;
   cards: ExperienceCard[];
+  bottomDecorationImage: string;
+  topDecorationImage: string;
 }

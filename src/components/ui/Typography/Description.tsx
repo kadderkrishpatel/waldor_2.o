@@ -9,7 +9,7 @@ export default function Description({ children, className }: DescriptionProps) {
   return (
     <p
       className={cn(
-        "font-hanken text-lg lg:text-xl leading-[150%] text-[#F3ECE3]",
+        "font-hanken text-lg lg:text-[17px] leading-[150%] text-[#F3ECE3]",
         className,
       )}
     >

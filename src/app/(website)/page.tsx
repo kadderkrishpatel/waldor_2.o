@@ -17,14 +17,24 @@ export default function HomePage() {
     <>
       <HeroSection />
       <AboutSection />
-      <TreatmentSection />
+      <section className="p-2 lg:p-4 overflow-hidden">
+        <TreatmentSection />
+      </section>
       <WhyChooseUsSection />
       <ExperienceSection />
-      <DoctorSection />
-      <TransformationSection />
+      <section className="p-2 lg:p-4 overflow-hidden">
+        <DoctorSection />
+      </section>
+      <section className="p-2 lg:p-4 overflow-hidden">
+        <TransformationSection />
+      </section>
       <SignatureTreatmentSection />
-      <SuccessStoriesSection />
-      <HowItWorksSection />
+      <section className="p-2 lg:p-4 overflow-hidden">
+        <SuccessStoriesSection />
+      </section>
+      <section className="p-2 lg:p-4 overflow-hidden">
+        <HowItWorksSection />
+      </section>
       <BlogSection />
     </>
   );

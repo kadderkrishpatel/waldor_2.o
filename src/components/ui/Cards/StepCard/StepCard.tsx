@@ -37,7 +37,14 @@ export default function StepCard({
       </DisplayNumber>
 
       <div className="relative h-20 w-20">
-        <Image src={icon} alt={title} fill className="object-contain" />
+        <Image
+          src={icon}
+          alt={title}
+          fill
+          className="object-contain"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="eager"
+        />
       </div>
 
       <div className="flex flex-col gap-[14px]">

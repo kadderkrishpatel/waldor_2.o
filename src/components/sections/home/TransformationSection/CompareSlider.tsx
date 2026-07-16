@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -17,12 +18,30 @@ export default function CompareSlider({
   afterImage,
   swiper,
 }: Props) {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      setMobile(window.innerWidth < 768);
+    };
+
+    update();
+
+    window.addEventListener("resize", update);
+
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const disableSwiper = () => {
-    swiper.current?.disable();
+    if (swiper.current) {
+      swiper.current.allowTouchMove = false;
+    }
   };
 
   const enableSwiper = () => {
-    swiper.current?.enable();
+    if (swiper.current) {
+      swiper.current.allowTouchMove = true;
+    }
   };
 
   return (
@@ -35,14 +54,37 @@ export default function CompareSlider({
       onTouchEnd={enableSwiper}
     >
       <ReactCompareSlider
-        itemOne={<ReactCompareSliderImage src={beforeImage} alt="Before" />}
-        itemTwo={<ReactCompareSliderImage src={afterImage} alt="After" />}
+        position={50}
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        itemOne={
+          <ReactCompareSliderImage
+            src={beforeImage}
+            alt="Before"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+        }
+        itemTwo={
+          <ReactCompareSliderImage
+            src={afterImage}
+            alt="After"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+        }
         handle={
           <ReactCompareSliderHandle
             buttonStyle={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "999px",
+              width: mobile ? 42 : 56,
+              height: mobile ? 42 : 56,
+              borderRadius: 999,
               background: "#F3EDE3",
               border: "2px solid #C6A26D",
               color: "#C6A26D",
@@ -50,15 +92,21 @@ export default function CompareSlider({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "18px",
-              fontWeight: 600,
             }}
             linesStyle={{
               background: "#C6A26D",
-              width: "2px",
+              width: mobile ? "1px" : "2px",
             }}
           >
-            <div className="flex items-center gap-1 text-lg font-semibold leading-none text-[#C6A26D]">
+            <div
+              style={{
+                display: "flex",
+                gap: mobile ? 2 : 4,
+                fontSize: mobile ? 14 : 18,
+                fontWeight: 600,
+                color: "#C6A26D",
+              }}
+            >
               <span>{"<"}</span>
               <span>{">"}</span>
             </div>

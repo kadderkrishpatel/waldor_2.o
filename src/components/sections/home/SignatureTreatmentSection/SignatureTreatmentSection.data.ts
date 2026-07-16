@@ -32,7 +32,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "Waldor™ Peptide Signature Blends",
       description:
         "Cellular molecules engineered to trigger collagen production, fortify your skin barrier and drive deep structural regeneration.",
-      image: "/assets/waldor/treatments/peptide.webp",
+      image: "/assets/waldor/service-thumb.jpg",
       slug: "waldor-peptide-blends",
     },
     {
@@ -40,7 +40,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "Hair Growth Treatment",
       description:
         "Advanced biological growth factors awaken resting roots, boosting circulation to deliver visibly thicker, fuller and healthier hair.",
-      image: "/assets/waldor/treatments/hair.webp",
+      image: "/assets/waldor/skin-cat.jpg",
       slug: "hair-growth-treatment",
     },
   ],

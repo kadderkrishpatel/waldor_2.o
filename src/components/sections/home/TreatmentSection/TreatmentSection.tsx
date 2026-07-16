@@ -1,64 +1,94 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useRef } from "react";
 import { treatmentData } from "./TreatmentSection.data";
+import TreatmentCard from "./TreatmentCard";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
-import { ArrowDownRight } from "lucide-react";
+import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 
 export default function TreatmentSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useHorizontalScroll({
+    section: sectionRef,
+    track: trackRef,
+  });
+
   return (
-    <section className="bg-[#EBE0D1] py-24 rounded-[40px] lg:m-4">
-      <div className="mx-auto px-16 lg:px-[60px] py-[120px]">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#EBE0D1] rounded-3xl lg:rounded-[40px] py-14 sm:py-16 lg:py-24 xl:py-28 "
+    >
+      {/* Top Decoration */}
+      <Image
+        src={treatmentData.topDecorationImg}
+        alt=""
+        width={131}
+        height={174}
+        className="absolute top-0 left-1/2 -translate-x-1/2 lg:left-[12%] lg:translate-x-0 pointer-events-none z-10"
+      />
+
+      <div className="mx-auto px-5 sm:px-8 lg:px-[60px]">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 mb-[80px]">
-          <div className="flex flex-col gap-[20px]">
+        <div className="mb-14 lg:mb-24 flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
+          <div className="max-w-3xl flex flex-col gap-5">
             <Eyebrow variant="secondary">{treatmentData.eyebrow}</Eyebrow>
+
             <Heading
-              className="text-[#29302D] lg:text-[64px]"
               before={treatmentData.heading.before}
               highlight={treatmentData.heading.highlight}
+              className="text-[#29302D] text-[36px] sm:text-[44px] lg:text-[56px] xl:text-[64px]"
             />
           </div>
 
-          <Description className="mt-8 max-w-lg text-[#423627]">
+          <Description className="max-w-lg text-[#423627]">
             {treatmentData.description}
           </Description>
         </div>
 
-        {/* Treatment Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {treatmentData.treatments.map((item) => (
-            <Link
-              href={item.href}
-              key={item.title}
-              className={`group relative overflow-hidden rounded-[999px] h-[420px] sm:h-[520px] md:h-[620px] lg:h-[700px] xl:h-[820px] 2xl:h-[950px] border-[10px] border-[#D8C2A3] ${item.offset ? "lg:mt-20 xl:mt-24" : ""}`}
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 px-[100px] py-[50px] h-[702px] lg:h-[950px] flex flex-col justify-between w-full">
-                <div className="relative h-[50px] w-full flex justify-center">
-                  <ArrowDownRight height={56} width={56} />
-                </div>
-                <div className="relative flex flex-col w-full justify-center items-center gap-[10px]">
-                  <h3 className="text-white font-heading italic text-3xl text-[#F3EDE3]">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-white/80 text-[15px] max-w-xs font-henken w-[200px] text-center text-[#D8C2A3]">
-                    {item.description}
-                  </p>
-                </div>
+        {/* ============================= */}
+        {/* MOBILE + TABLET HORIZONTAL */}
+        {/* ============================= */}
+        <div className="block lg:hidden overflow-hidden">
+          <div
+            ref={trackRef}
+            className="flex gap-6 w-max will-change-transform"
+          >
+            {treatmentData.treatments.map((item) => (
+              <div
+                key={item.title}
+                className="shrink-0 w-[85vw] sm:w-[65vw] h-[560px] sm:h-[650px]"
+              >
+                <TreatmentCard {...item} />
               </div>
-            </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ============================= */}
+        {/* DESKTOP GRID */}
+        {/* ============================= */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8 items-start">
+          {treatmentData.treatments.map((item, index) => (
+            <div
+              key={item.title}
+              className={`w-full h-[760px] xl:h-[850px] ${index === 1 ? "lg:mt-28" : ""}`}
+            >
+              <TreatmentCard {...item} />
+            </div>
           ))}
         </div>
       </div>
+
+      {/* Bottom Decoration */}
+      <Image
+        src={treatmentData.bottomDecorationImg}
+        alt=""
+        width={277}
+        height={299}
+        className="absolute right-0 bottom-0 hidden lg:block pointer-events-none"
+      />
     </section>
   );
 }

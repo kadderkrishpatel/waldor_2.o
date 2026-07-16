@@ -17,6 +17,7 @@ export interface HeroSectionProps {
   stats: {
     label: string;
     value: string;
+    specialValue?: string;
     showDivider?: boolean;
   }[];
 }

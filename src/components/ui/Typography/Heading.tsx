@@ -18,7 +18,7 @@ export default function Heading({
   return (
     <h1
       className={cn(
-        "font-heading text-[#F3EDE3] text-5xl md:text-7xl lg:text-[90px] font-normal leading-[100%] tracking-[-1.76px]",
+        "font-fraunces text-[32px] text-[#F3EDE3] text-5xl md:text-7xl lg:text-[90px] font-normal leading-[100%] tracking-[-1.76px]",
         className,
       )}
     >
@@ -27,7 +27,7 @@ export default function Heading({
       {highlight && (
         <span
           className={cn(
-            "text-[#C5A375] font-normal leading-[-1.76px] italic",
+            "text-[#C5A375] font-fraunces font-normal leading-[-1.76px] italic",
             highlightClassName,
           )}
         >

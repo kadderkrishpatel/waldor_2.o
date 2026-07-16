@@ -29,33 +29,36 @@ export default function SignatureTreatmentSection() {
   }, []);
 
   return (
-    <section className="bg-[#3D4844] py-[120px] lg:m-4 overflow-hidden">
-      <div className="mx-auto px-6 lg:px-[60px]">
+    <section className="overflow-hidden bg-[#3D4844] rounded-[24px] lg:rounded-[40px] py-16 md:py-20 lg:py-[120px] lg:m-4 m-2">
+      <div className="mx-auto px-5 sm:px-6 lg:px-[60px]">
         {/* Header */}
-
-        <div className="mb-20 flex items-end justify-between">
-          <div className="max-w-[80%]">
+        <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col lg:flex-row lg:items-end gap-6 lg:justify-between">
+          <div className="max-w-full lg:max-w-[80%] flex flex-col gap-6">
             <Eyebrow variant="secondary">
               {signatureTreatmentData.eyebrow}
             </Eyebrow>
 
             <Heading
-              className="mt-5 text-[#BEC2C1] lg:text-[64px]"
+              className="mt-4 lg:mt-5 text-[#BEC2C1] lg:text-[64px]"
               before={signatureTreatmentData.heading.before}
               highlight={signatureTreatmentData.heading.highlight}
             />
           </div>
 
-          <Button href={signatureTreatmentData.button.href} variant="gold">
-            {signatureTreatmentData.button.label}
-          </Button>
+          <div className="w-full lg:w-auto">
+            <Button href={signatureTreatmentData.button.href} variant="gold">
+              {signatureTreatmentData.button.label}
+            </Button>
+          </div>
         </div>
 
         <div className="relative">
-          <FloatingTreatmentImage
-            image={activeTreatment.image}
-            top={imageTop}
-          />
+          <div className="hidden lg:block">
+            <FloatingTreatmentImage
+              image={activeTreatment.image}
+              top={imageTop}
+            />
+          </div>
 
           <div className="border-t border-[#58605D]">
             {signatureTreatmentData.treatments.map((item, index) => (

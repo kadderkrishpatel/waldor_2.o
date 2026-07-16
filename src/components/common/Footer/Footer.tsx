@@ -10,13 +10,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative rounded-[32px] bg-[#28302D] pt-20 lg:m-4">
+    <footer className="relative rounded-[32px] bg-[#28302D] pt-20 m-2 lg:m-4">
       <Image
         src={footerData.footerRightImg}
         alt=""
         width={209.37}
         height={316.48}
         className="absolute right-0 top-0"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        loading="eager"
       />
 
       <Image
@@ -47,22 +49,51 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid grid-cols-1 gap-10 border-t border-[#3D4844] py-10 md:grid-cols-2 lg:grid-cols-4">
-          {footerData.columns.map((column) => (
-            <FooterColumn
-              key={column.title}
-              title={column.title}
-              links={column.links}
-            />
-          ))}
+        <div className="grid grid-cols-1 gap-10 border-t border-[#3D4844] py-10">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {footerData.columns.map((column) => (
+              <FooterColumn
+                key={column.title}
+                title={column.title}
+                links={column.links}
+              />
+            ))}
+          </div>
 
-          <FooterContact {...footerData.contact} />
+          <div className="flex">
+            <FooterContact {...footerData.contact} />
+          </div>
         </div>
 
         {/* Bottom */}
         <div className="flex flex-col justify-between gap-5 border-t border-[#3D4844] pt-10 md:flex-row">
-          <p className="text-xs text-[#C5A375]">
-            © {currentYear} Waldor Clinic · Privacy · Terms
+          <p className="flex flex-wrap items-center gap-1 text-xs text-[#C5A375]">
+            <span>© {currentYear} Waldor Clinic</span>
+
+            <span>·</span>
+
+            <Link
+              href="/privacy-policy"
+              className="transition-colors hover:text-white"
+            >
+              Privacy Policy
+            </Link>
+
+            <span>·</span>
+
+            <Link
+              href="/terms-and-conditions"
+              className="transition-colors hover:text-white"
+            >
+              Terms & Conditions
+            </Link>
+
+            <span>·</span>
+
+            <span>
+              Complaints Injectables are prescription-only medicines and are
+              discussed at consultation only.
+            </span>
           </p>
 
           <div className="flex items-center gap-5">
@@ -81,19 +112,23 @@ export default function Footer() {
                   width={24}
                   height={24}
                   className="opacity-70 transition-opacity duration-300 hover:opacity-100"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="eager"
                 />
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="relative mt-16 h-[231px] w-full">
+        <div className="relative mt-16 h-[54px] lg:h-[231px] w-full">
           <Image
             src={footerData.footerImg}
             alt="Waldor Clinic"
             fill
             priority
-            className="object-fill"
+            className="object-contain opacity-70 transition-opacity duration-300 hover:opacity-100"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="eager"
           />
         </div>
       </div>

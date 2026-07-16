@@ -17,4 +17,6 @@ export interface TreatmentSectionProps {
   heading: HeroHeading;
   description: string;
   treatments: TreatmentItem[];
+  topDecorationImg: string;
+  bottomDecorationImg: string;
 }

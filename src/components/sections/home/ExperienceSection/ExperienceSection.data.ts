@@ -1,5 +1,7 @@
 export const experienceData = {
   eyebrow: "BEYOND THE SURFACE",
+  bottomDecorationImage: "/assets/waldor/exp-leaf-bottom.png",
+  topDecorationImage: "/assets/waldor/exp-leaf-top.png",
 
   heading: {
     before: "Experience",
@@ -7,7 +9,7 @@ export const experienceData = {
   },
 
   description:
-    "We didn’t enter the industry to follow the rules; we came to redefine them. Here is how we elevate your experience beyond the ordinary.",
+    "We didn't enter the industry to follow the rules; we came to redefine them. Here is how we elevate your experience beyond the ordinary.",
 
   image: "/assets/waldor/experience-image.png",
 

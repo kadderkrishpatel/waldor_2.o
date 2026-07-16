@@ -1,17 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
 import { blogSectionData } from "./BlogSection.data";
-import { CardTitle, Eyebrow, Heading } from "@/src/components/ui/Typography";
+import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import Button from "@/src/components/ui/Button";
 import { BlogCard } from "@/src/components/ui/Cards";
 
 export default function BlogSection() {
   return (
-    <section className="bg-[#3D4844] lg:m-4">
-      <div className="mx-auto px-6 lg:px-[60px] lg:py-[120px]">
+    <section className="overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#3D4844] m-2 lg:m-4">
+      <div className="mx-auto px-5 sm:px-6 lg:px-[60px] py-16 md:py-20 lg:py-[120px]">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-10">
-          <div className="flex flex-col gap-[14px]">
+        <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-4 lg:gap-[14px] max-w-[900px]">
             <Eyebrow variant="secondary">{blogSectionData.eyebrow}</Eyebrow>
 
             <Heading
@@ -21,22 +19,29 @@ export default function BlogSection() {
             />
           </div>
 
-          <Button href={blogSectionData.button.href} variant="gold">
-            {blogSectionData.button.label}
-          </Button>
+          <div className="w-full lg:w-auto">
+            <Button
+              href={blogSectionData.button.href}
+              variant="gold"
+              className="w-full lg:w-auto"
+            >
+              {blogSectionData.button.label}
+            </Button>
+          </div>
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 lg:gap-8 justify-items-center">
           {blogSectionData.posts.map((post) => (
-            <BlogCard
-              key={post.id}
-              slug={post.slug}
-              image={post.image}
-              category={post.category}
-              title={post.title}
-              readTime={post.readTime}
-            />
+            <div key={post.id} className="w-full max-w-[420px] xl:max-w-none">
+              <BlogCard
+                slug={post.slug}
+                image={post.image}
+                category={post.category}
+                title={post.title}
+                readTime={post.readTime}
+              />
+            </div>
           ))}
         </div>
       </div>
