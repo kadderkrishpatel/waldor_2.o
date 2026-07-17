@@ -1,6 +1,6 @@
-import { FooterProps } from "./Footer.types";
+import { FooterDataProps } from "./Footer.types";
 
-export const footerData: FooterProps = {
+export const footerData: FooterDataProps = {
   footerImg: "/assets/waldor/footer.png",
   footerRightImg: "/assets/waldor/footer-top-right.png",
   footerLeftImg: "/assets/waldor/footer-left.png",

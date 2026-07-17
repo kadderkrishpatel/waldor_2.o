@@ -22,27 +22,27 @@ const footerCTAByRoute: {
     match: "/",
     exact: true,
     cta: homeFooterCTA,
-    bg: "rgba(0, 0, 0, 0.30)",
+    bg: "bg-black/30",
   },
   {
     match: "/contact",
     cta: defaultFooterCTA,
-    bg: "rgba(0, 0, 0, 0.30)",
+    bg: "bg-black/30",
   },
   {
     match: "/treatments",
     cta: defaultFooterCTA,
-    bg: "rgba(0, 0, 0, 0.30)",
+    bg: "bg-black/30",
   },
   {
     match: "/doctors",
     cta: defaultFooterCTA,
-    bg: "rgba(0, 0, 0, 0.30)",
+    bg: "bg-black/30",
   },
   {
-    match: "/blogs",
+    match: "/blog",
     cta: defaultFooterCTA,
-    bg: "rgba(0, 0, 0, 0.30)",
+    bg: "bg-black/30",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function WebsiteLayout({ children }: WebsiteLayoutProps) {
         item.exact ? pathname === item.match : pathname.startsWith(item.match),
       ) ?? {
         cta: defaultFooterCTA,
-        bg: "rgba(0, 0, 0, 0.30)",
+        bg: "bg-black/30",
       }
     );
   }, [pathname]);

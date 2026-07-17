@@ -40,7 +40,6 @@ export interface FooterDataProps {
   footerImg: string;
   footerRightImg: string;
   footerLeftImg: string;
-
   columns: FooterColumn[];
   contact: FooterContact;
   socialLinks: FooterSocialLink[];

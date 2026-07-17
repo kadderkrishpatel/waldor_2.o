@@ -36,7 +36,7 @@ export const blogs: Blog[] = [
       </p>
 
       <blockquote>
-        Acne is not a failure of hygiene; it is a complex biological response to internal and external stressors.
+        "Acne is not a failure of hygiene; it is a complex biological response to internal and external stressors."
       </blockquote>
 
       <h2>The Cortisol Connection</h2>

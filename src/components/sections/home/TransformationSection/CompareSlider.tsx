@@ -54,7 +54,7 @@ export default function CompareSlider({
       onTouchEnd={enableSwiper}
     >
       <ReactCompareSlider
-        position={50}
+        defaultValue={50}
         style={{
           width: "100%",
           height: "100%",
