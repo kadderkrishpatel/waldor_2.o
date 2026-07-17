@@ -22,6 +22,7 @@ export default function HeroSection() {
           {/* Left */}
           <div className="max-w-3xl">
             <Eyebrow className="mb-4 lg:mb-6">{heroData.eyebrow}</Eyebrow>
+            
 
             <Heading
               before={heroData.heading.before}
