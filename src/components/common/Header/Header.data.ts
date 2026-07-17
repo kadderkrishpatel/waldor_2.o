@@ -1,7 +1,7 @@
 import { HeaderProps } from "./Header.types";
 
 export const headerData: HeaderProps = {
-  logo: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/logo.png",
+  logo: "/assets/waldor/logo.png",
 
   navigation: [
     {

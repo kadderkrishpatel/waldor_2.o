@@ -9,8 +9,8 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <HeroBackgroundVideo
-          src="https://avnf4gmjhip1rpon.private.blob.vercel-storage.comhttps://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/hero-bg.mp4"
-          poster="https://avnf4gmjhip1rpon.private.blob.vercel-storage.comhttps://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/hero-bg.png"
+          src="https://xymgm1c0nsa3pqkd.public.blob.vercel-storage.com/assets/waldor/hero-bg.mp4"
+          poster="https://xymgm1c0nsa3pqkd.public.blob.vercel-storage.com/assets/waldor/hero-bg.png"
         />
       </div>
 

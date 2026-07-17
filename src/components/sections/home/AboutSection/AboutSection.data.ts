@@ -5,5 +5,5 @@ export const aboutData: AboutSectionProps = {
   title: "",    
   description:
     "At WALDOR Clinic, we elevate aesthetics to an art form where advanced technology, bespoke care and refined luxury converge to craft transformative experiences that transcend beauty and embody a way of life.",
-  image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/about-decorative.png",
+  image: "/assets/waldor/about-decorative.png",
 };

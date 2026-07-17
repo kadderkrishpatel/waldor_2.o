@@ -13,5 +13,5 @@ export const heroData = {
       href: "/treatments",
     },
   ],
-  image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/hero-bg.png",
+  image: "/assets/waldor/hero-bg.png",
 };

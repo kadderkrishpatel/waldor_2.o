@@ -25,7 +25,7 @@ export const heroData: HeroSectionProps = {
     },
   ],
 
-  backgroundImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/hero-bg.png",
+  backgroundImage: "/assets/waldor/hero-bg.png",
 
   stats: [
     {

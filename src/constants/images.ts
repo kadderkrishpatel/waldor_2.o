@@ -1,10 +1,10 @@
 export const IMAGES = {
-  logo: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/logo/logo.png",
+  logo: "/assets/logo/logo.png",
 
   hero: {
-    background: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/hero/background.webp",
-    foreground: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/hero/foreground.webp",
-    leaves: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/hero/leaves.webp",
+    background: "/assets/hero/background.webp",
+    foreground: "/assets/hero/foreground.webp",
+    leaves: "/assets/hero/leaves.webp",
   },
 
   treatments: {},
@@ -14,7 +14,7 @@ export const IMAGES = {
   blog: {},
 
   icons: {
-    arrow: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/icons/arrow.svg",
-    play: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/icons/play.svg",
+    arrow: "/assets/icons/arrow.svg",
+    play: "/assets/icons/play.svg",
   },
 } as const;

@@ -2,7 +2,7 @@ import { SuccessStoriesSectionProps } from "./SuccessStoriesSection.types";
 
 export const successStoriesData: SuccessStoriesSectionProps = {
   eyebrow: "SUCCESS STORIES",
-  successRightImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/success-right.png",
+  successRightImg: "/assets/waldor/success-right.png",
   heading: {
     before: "Refined Results,",
     highlight: "Natural Beauty",
