@@ -14,7 +14,7 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <article className={cn("group", className)}>
-      <Link href={`/blogs/${slug}`}>
+      <Link href={`/blog/${slug}`}>
         {/* Image */}
         <div className="relative mb-6 h-[530px] overflow-hidden rounded-[28px]">
           <Image

@@ -154,3 +154,86 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.blog-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-content p {
+  color: #28302d;
+  font-size: 17px;
+  line-height: 27px;
+  margin-bottom: 32px;
+  font-family: "Hanken Grotesk";
+}
+
+.blog-content h2 {
+  color: #c5a375;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 56px 0 28px;
+  font-family: 'Fraunces';
+}
+
+.blog-content blockquote {
+  color: #c5a375;
+  margin: 48px 0;
+  padding-left: 28px;
+  font-size: 48px;
+  font-style: italic;
+  position: relative;
+  font-family: 'Fraunces';
+  font-weight: 300;
+  line-height: 55px;
+  letter-spacing: -0.48px;
+}
+
+.blog-content blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 2px;
+  height: calc(100% - 8px);
+  background: #c5a375;
+}
+
+.blog-content figure {
+  margin: 56px 0;
+}
+
+.blog-content figure img {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  height: 500px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.blog-content figcaption {
+  margin-top: 16px;
+  color: #7e8582;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.blog-content strong {
+  font-weight: 600;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 24px 0 32px;
+  padding-left: 24px;
+}
+
+.blog-content li {
+  margin-bottom: 12px;
+  color: #28302d;
+  font-size: 17px;
+  line-height: 1.9;
+}

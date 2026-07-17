@@ -3,13 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { headerData } from "./Header.data";
+import { cn } from "@/src/utils/cn";
 
-export default function Header() {
+interface HeaderBgProps {
+  bg?: string;
+}
+
+export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-5 lg:px-[60px] pt-8">
-      <div className="bg-white/10 backdrop-blur-md rounded-[24px] px-6 py-5 flex items-center justify-between">
+      <div
+        className={cn(
+          "backdrop-blur-md rounded-[24px] px-6 py-5 flex items-center justify-between",
+          bg,
+        )}
+      >
         {/* Logo */}
         <Link href="/">
           <Image
@@ -17,7 +27,7 @@ export default function Header() {
             alt="Waldor Clinic"
             width={160}
             height={40}
-            className="h-[18px] w-auto"
+            className="h-[28px] w-auto"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="eager"
           />

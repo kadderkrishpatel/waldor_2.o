@@ -5,14 +5,23 @@ import { footerData } from "./Footer.data";
 import FooterColumn from "./FooterColumn";
 import FooterContact from "./FooterContact";
 import Image from "next/image";
+import { FooterProps } from "./Footer.types";
 
-export default function Footer() {
+export default function Footer({
+  footerImg,
+  footerRightImg,
+  footerLeftImg,
+  columns,
+  contact,
+  socialLinks,
+  cta,
+}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative rounded-[32px] bg-[#28302D] pt-20 m-2 lg:m-4">
       <Image
-        src={footerData.footerRightImg}
+        src={footerRightImg}
         alt=""
         width={209.37}
         height={316.48}
@@ -22,7 +31,7 @@ export default function Footer() {
       />
 
       <Image
-        src={footerData.footerLeftImg}
+        src={footerLeftImg}
         alt=""
         width={141.45}
         height={334.26}
@@ -35,22 +44,22 @@ export default function Footer() {
           <Heading
             className="max-w-[700px] text-[#F3EDE3]"
             highlightClassName="text-[#836D4E]"
-            before="Ready for"
-            highlight="lasting vitality?"
+            before={cta.heading.before}
+            highlight={cta.heading.highlight}
           />
 
           <Description className="mt-8 max-w-[650px] text-white">
-            At WALDOR Clinic, every treatment is designed around one thing…YOU!
+            {cta.description}
           </Description>
 
-          <Button href="/contact" variant="gold" className="mt-10">
-            Book Your Glow Session
+          <Button href={cta.button.href} variant="gold" className="mt-10">
+            {cta.button.label}
           </Button>
         </div>
 
         {/* Columns */}
         <div className="grid grid-cols-1 gap-10 border-t border-[#3D4844] py-10">
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-2 lg:grid-cols-4">
             {footerData.columns.map((column) => (
               <FooterColumn
                 key={column.title}
@@ -58,9 +67,13 @@ export default function Footer() {
                 links={column.links}
               />
             ))}
+
+            <div className="hidden lg:block">
+              <FooterContact {...footerData.contact} />
+            </div>
           </div>
 
-          <div className="flex">
+          <div className="block lg:hidden">
             <FooterContact {...footerData.contact} />
           </div>
         </div>
@@ -97,7 +110,7 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-5">
-            {footerData.socialLinks.map((social) => (
+            {socialLinks.map((social) => (
               <Link
                 key={social.name}
                 href={social.href}
@@ -120,13 +133,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative mt-16 h-[54px] lg:h-[231px] w-full">
+        <div className="relative mt-16 h-[54px] lg:h-[263px] w-full">
           <Image
-            src={footerData.footerImg}
+            src={footerImg}
             alt="Waldor Clinic"
             fill
             priority
-            className="object-contain opacity-70 transition-opacity duration-300 hover:opacity-100"
+            className="object-cover opacity-70 transition-opacity duration-300 hover:opacity-100"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="eager"
           />

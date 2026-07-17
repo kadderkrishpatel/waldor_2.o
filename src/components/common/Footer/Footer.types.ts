@@ -21,11 +21,34 @@ export interface FooterSocialLink {
   href: string;
 }
 
-export interface FooterProps {
+export interface FooterCTA {
+  heading: {
+    before: string;
+    highlight: string;
+  };
+  description: string;
+  button: {
+    label: string;
+    href: string;
+  };
+}
+
+/**
+ * Shared footer content
+ */
+export interface FooterDataProps {
   footerImg: string;
+  footerRightImg: string;
+  footerLeftImg: string;
+
   columns: FooterColumn[];
   contact: FooterContact;
   socialLinks: FooterSocialLink[];
-  footerRightImg: string;
-  footerLeftImg: string;
+}
+
+/**
+ * Complete Footer Props
+ */
+export interface FooterProps extends FooterDataProps {
+  cta: FooterCTA;
 }

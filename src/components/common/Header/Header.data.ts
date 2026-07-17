@@ -22,7 +22,7 @@ export const headerData: HeaderProps = {
     },
     {
       label: "Blog",
-      href: "/blogs",
+      href: "/blog",
     },
     {
       label: "Contact",

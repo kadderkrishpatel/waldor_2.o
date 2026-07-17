@@ -1,3 +1,4 @@
+import { ElementType } from "react";
 import { cn } from "@/src/lib/utils";
 
 interface HeadingProps {
@@ -6,6 +7,7 @@ interface HeadingProps {
   after?: string;
   className?: string;
   highlightClassName?: string;
+  as?: ElementType;
 }
 
 export default function Heading({
@@ -14,11 +16,12 @@ export default function Heading({
   after,
   className,
   highlightClassName,
+  as: Component = "h1",
 }: HeadingProps) {
   return (
-    <h1
+    <Component
       className={cn(
-        "font-fraunces text-[32px] text-[#F3EDE3] text-5xl md:text-7xl lg:text-[90px] font-normal leading-[100%] tracking-[-1.76px]",
+        "font-fraunces text-[#F3EDE3] text-[32px] md:text-7xl lg:text-[90px] font-normal leading-[100%] tracking-[-1.76px]",
         className,
       )}
     >
@@ -27,7 +30,7 @@ export default function Heading({
       {highlight && (
         <span
           className={cn(
-            "text-[#C5A375] font-fraunces font-normal leading-[-1.76px] italic",
+            "font-fraunces font-normal italic text-[#C5A375]",
             highlightClassName,
           )}
         >
@@ -36,6 +39,6 @@ export default function Heading({
       )}
 
       {after && <> {after}</>}
-    </h1>
+    </Component>
   );
 }

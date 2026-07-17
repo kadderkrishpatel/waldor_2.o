@@ -6,6 +6,7 @@ import {
   Fraunces,
 } from "next/font/google";
 import AppProviders from "@/src/providers/AppProviders";
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: "Waldor Clinic",
@@ -46,6 +47,14 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable} ${hanken.variable} ${fraunces.variable}`}
     >
       <body>
+        <Toaster
+          position="top-center"
+          richColors
+          expand={false}
+          closeButton
+          duration={4000}
+        />
+
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
