@@ -1,32 +1,33 @@
+import { asset } from "@/src/lib/assets";
 import { FooterDataProps } from "./Footer.types";
 
 export const footerData: FooterDataProps = {
-  footerImg: "/assets/waldor/footer.png",
-  footerRightImg: "/assets/waldor/footer-top-right.png",
-  footerLeftImg: "/assets/waldor/footer-left.png",
+  footerImg: asset("/assets/waldor/footer.png"),
+  footerRightImg: asset("/assets/waldor/footer-top-right.png"),
+  footerLeftImg: asset("/assets/waldor/footer-left.png"),
   columns: [
     {
       title: "TREATMENTS",
       links: [
         {
           label: "Waldor Signature",
-          href: "/treatments",
+          href: "#",
         },
         {
           label: "Skin",
-          href: "/treatments/skin",
+          href: "#",
         },
         {
           label: "Face",
-          href: "/treatments/face",
+          href: "#",
         },
         {
           label: "Body",
-          href: "/treatments/body",
+          href: "#",
         },
         {
           label: "Hair",
-          href: "/treatments/hair",
+          href: "#",
         },
       ],
     },
@@ -35,19 +36,19 @@ export const footerData: FooterDataProps = {
       links: [
         {
           label: "Acne",
-          href: "/concerns/acne",
+          href: "#",
         },
         {
           label: "Acne Scarring",
-          href: "/concerns/acne-scarring",
+          href: "#",
         },
         {
           label: "Dull Skin",
-          href: "/concerns/dull-skin",
+          href: "#",
         },
         {
           label: "Fine Lines & Wrinkles",
-          href: "/concerns/wrinkles",
+          href: "#",
         },
       ],
     },
@@ -86,12 +87,12 @@ export const footerData: FooterDataProps = {
   socialLinks: [
     {
       name: "Instagram",
-      icon: "/assets/waldor/insta-icon.png",
+      icon: asset("/assets/waldor/insta-icon.png"),
       href: "#",
     },
     {
       name: "Facebook",
-      icon: "/assets/waldor/fb-icon.png",
+      icon: asset("/assets/waldor/fb-icon.png"),
       href: "https://www.facebook.com/waldorclinic",
     },
   ],

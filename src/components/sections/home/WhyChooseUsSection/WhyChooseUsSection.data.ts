@@ -1,3 +1,4 @@
+import { asset } from "@/src/lib/assets";
 import { WhyChooseUsSectionProps } from "./WhyChooseUsSection.types";
 
 export const whyChooseUsData: WhyChooseUsSectionProps = {
@@ -12,6 +13,6 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     label: "Schedule Your Appointment",
     href: "/contact",
   },
-  leftImage: "/assets/waldor/whychoose-left.png",
-  rightImage: "/assets/waldor/whychoose-right.png",
+  leftImage: asset("/assets/waldor/whychoose-left.png"),
+  rightImage: asset("/assets/waldor/whychoose-right.png"),
 };

@@ -1,10 +1,12 @@
+import { asset } from "../lib/assets";
+
 export const IMAGES = {
-  logo: "/assets/logo/logo.png",
+  logo: asset("/assets/logo/logo.png"),
 
   hero: {
-    background: "/assets/hero/background.webp",
-    foreground: "/assets/hero/foreground.webp",
-    leaves: "/assets/hero/leaves.webp",
+    background: asset("/assets/hero/background.webp"),
+    foreground: asset("/assets/hero/foreground.webp"),
+    leaves: asset("/assets/hero/leaves.webp"),
   },
 
   treatments: {},
@@ -14,7 +16,7 @@ export const IMAGES = {
   blog: {},
 
   icons: {
-    arrow: "/assets/icons/arrow.svg",
-    play: "/assets/icons/play.svg",
+    arrow: asset("/assets/icons/arrow.svg"),
+    play: asset("/assets/icons/play.svg"),
   },
 } as const;

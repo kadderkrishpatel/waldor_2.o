@@ -1,24 +1,25 @@
+import { asset } from "@/src/lib/assets";
 import { HeaderProps } from "./Header.types";
 
 export const headerData: HeaderProps = {
-  logo: "/assets/waldor/logo.png",
+  logo: asset("/assets/waldor/logo.png"),
 
   navigation: [
     {
       label: "Treatments",
-      href: "/treatments",
+      href: "#",
     },
     {
       label: "Concerns",
-      href: "/concerns",
+      href: "#",
     },
     {
       label: "Success Stories",
-      href: "/success-stories",
+      href: "#",
     },
     {
       label: "Doctors",
-      href: "/doctors",
+      href: "#",
     },
     {
       label: "Blog",

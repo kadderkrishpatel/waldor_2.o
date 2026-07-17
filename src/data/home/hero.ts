@@ -1,3 +1,5 @@
+import { asset } from "@/src/lib/assets";
+
 export const heroData = {
   tagline: "London Hair and Skin Clinic",
   title: "Re-Code Your Skin Chemistry at Waldor",
@@ -10,8 +12,8 @@ export const heroData = {
     },
     {
       label: "Explore Plans",
-      href: "/treatments",
+      href: "#",
     },
   ],
-  image: "/assets/waldor/hero-bg.png",
+  image: asset("/assets/waldor/hero-bg.png"),
 };

@@ -1,3 +1,4 @@
+import { asset } from "@/src/lib/assets";
 import { HowItWorksSectionProps } from "./HowItWorksSection.types";
 
 export const howItWorksData: HowItWorksSectionProps = {
@@ -11,25 +12,25 @@ export const howItWorksData: HowItWorksSectionProps = {
       number: "01",
       title: "Reservation",
       description: "Book via our platform or contact us directly.",
-      icon: "/assets/waldor/calendar-icon.png",
+      icon: asset("/assets/waldor/calendar-icon.png"),
     },
     {
       number: "02",
       title: "Diagnostic",
       description: "Begin with your 45-minute in-person skin analysis.",
-      icon: "/assets/waldor/scan-icon.png",
+      icon: asset("/assets/waldor/scan-icon.png"),
     },
     {
       number: "03",
       title: "Strategy",
       description: "Receive your bespoke written treatment plan.",
-      icon: "/assets/waldor/plan-icon.png",
+      icon: asset("/assets/waldor/plan-icon.png"),
     },
     {
       number: "04",
       title: "Procedure",
       description: "Experience your tailored clinical skin transformation.",
-      icon: "/assets/waldor/treatment-icon.png",
+      icon: asset("/assets/waldor/treatment-icon.png"),
     },
   ],
 };

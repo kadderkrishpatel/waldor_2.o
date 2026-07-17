@@ -1,8 +1,9 @@
+import { asset } from "@/src/lib/assets";
 import { SuccessStoriesSectionProps } from "./SuccessStoriesSection.types";
 
 export const successStoriesData: SuccessStoriesSectionProps = {
   eyebrow: "SUCCESS STORIES",
-  successRightImg: "/assets/waldor/success-right.png",
+  successRightImg: asset("/assets/waldor/success-right.png"),
   heading: {
     before: "Refined Results,",
     highlight: "Natural Beauty",

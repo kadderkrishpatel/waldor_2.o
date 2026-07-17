@@ -34,7 +34,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-8">
           {headerData.navigation.map((item) => (
             <Link
               key={item.href}
@@ -47,7 +47,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
         </nav>
 
         {/* CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
             href="/contact"
             className="bg-[#323C38] text-[#EBE0D1] px-7 py-4 rounded-full text-sm font-bold"
@@ -59,7 +59,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
         {/* Mobile Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-[#EBE0D1] text-2xl"
+          className="xl:hidden text-[#EBE0D1] text-2xl"
         >
           ☰
         </button>
@@ -67,7 +67,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden mt-3 bg-[#323C38] rounded-[24px] p-6">
+        <div className="xl:hidden mt-3 bg-[#323C38] rounded-[24px] p-6">
           <nav className="flex flex-col gap-5">
             {headerData.navigation.map((item) => (
               <Link

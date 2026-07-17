@@ -1,8 +1,9 @@
+import { asset } from "@/src/lib/assets";
 import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
   eyebrow: "GET IN TOUCH",
-  decorationImg: "/assets/waldor/contact-decoration.png",
+  decorationImg: asset("/assets/waldor/contact-decoration.png"),
   heading: {
     before: "Start the",
     highlight: "Conversation",

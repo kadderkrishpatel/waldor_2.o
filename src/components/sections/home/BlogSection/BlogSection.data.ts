@@ -1,3 +1,4 @@
+import { asset } from "@/src/lib/assets";
 import { BlogSectionProps } from "./BlogSection.types";
 
 export const blogSectionData: BlogSectionProps = {
@@ -16,7 +17,7 @@ export const blogSectionData: BlogSectionProps = {
       title: "What actually causes adult acne and what doesn't",
       category: "ACNE",
       readTime: "5 MIN READ",
-      image: "/assets/waldor/blog-1.jpg",
+      image: asset("/assets/waldor/blog-1.jpg"),
       slug: "what-causes-adult-acne",
     },
     {
@@ -24,7 +25,7 @@ export const blogSectionData: BlogSectionProps = {
       title: "HydraGlass™ explained: what one session does",
       category: "GLASS SKIN",
       readTime: "5 MIN READ",
-      image: "/assets/waldor/blog-2.jpg",
+      image: asset("/assets/waldor/blog-2.jpg"),
       slug: "hydrglass-treatment-explained",
     },
     {
@@ -32,7 +33,7 @@ export const blogSectionData: BlogSectionProps = {
       title: "Treating uneven tone in skin of colour safely",
       category: "PIGMENTATION",
       readTime: "5 MIN READ",
-      image: "/assets/waldor/blog-3.jpg",
+      image: asset("/assets/waldor/blog-3.jpg"),
       slug: "treating-uneven-skin-tone",
     },
   ],

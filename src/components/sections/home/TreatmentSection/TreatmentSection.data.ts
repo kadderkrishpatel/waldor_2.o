@@ -1,9 +1,10 @@
+import { asset } from "@/src/lib/assets";
 import { TreatmentSectionProps } from "./TreatmentSection.types";
 
 export const treatmentData: TreatmentSectionProps = {
   eyebrow: "YOUR SKIN. AS A CANVAS",
-  topDecorationImg: "/assets/waldor/begin-top-left.png",
-  bottomDecorationImg: "/assets/waldor/begin-bottom.png",
+  topDecorationImg: asset("/assets/waldor/begin-top-left.png"),
+  bottomDecorationImg: asset("/assets/waldor/begin-bottom.png"),
   heading: {
     before: "Where shall we",
     highlight: "begin?",
@@ -15,21 +16,21 @@ export const treatmentData: TreatmentSectionProps = {
     {
       title: "Skin",
       description: "Dullness, Pigmentation & Texture",
-      image: "/assets/waldor/skin-cat.jpg",
-      href: "/treatments/skin",
+      image: asset("/assets/waldor/skin-cat.jpg"),
+      href: "#",
     },
     {
       title: "Body",
       description: "Muscle Growth & Chiseled Physiqu",
-      image: "/assets/waldor/body-cat.jpg",
-      href: "/treatments/face",
+      image: asset("/assets/waldor/body-cat.jpg"),
+      href: "#",
       offset: true,
     },
     {
       title: "Face",
       description: "Acne, Scarring & Wrinkles",
-      image: "/assets/waldor/body-cat.jpg",
-      href: "/treatments/hair",
+      image: asset("/assets/waldor/body-cat.jpg"),
+      href: "#",
     },
   ],
 };

@@ -28,7 +28,7 @@ const TreatmentItem = forwardRef<HTMLAnchorElement, TreatmentItemProps>(
     return (
       <Link
         ref={ref}
-        href={`/treatments/${item.slug}`}
+        href="#"
         onMouseEnter={onHover}
         onFocus={onHover}
         className={`group relative flex flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-8 border-b border-[#59615E] py-6 md:py-8 lg:py-10 transition-all duration-500 ${active ? "bg-[#4B5551]" : "hover:bg-[#46504C]"}`}

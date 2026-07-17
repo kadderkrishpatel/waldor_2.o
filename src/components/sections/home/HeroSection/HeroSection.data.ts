@@ -1,3 +1,4 @@
+import { asset } from "@/src/lib/assets";
 import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
@@ -20,12 +21,12 @@ export const heroData: HeroSectionProps = {
     },
     {
       label: "Explore Plans",
-      href: "/treatments",
+      href: "#",
       variant: "secondary",
     },
   ],
 
-  backgroundImage: "/assets/waldor/hero-bg.png",
+  backgroundImage: asset("/assets/waldor/hero-bg.png"),
 
   stats: [
     {

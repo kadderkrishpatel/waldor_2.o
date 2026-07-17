@@ -1,3 +1,4 @@
+import { asset } from "@/src/lib/assets";
 import { TransformationSectionProps } from "./TransformationSection.types";
 
 export const transformationData: TransformationSectionProps = {
@@ -13,15 +14,15 @@ export const transformationData: TransformationSectionProps = {
     {
       title: "HydraGlass™ Skin Transformation",
       category: "GLASS SKIN",
-      beforeImage: "/assets/waldor/before-1.png",
-      afterImage: "/assets/waldor/after-1.png",
+      beforeImage: asset("/assets/waldor/before-1.png"),
+      afterImage: asset("/assets/waldor/after-1.png"),
       duration: "AFTER · WEEK 12",
     },
     {
       title: "Pigmentation Correction",
       category: "PIGMENTATION",
-      beforeImage: "/assets/waldor/before-2.png",
-      afterImage: "/assets/waldor/after-2.png",
+      beforeImage: asset("/assets/waldor/before-2.png"),
+      afterImage: asset("/assets/waldor/after-2.png"),
       duration: "8 WEEK PROGRAM",
     },
   ],
