@@ -12,6 +12,6 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     label: "Schedule Your Appointment",
     href: "/contact",
   },
-  leftImage: "/assets/waldor/whychoose-left.png",
-  rightImage: "/assets/waldor/whychoose-right.png",
+  leftImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/whychoose-left.png",
+  rightImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/whychoose-right.png",
 };

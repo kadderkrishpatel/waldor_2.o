@@ -1,9 +1,9 @@
 import { FooterDataProps } from "./Footer.types";
 
 export const footerData: FooterDataProps = {
-  footerImg: "/assets/waldor/footer.png",
-  footerRightImg: "/assets/waldor/footer-top-right.png",
-  footerLeftImg: "/assets/waldor/footer-left.png",
+  footerImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/footer.png",
+  footerRightImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/footer-top-right.png",
+  footerLeftImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/footer-left.png",
   columns: [
     {
       title: "TREATMENTS",
@@ -86,12 +86,12 @@ export const footerData: FooterDataProps = {
   socialLinks: [
     {
       name: "Instagram",
-      icon: "/assets/waldor/insta-icon.png",
+      icon: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/insta-icon.png",
       href: "#",
     },
     {
       name: "Facebook",
-      icon: "/assets/waldor/fb-icon.png",
+      icon: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/fb-icon.png",
       href: "https://www.facebook.com/waldorclinic",
     },
   ],

@@ -2,8 +2,8 @@ import { TreatmentSectionProps } from "./TreatmentSection.types";
 
 export const treatmentData: TreatmentSectionProps = {
   eyebrow: "YOUR SKIN. AS A CANVAS",
-  topDecorationImg: "/assets/waldor/begin-top-left.png",
-  bottomDecorationImg: "/assets/waldor/begin-bottom.png",
+  topDecorationImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/begin-top-left.png",
+  bottomDecorationImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/begin-bottom.png",
   heading: {
     before: "Where shall we",
     highlight: "begin?",
@@ -15,20 +15,20 @@ export const treatmentData: TreatmentSectionProps = {
     {
       title: "Skin",
       description: "Dullness, Pigmentation & Texture",
-      image: "/assets/waldor/skin-cat.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/skin-cat.jpg",
       href: "/treatments/skin",
     },
     {
       title: "Body",
       description: "Muscle Growth & Chiseled Physiqu",
-      image: "/assets/waldor/body-cat.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/body-cat.jpg",
       href: "/treatments/face",
       offset: true,
     },
     {
       title: "Face",
       description: "Acne, Scarring & Wrinkles",
-      image: "/assets/waldor/body-cat.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/body-cat.jpg",
       href: "/treatments/hair",
     },
   ],

@@ -16,13 +16,13 @@ export const blogs: Blog[] = [
     title: "What actually causes adult acne",
     subtitle: "and what doesn't.",
     category: "Acne",
-    image: "/assets/waldor/blog-1.jpg",
-    bannerImage: "/assets/waldor/blog-1.jpg",
+    image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-1.jpg",
+    bannerImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-1.jpg",
     excerpt:
       "The common misconception that acne is only for teenagers is far from reality.",
     readTime: "8 MIN READ",
     author: "Dr. Elara Vance",
-    authorImage: "/assets/waldor/blog-1.jpg",
+    authorImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-1.jpg",
     publishedAt: "March 14, 2026",
     content: `
       <p>
@@ -47,7 +47,7 @@ export const blogs: Blog[] = [
       </p>
 
       <figure>
-        <img src="/assets/waldor/blog-1.jpg" alt="Acne Treatment" />
+        <img src="https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-1.jpg" alt="Acne Treatment" />
         <figcaption>
           Hydrated skin cells exhibit higher resilience against microbial triggers.
         </figcaption>
@@ -69,9 +69,9 @@ export const blogs: Blog[] = [
 
     category: "Glass Skin",
 
-    image: "/assets/waldor/blog-2.jpg",
+    image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-2.jpg",
 
-    bannerImage: "/assets/waldor/blog-detail-banner.jpg",
+    bannerImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-detail-banner.jpg",
 
     excerpt:
       "Everything you should know before your first HydraGlass treatment.",
@@ -80,7 +80,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: "/assets/images/blogs/author.png",
+    authorImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/images/blogs/author.png",
 
     publishedAt: "April 2, 2026",
 
@@ -114,9 +114,9 @@ export const blogs: Blog[] = [
 
     category: "Pigmentation",
 
-    image: "/assets/waldor/blog-3.jpg",
+    image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-3.jpg",
 
-    bannerImage: "/assets/waldor/blog-detail-banner.jpg",
+    bannerImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-detail-banner.jpg",
 
     excerpt: "Why personalised pigmentation treatment matters.",
 
@@ -124,7 +124,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: "/assets/images/blogs/author.png",
+    authorImage: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/images/blogs/author.png",
 
     publishedAt: "May 8, 2026",
 

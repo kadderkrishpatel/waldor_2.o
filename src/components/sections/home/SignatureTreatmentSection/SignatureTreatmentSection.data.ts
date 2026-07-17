@@ -16,7 +16,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "HydraGlass™ Facial",
       description:
         "A smoothing dermal treatment that gently refines texture and locks in moisture to instantly unveil a flawless, poreless glass-skin glow.",
-      image: "/assets/waldor/service-thumb.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/service-thumb.jpg",
       slug: "hydraglass-facial",
     },
     {
@@ -24,7 +24,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "Salmon Sperm Polynucleotide",
       description:
         "Experience regenerative DNA therapy that repairs deep cellular damage, instantly boosting your skin’s hydration and youthful bounce.",
-      image: "/assets/waldor/skin-cat.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/skin-cat.jpg",
       slug: "salmon-sperm-polynucleotide",
     },
     {
@@ -32,7 +32,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "Waldor™ Peptide Signature Blends",
       description:
         "Cellular molecules engineered to trigger collagen production, fortify your skin barrier and drive deep structural regeneration.",
-      image: "/assets/waldor/service-thumb.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/service-thumb.jpg",
       slug: "waldor-peptide-blends",
     },
     {
@@ -40,7 +40,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       title: "Hair Growth Treatment",
       description:
         "Advanced biological growth factors awaken resting roots, boosting circulation to deliver visibly thicker, fuller and healthier hair.",
-      image: "/assets/waldor/skin-cat.jpg",
+      image: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/skin-cat.jpg",
       slug: "hair-growth-treatment",
     },
   ],

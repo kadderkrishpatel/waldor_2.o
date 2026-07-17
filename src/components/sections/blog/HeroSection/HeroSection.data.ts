@@ -2,7 +2,7 @@ import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
   eyebrow: "FROM THE BLOG",
-  decorationImg: "/assets/waldor/blog-decoration.png",
+  decorationImg: "https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/blog-decoration.png",
   heading: {
     before: "Skin,",
     highlight: "Explained",

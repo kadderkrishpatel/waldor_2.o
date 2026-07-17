@@ -44,7 +44,7 @@ export default function ExperienceSection() {
         <div className="relative mt-12 md:mt-16 lg:mt-[300px] mb-12 md:mb-16 lg:mb-[250px] flex justify-center">
           <div className="relative w-full max-w-[1064px] lg:h-[554px]">
             <Image
-              src="/assets/waldor/exp-star.svg"
+              src="https://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/waldor/exp-star.svg"
               alt=""
               width={80}
               height={80}

@@ -75,8 +75,8 @@ pnpm-debug.log*
 # =========================================================
 # Public Generated Assets
 # =========================================================
-public/assets/
-public/assets/**
+publichttps://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/
+publichttps://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/**
 
 # =========================================================
 # IDE & Editor
@@ -134,6 +134,6 @@ temp/
 *.cache
 
 
-public/assets/
+publichttps://avnf4gmjhip1rpon.private.blob.vercel-storage.com/assets/
 public/uploads/
 public/images/uploads/
