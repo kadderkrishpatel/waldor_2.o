@@ -15,25 +15,29 @@ export const metadata = {
 
 const inter = Inter({
   subsets: ["latin"],
+  style: ["normal", "italic"],
   variable: "--font-inter",
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
+  style: ["normal", "italic"],
   weight: ["400", "500", "600", "700"],
 });
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-hanken",
+  style: ["normal", "italic"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-fraunces",
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
 });
 
 export default function RootLayout({

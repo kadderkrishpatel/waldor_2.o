@@ -29,6 +29,10 @@ export const footerData: FooterDataProps = {
           label: "Hair",
           href: "#",
         },
+        {
+          label: "FAQ",
+          href: "/faq/treatments",
+        },
       ],
     },
     {
@@ -50,6 +54,10 @@ export const footerData: FooterDataProps = {
           label: "Fine Lines & Wrinkles",
           href: "#",
         },
+        {
+          label: "FAQ",
+          href: "/faq/concerns",
+        },
       ],
     },
     {
@@ -70,6 +78,10 @@ export const footerData: FooterDataProps = {
         {
           label: "Contact Us",
           href: "/contact",
+        },
+        {
+          label: "FAQ",
+          href: "/faq/clinic",
         },
       ],
     },
