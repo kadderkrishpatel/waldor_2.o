@@ -41,7 +41,7 @@ export default function SuccessStoriesSection() {
           <Eyebrow variant="secondary">{successStoriesData.eyebrow}</Eyebrow>
 
           <Heading
-            className="text-[#29302D] lg:text-[64px]"
+            className="text-[#E4E6E5] lg:text-[64px]"
             before={successStoriesData.heading.before}
             highlight={successStoriesData.heading.highlight}
           />

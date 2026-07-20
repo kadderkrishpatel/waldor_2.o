@@ -8,7 +8,7 @@ export default function WhyChooseUsSection() {
     <section className="relative overflow-hidden bg-[#3D4844] py-4 sm:py-6 m-2 lg:m-4 rounded-none lg:rounded-[40px]">
       {/* Content Card */}
       <div className="relative z-10 rounded-[24px] sm:rounded-[32px] bg-[#C5A375] min-h-[520px] sm:min-h-[600px] lg:min-h-[750px] px-5 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-30 flex items-center justify-center">
-        <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
+        <div className="mx-auto flex max-w-[800px] flex-col items-center text-center">
           {/* Heading */}
           <Heading
             highlightClassName="text-[#836D4E]"

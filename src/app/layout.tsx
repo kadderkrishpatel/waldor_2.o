@@ -21,21 +21,20 @@ const inter = Inter({
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-cormorant",
   style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
 });
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-hanken",
   style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-hanken",
 });
 
+// FIX: Removed weight and style arrays so Next.js treats it as a Variable Font
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  axes: ["opsz", "WONK"],
   style: ["normal", "italic"],
   variable: "--font-fraunces",
 });

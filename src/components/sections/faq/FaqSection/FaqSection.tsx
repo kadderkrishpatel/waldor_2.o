@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { faqData, FAQCategory } from "./FaqSection.data";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
+import { Button } from "@/src/components";
 
 const filters: {
   label: string;
@@ -65,18 +66,21 @@ export default function FaqSection() {
         {/* Filters */}
         <div className="mb-20 flex flex-wrap gap-3">
           {filters.map((filter) => (
-            <button
+            <Button
               key={filter.value}
+              type="button"
+              size="sm"
+              variant="outline"
               onClick={() => router.push(`/faq/${filter.value}`)}
               className={clsx(
-                "rounded-full border px-6 py-3 uppercase transition-all duration-300",
+                "!min-h-[48px] !px-6 !py-3 !tracking-[1.6px] transition-all duration-300",
                 activeFilter === filter.value
-                  ? "border-[#28302D] bg-[#28302D] text-white"
-                  : "border-[#9A7B4F80] text-[#28302D] hover:bg-[#F3ECE3]",
+                  ? "!border-[#28302D] !bg-[#28302D] !text-white hover:!bg-[#28302D]"
+                  : "!border-[#9A7B4F80] !bg-transparent !text-[#28302D] hover:!bg-[#F3ECE3] hover:!border-[#9A7B4F80] hover:!text-[#28302D]",
               )}
             >
               {filter.label}
-            </button>
+            </Button>
           ))}
         </div>
 

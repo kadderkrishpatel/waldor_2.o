@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex min-h-[700px] sm:min-h-[760px] lg:min-h-screen flex-col px-5 py-6 sm:px-8 sm:py-8 lg:px-[60px] lg:py-[60px]">
         <div className="mt-80 lg:mt-24 flex flex-1 flex-col justify-end gap-12 2xl:flex-row 2xl:items-end 2xl:justify-between">
           {/* Left */}
-          <div className="max-w-3xl">
+          <div className="max-w-[620px]">
             <Eyebrow className="mb-4 lg:mb-6">{heroData.eyebrow}</Eyebrow>
 
             <Heading

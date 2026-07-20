@@ -26,11 +26,11 @@ export default function DoctorSection() {
     >
       <div className="mx-auto px-6 lg:px-[60px]">
         {/* Heading */}
-        <div className="mb-10 md:mb-12 lg:mb-16 max-w-[800px] flex flex-col gap-4 md:gap-5 lg:gap-6">
+        <div className="mb-10 md:mb-12 lg:mb-16 max-w-[750px] flex flex-col gap-4 md:gap-5 lg:gap-6">
           <Eyebrow variant="secondary">{doctorSectionData.eyebrow}</Eyebrow>
 
           <Heading
-            className="text-[#BEC2C1] lg:text-[64px]"
+            className="text-[#BEC2C1] lg:text-[64px] leading-[115%]"
             before={doctorSectionData.heading.before}
             highlight={doctorSectionData.heading.highlight}
           />

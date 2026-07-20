@@ -9,7 +9,7 @@ export default function BlogSection() {
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px] py-16 md:py-20 lg:py-[120px]">
         {/* Header */}
         <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-end lg:justify-between">
-          <div className="flex flex-col gap-4 lg:gap-[14px] max-w-[900px]">
+          <div className="flex flex-col gap-4 lg:gap-[14px]">
             <Eyebrow variant="secondary">{blogSectionData.eyebrow}</Eyebrow>
 
             <Heading

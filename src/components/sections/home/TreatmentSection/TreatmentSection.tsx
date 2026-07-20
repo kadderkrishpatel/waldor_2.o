@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { treatmentData } from "./TreatmentSection.data";
 import TreatmentCard from "./TreatmentCard";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
@@ -9,10 +9,24 @@ import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 export default function TreatmentSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const [enableHorizontalScroll, setEnableHorizontalScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setEnableHorizontalScroll(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkScreen();
+
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   useHorizontalScroll({
     section: sectionRef,
     track: trackRef,
+    enabled: enableHorizontalScroll,
   });
 
   return (

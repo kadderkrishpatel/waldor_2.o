@@ -13,7 +13,7 @@ export default function CardTitle({
   return (
     <h3
       className={cn(
-        "text-[36px] font-[300] font-fraunces leading-[46.8px] tracking-[-0.18px] transition-colors duration-300",
+        "text-[36px] font-[300] font-fraunces leading-[46.8px] tracking-[-0.18px] transition-colors duration-300 text-[#ECE0D1]",
         className,
       )}
       {...props}

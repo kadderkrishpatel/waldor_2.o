@@ -13,13 +13,12 @@ import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 export default function HowItWorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
-
   const [ready, setReady] = useState(false);
 
   useHorizontalScroll({
     section: sectionRef,
     swiper: swiperRef,
-    enabled: ready,
+    enabled: ready && typeof window !== "undefined" && window.innerWidth < 1280,
   });
 
   return (
@@ -40,57 +39,65 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Swiper */}
-        <Swiper
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-            setReady(true);
-          }}
-          navigation
-          pagination={{
-            clickable: true,
-          }}
-          speed={600}
-          spaceBetween={24}
-          slidesPerView={1.05}
-          watchOverflow
-          breakpoints={{
-            480: {
-              slidesPerView: 1.15,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 1.3,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 24,
-            },
-            1024: {
-              slidesPerView: 2.5,
-              spaceBetween: 24,
-            },
-            1280: {
-              slidesPerView: 3,
-              spaceBetween: 28,
-            },
-            1536: {
-              slidesPerView: 4,
-              spaceBetween: 32,
-            },
-          }}
-        >
+        {/* Mobile & Tablet */}
+        <div className="lg:hidden">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              setReady(true);
+            }}
+            navigation
+            pagination={{
+              clickable: true,
+            }}
+            speed={600}
+            spaceBetween={24}
+            slidesPerView={1.05}
+            watchOverflow
+            breakpoints={{
+              480: {
+                slidesPerView: 1.15,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+              },
+            }}
+          >
+            {howItWorksData.steps.map((step) => (
+              <SwiperSlide key={step.number}>
+                <StepCard
+                  number={step.number}
+                  title={step.title}
+                  description={step.description}
+                  icon={step.icon}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Desktop */}
+        <div className="hidden lg:grid lg:grid-cols-4 lg:gap-8">
           {howItWorksData.steps.map((step) => (
-            <SwiperSlide key={step.number}>
-              <StepCard
-                number={step.number}
-                title={step.title}
-                description={step.description}
-                icon={step.icon}
-              />
-            </SwiperSlide>
+            <StepCard
+              key={step.number}
+              number={step.number}
+              title={step.title}
+              description={step.description}
+              icon={step.icon}
+            />
           ))}
-        </Swiper>
+        </div>
       </div>
     </section>
   );

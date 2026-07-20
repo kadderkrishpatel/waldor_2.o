@@ -29,7 +29,7 @@ export const treatmentData: TreatmentSectionProps = {
     {
       title: "Face",
       description: "Acne, Scarring & Wrinkles",
-      image: asset("/assets/waldor/body-cat.jpg"),
+      image: asset("/assets/waldor/face-cat.jpg"),
       href: "#",
     },
   ],
