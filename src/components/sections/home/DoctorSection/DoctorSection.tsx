@@ -77,7 +77,7 @@ export default function DoctorSection() {
         >
           {doctorSectionData.doctors.map((doctor) => (
             <SwiperSlide key={doctor.slug}>
-              <DoctorCard {...doctor} swiper={swiperRef} />
+              <DoctorCard {...doctor} />
             </SwiperSlide>
           ))}
         </Swiper>

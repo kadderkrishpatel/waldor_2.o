@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { MutableRefObject } from "react";
-import type { Swiper as SwiperType } from "swiper";
 
 interface DoctorCardProps {
   slug: string;
   image: string;
   name: string;
   role: string;
-  swiper: MutableRefObject<SwiperType | null>;
 }
 
 export default function DoctorCard({
@@ -16,13 +13,11 @@ export default function DoctorCard({
   image,
   name,
   role,
-  swiper,
 }: DoctorCardProps) {
   return (
     <Link
       href={`/doctors/${slug}`}
       className="group relative block h-[620px] overflow-hidden rounded-[32px] bg-[#515D59]"
-      swiper={swiper}
     >
       <Image
         src={image}
