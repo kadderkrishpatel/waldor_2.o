@@ -22,7 +22,7 @@ export default function TransformationCard({
   return (
     <div className="relative overflow-hidden rounded-[20px] md:rounded-[24px] lg:rounded-[32px] bg-[#F3ECE3] h-full">
       {/* Before / After Image */}
-      <div className="relative w-full aspect-[4/5] sm:aspect-[4/5] md:aspect-[2/3] lg:aspect-[3/2] xl:aspect-[3/2]">
+      <div className="relative h-[650px] w-full aspect-[4/5] sm:aspect-[4/5] md:aspect-[2/3] lg:aspect-[3/2] xl:aspect-[3/2]">
         <BeforeAfterSlider
           beforeImage={beforeImage}
           afterImage={afterImage}

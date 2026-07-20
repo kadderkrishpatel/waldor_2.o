@@ -55,6 +55,7 @@ export default function CompareSlider({
     >
       <ReactCompareSlider
         defaultValue={50}
+        className="h-[650px]"
         style={{
           width: "100%",
           height: "100%",
@@ -66,6 +67,8 @@ export default function CompareSlider({
             style={{
               objectFit: "cover",
               objectPosition: "center",
+              height: "100%",
+              aspectRatio: "1/1",
             }}
           />
         }

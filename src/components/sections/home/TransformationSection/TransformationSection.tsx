@@ -79,17 +79,17 @@ export default function TransformationSection() {
             },
 
             1024: {
-              slidesPerView: 1.25,
+              slidesPerView: 1.2,
               spaceBetween: 24,
             },
 
             1280: {
-              slidesPerView: 1.35,
+              slidesPerView: 1.2,
               spaceBetween: 24,
             },
 
             1536: {
-              slidesPerView: 1.45,
+              slidesPerView: 1.2,
               spaceBetween: 28,
             },
           }}
