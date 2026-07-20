@@ -85,7 +85,7 @@ export default function CompareSlider({
               width: mobile ? 42 : 56,
               height: mobile ? 42 : 56,
               borderRadius: 999,
-              background: "#F3EDE3",
+              background: "#C6A26D",
               border: "2px solid #C6A26D",
               color: "#C6A26D",
               boxShadow: "0 10px 30px rgba(0,0,0,.12)",
