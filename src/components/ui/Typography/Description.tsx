@@ -8,6 +8,8 @@ interface DescriptionProps {
 export default function Description({ children, className }: DescriptionProps) {
   return (
     <p
+      data-reveal
+      data-direction="left"
       className={cn(
         "font-hanken text-lg lg:text-[17px] leading-[150%] text-[#F3ECE3]",
         className,

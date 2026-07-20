@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
 import { heroData } from "./HeroSection.data";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function HeroSection() {
+  const sectionRef = useSectionReveal();
+
   return (
-    <section className="overflow-hidden lg:rounded-[32px] m-2 lg:m-4 min-h-[400px] sm:min-h-[400px]">
+    <section
+      ref={sectionRef}
+      className="overflow-hidden lg:rounded-[32px] m-2 lg:m-4 min-h-[400px] sm:min-h-[400px]"
+    >
       {/* right Decorative Image */}
       {heroData.decorationImg && (
         <Image

@@ -18,6 +18,8 @@ export default function Eyebrow({
 }: EyebrowProps) {
   return (
     <p
+      data-reveal
+      data-direction="left"
       className={cn(
         "font-hanken text-xs font-bold uppercase tracking-[0.16em]",
         variants[variant],

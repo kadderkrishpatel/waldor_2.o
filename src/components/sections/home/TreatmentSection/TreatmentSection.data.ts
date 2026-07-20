@@ -2,16 +2,16 @@ import { asset } from "@/src/lib/assets";
 import { TreatmentSectionProps } from "./TreatmentSection.types";
 
 export const treatmentData: TreatmentSectionProps = {
-  eyebrow: "YOUR SKIN. AS A CANVAS",
+  eyebrow: "Target Treatment Path",
   topDecorationImg: asset("/assets/waldor/begin-top-left.png"),
   bottomDecorationImg: asset("/assets/waldor/begin-bottom.png"),
   heading: {
-    before: "Where shall we",
-    highlight: "begin?",
+    before: "What is Your",
+    highlight: "Focus Today?",
     after: "",
   },
   description:
-    "Our diagnosis-first approach ensures every routine is as unique as the canvas it treats. Refined luxury, scientifically proven.",
+    "Every cellular concern requires a targeted intervention. Select your focus area below to unlock a bespoke, result-driven solution designed exclusively for you. ",
   treatments: [
     {
       title: "Skin",

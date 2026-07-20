@@ -16,8 +16,10 @@ export default function DoctorCard({
 }: DoctorCardProps) {
   return (
     <Link
+      data-reveal
+      data-direction="left"
       href={`/doctors/${slug}`}
-      className="group relative block h-[620px] overflow-hidden rounded-[32px] bg-[#515D59]"
+      className="group relative block h-[530px] overflow-hidden rounded-[32px] bg-[#515D59]"
     >
       <Image
         src={image}

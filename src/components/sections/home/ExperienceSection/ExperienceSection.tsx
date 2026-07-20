@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/image";
 import { experienceData } from "./ExperienceSection.data";
 import ExperienceCard from "./ExperienceCard";
 import { Eyebrow, Heading, Description } from "@/src/components/ui/Typography";
 import { asset } from "@/src/lib/assets";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function ExperienceSection() {
+  const sectionRef = useSectionReveal();
   const cardPosition = {
     top: "lg:top-[-40%] lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-10",
     left: "lg:left-0 lg:top-1/2 lg:-translate-x-20 lg:-translate-y-1/2",
@@ -14,7 +17,10 @@ export default function ExperienceSection() {
   };
 
   return (
-    <section className="relative overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#EBE0D1] py-16 md:py-20 lg:py-[120px] m-2 lg:m-4">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#EBE0D1] py-16 md:py-20 lg:py-[120px] m-2 lg:m-4"
+    >
       <Image
         src={experienceData.topDecorationImage}
         alt=""

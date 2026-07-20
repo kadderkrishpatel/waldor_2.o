@@ -18,10 +18,6 @@ export const headerData: HeaderProps = {
       href: "#",
     },
     {
-      label: "Doctors",
-      href: "#",
-    },
-    {
       label: "Blog",
       href: "/blog",
     },

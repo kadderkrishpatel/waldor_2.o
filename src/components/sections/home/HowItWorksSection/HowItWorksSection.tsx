@@ -9,9 +9,13 @@ import { howItWorksData } from "./HowItWorksSection.data";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import { StepCard } from "@/src/components/ui/Cards";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function HowItWorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sectionRevealRef = useSectionReveal();
+  const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -23,7 +27,7 @@ export default function HowItWorksSection() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={mergedRef}
       className="overflow-hidden rounded-[24px] lg:rounded-[32px] bg-[#EBE0D1] "
     >
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px] py-16 md:py-20 lg:py-[120px]">
@@ -44,7 +48,7 @@ export default function HowItWorksSection() {
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
-              setReady(true);
+              //setReady(true);
             }}
             navigation
             pagination={{

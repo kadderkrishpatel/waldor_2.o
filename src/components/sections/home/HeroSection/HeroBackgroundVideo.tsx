@@ -41,7 +41,7 @@ export default function HeroBackgroundVideo({
         muted
         loop
         playsInline
-        className="h-full w-full object-cover object-center"
+        className="h-full w-full object-none object-left"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />

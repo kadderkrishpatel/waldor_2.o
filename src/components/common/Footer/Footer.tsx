@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Button from "@/src/components/ui/Button";
 import { Description, Heading } from "@/src/components/ui/Typography";
@@ -6,6 +7,7 @@ import FooterColumn from "./FooterColumn";
 import FooterContact from "./FooterContact";
 import Image from "next/image";
 import { FooterProps } from "./Footer.types";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function Footer({
   footerImg,
@@ -16,10 +18,14 @@ export default function Footer({
   socialLinks,
   cta,
 }: FooterProps) {
+  const sectionRef = useSectionReveal();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative rounded-[32px] bg-[#28302D] pt-20 m-2 lg:m-4">
+    <footer
+      ref={sectionRef}
+      className="relative rounded-[32px] bg-[#28302D] pt-20 m-2 lg:m-4"
+    >
       <Image
         src={footerRightImg}
         alt=""
@@ -52,9 +58,11 @@ export default function Footer({
             {cta.description}
           </Description>
 
-          <Button href={cta.button.href} variant="gold" className="mt-10">
-            {cta.button.label}
-          </Button>
+          <div data-reveal data-direction="left">
+            <Button href={cta.button.href} variant="gold" className="mt-10">
+              {cta.button.label}
+            </Button>
+          </div>
         </div>
 
         {/* Columns */}
@@ -80,7 +88,11 @@ export default function Footer({
 
         {/* Bottom */}
         <div className="flex flex-col justify-between gap-5 border-t border-[#3D4844] pt-10 md:flex-row">
-          <p className="flex flex-wrap items-center gap-1 text-xs text-[#C5A375]">
+          <p
+            data-reveal
+            data-direction="left"
+            className="flex flex-wrap items-center gap-1 text-xs text-[#C5A375]"
+          >
             <span>© {currentYear} Waldor Clinic</span>
 
             <span>·</span>
@@ -133,13 +145,13 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="relative mt-16 h-[54px] lg:h-[263px] w-full">
+        <div className="relative mt-16 h-[54px] md:h-[130px] 2xl:h-[263px] w-full">
           <Image
             src={footerImg}
             alt="Waldor Clinic"
             fill
             priority
-            className="object-cover opacity-70 transition-opacity duration-300 hover:opacity-100"
+            className="object-fill opacity-70 transition-opacity duration-300 hover:opacity-100"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="eager"
           />

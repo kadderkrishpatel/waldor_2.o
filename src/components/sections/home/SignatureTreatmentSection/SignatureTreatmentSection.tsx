@@ -5,8 +5,10 @@ import TreatmentItem from "./TreatmentItem";
 import FloatingTreatmentImage from "./FloatingTreatmentImage";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import Button from "@/src/components/ui/Button";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function SignatureTreatmentSection() {
+  const sectionRef = useSectionReveal();
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageTop, setImageTop] = useState(0);
 
@@ -29,7 +31,10 @@ export default function SignatureTreatmentSection() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-[#3D4844] rounded-[24px] lg:rounded-[40px] py-16 md:py-20 lg:py-[120px] lg:m-4 m-2">
+    <section
+      ref={sectionRef}
+      className="overflow-hidden bg-[#3D4844] rounded-[24px] lg:rounded-[40px] py-16 md:py-20 lg:py-[120px] lg:m-4 m-2"
+    >
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px]">
         {/* Header */}
         <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col lg:flex-row lg:items-end gap-6 lg:justify-between">

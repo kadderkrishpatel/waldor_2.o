@@ -9,9 +9,13 @@ import DoctorCard from "./DoctorCard";
 import { doctorSectionData } from "./DoctorSection.data";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function DoctorSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sectionRevealRef = useSectionReveal();
+  const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -23,8 +27,8 @@ export default function DoctorSection() {
 
   return (
     <section
-      ref={sectionRef}
-      className="rounded-[24px] lg:rounded-[40px] bg-[#3D4844] m-2 py-16 md:py-20 lg:py-[120px] overflow-hidden "
+      ref={mergedRef}
+      className="rounded-[24px] lg:rounded-[40px] bg-[#3D4844] m-2 py-16 md:py-20 lg:py-[80px] overflow-hidden "
     >
       <div className="mx-auto px-6 lg:px-[60px]">
         {/* Heading */}
@@ -46,7 +50,7 @@ export default function DoctorSection() {
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            setReady(true);
+            //setReady(true);
           }}
           navigation
           pagination={{
@@ -71,7 +75,7 @@ export default function DoctorSection() {
               slidesPerView: 2.4,
             },
             1280: {
-              slidesPerView: 3,
+              slidesPerView: 3.4,
             },
           }}
         >

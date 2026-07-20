@@ -13,7 +13,11 @@ export default function BlogCard({
   className,
 }: BlogCardProps) {
   return (
-    <article className={cn("group", className)}>
+    <article
+      data-reveal
+      data-direction="left"
+      className={cn("group", className)}
+    >
       <Link href={`/blog/${slug}`}>
         {/* Image */}
         <div className="relative mb-6 h-[530px] overflow-hidden rounded-[28px]">
@@ -33,7 +37,13 @@ export default function BlogCard({
 
           <CardTitle>{title}</CardTitle>
 
-          <p className="text-xs text-[#7D8582]">{readTime}</p>
+          <p
+            data-reveal
+            data-direction="left"
+            className="text-xs text-[#7D8582]"
+          >
+            {readTime}
+          </p>
         </div>
       </Link>
     </article>

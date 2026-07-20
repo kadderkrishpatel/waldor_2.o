@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { headerData } from "./Header.data";
 import { cn } from "@/src/utils/cn";
+import Button from "@/src/components/ui/Button";
 
 interface HeaderBgProps {
   bg?: string;
@@ -13,10 +14,10 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-5 lg:px-[60px] pt-8">
+    <header className="fixed top-0 left-0 right-0 z-50 px-5 lg:px-[60px] pt-8 max-w-[1440px] mx-auto">
       <div
         className={cn(
-          "backdrop-blur-md rounded-[24px] px-6 py-5 flex items-center justify-between",
+          "backdrop-blur-md rounded-[24px] px-6 py-3 flex items-center justify-between",
           bg,
         )}
       >
@@ -27,7 +28,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
             alt="Waldor Clinic"
             width={160}
             height={40}
-            className="h-[28px] w-auto"
+            className="h-[20px] lg:h-[28px] w-auto"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="eager"
           />
@@ -48,12 +49,9 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
 
         {/* CTA */}
         <div className="hidden xl:block">
-          <Link
-            href="/contact"
-            className="bg-[#323C38] text-[#EBE0D1] px-7 py-4 rounded-full text-sm font-bold"
-          >
+          <Button variant="primary" href="/contact" className="rounded-full px-8 py-5">
             Book a Consultation
-          </Link>
+          </Button>
         </div>
 
         {/* Mobile Button */}

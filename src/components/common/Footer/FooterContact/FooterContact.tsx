@@ -9,7 +9,7 @@ export default function FooterContact({
   timings,
 }: FooterContactProps) {
   return (
-    <div>
+    <div data-reveal data-direction="left">
       <Eyebrow variant="secondary" className="mb-5">
         Contact Us
       </Eyebrow>

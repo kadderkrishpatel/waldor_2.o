@@ -25,6 +25,8 @@ export default function StepCard({
       )}
     >
       <DisplayNumber
+        data-reveal
+        data-direction="left"
         className="
           text-sm
           font-bold
@@ -38,6 +40,8 @@ export default function StepCard({
 
       <div className="relative h-20 w-20">
         <Image
+          data-reveal
+          data-direction="left"
           src={icon}
           alt={title}
           fill

@@ -1,15 +1,21 @@
+"use client";
 import Image from "next/image";
-
 import { Blog } from "../BlogListingSection/BlogListingSection.types";
 import Heading from "@/src/components/ui/Typography/Heading";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 interface BlogDetailSectionProps {
   blog: Blog;
 }
 
 export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
+  const sectionRef = useSectionReveal();
+
   return (
-    <section className="relative bg-[#EBE0D1] rounded-[40px] py-16 md:py-20 lg:py-[40px] m-2 lg:m-4 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative bg-[#EBE0D1] rounded-[40px] py-16 md:py-20 lg:py-[40px] m-2 lg:m-4 overflow-hidden"
+    >
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px]">
         {/* Hero */}
         <div className="bg-[#EBE0D1] rounded-[40px] pt-5 mt-10 lg:mt-40">
@@ -18,11 +24,15 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
               as="h1"
               before={blog.title}
               highlight={blog.subtitle}
-              className="text-[64px] leading-[100%] text-[#28302D]"
+              className="text-[48px] lg:text-[64px] leading-[100%] text-[#28302D]"
               highlightClassName="text-[#C5A375]"
             />
 
-            <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-12">
+            <div
+              data-reveal
+              data-direction="left"
+              className="flex flex-wrap items-center justify-center gap-1 lg:gap-12"
+            >
               <div className="flex items-center gap-3">
                 <Image
                   src={blog.authorImage}
@@ -47,7 +57,11 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
             </div>
           </div>
 
-          <div className="mx-auto max-w-[1280px] px-5">
+          <div
+            data-reveal
+            data-direction="left"
+            className="mx-auto max-w-[1280px] px-5"
+          >
             <Image
               src={blog.bannerImage}
               alt={blog.title}
@@ -60,7 +74,11 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
         </div>
 
         {/* Blog Content */}
-        <div className="mx-auto mt-[60px] max-w-[800px]">
+        <div
+          data-reveal
+          data-direction="left"
+          className="mx-auto mt-[60px] max-w-[800px]"
+        >
           <div
             className="blog-content text-[#29302D]"
             dangerouslySetInnerHTML={{

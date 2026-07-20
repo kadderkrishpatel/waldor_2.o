@@ -49,7 +49,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} ${hanken.variable} ${fraunces.variable}`}
     >
-      <body>
+      <body className="max-w-[1920px] mx-auto">
         <Toaster
           position="top-center"
           richColors

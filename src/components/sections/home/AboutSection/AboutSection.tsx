@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
 import { aboutData } from "./AboutSection.data";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function AboutSection() {
+  const sectionRef = useSectionReveal();
+
   return (
-    <section className="relative overflow-hidden bg-[#3D4844] py-16 md:py-20 lg:py-24 xl:py-28 mx-2 lg:m-4">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#3D4844] py-16 md:py-20 lg:py-24 xl:py-28 mx-2 lg:m-4"
+    >
       <div className="container mx-auto px-5 sm:px-6 lg:px-[60px]">
         <div className="mx-auto max-w-[1100px] text-center">
           <Eyebrow variant="secondary" className="mb-4 md:mb-5 lg:mb-6">

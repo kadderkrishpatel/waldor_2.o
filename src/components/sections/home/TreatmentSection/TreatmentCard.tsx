@@ -20,6 +20,8 @@ export default function TreatmentCard({
   return (
     <Link
       href={href}
+      data-reveal
+      data-direction="top"
       className="group relative block h-full w-full overflow-hidden rounded-full border-[8px] lg:border-[10px] border-[#D8C2A3] bg-[#D8C2A3]"
     >
       {/* Image */}
@@ -38,7 +40,7 @@ export default function TreatmentCard({
       <div className="absolute inset-0 flex flex-col justify-between p-8 sm:p-10 lg:p-12 xl:p-14">
         {/* Arrow */}
         <div className="flex justify-center">
-          <div className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 group-hover:rotate-45">
+          <div className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 group-hover:-rotate-70">
             <ArrowDownRight className="h-7 w-7 lg:h-9 lg:w-9 text-[#F3EDE3]" />
           </div>
         </div>

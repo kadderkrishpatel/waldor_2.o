@@ -2,10 +2,10 @@ import { asset } from "@/src/lib/assets";
 import { HowItWorksSectionProps } from "./HowItWorksSection.types";
 
 export const howItWorksData: HowItWorksSectionProps = {
-  eyebrow: "HOW IT WORKS",
+  eyebrow: "The Methodology",
   heading: {
-    before: "Four steps, no",
-    highlight: "pressure.",
+    before: "Four Steps to",
+    highlight: "Your Metamorphosis",
   },
   steps: [
     {

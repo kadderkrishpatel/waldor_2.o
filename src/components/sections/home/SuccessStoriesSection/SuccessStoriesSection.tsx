@@ -9,9 +9,13 @@ import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 import { successStoriesData } from "./SuccessStoriesSection.data";
 import "swiper/css";
 import "swiper/css/pagination";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function SuccessStoriesSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sectionRevealRef = useSectionReveal();
+  const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -23,7 +27,7 @@ export default function SuccessStoriesSection() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={mergedRef}
       className="relative overflow-hidden bg-[#3D4844] rounded-[24px] lg:rounded-[40px] "
     >
       <Image
@@ -52,7 +56,7 @@ export default function SuccessStoriesSection() {
           modules={[Pagination]}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            setReady(true);
+            //setReady(true);
           }}
           navigation
           pagination={{
@@ -82,7 +86,11 @@ export default function SuccessStoriesSection() {
         >
           {successStoriesData.testimonials.map((item) => (
             <SwiperSlide key={item.name}>
-              <article className="flex min-h-[490px] md:min-h-[430px] lg:min-h-[490px] flex-col justify-between rounded-[20px] lg:rounded-[24px] bg-[#3D4844] p-6 md:p-8 lg:p-10">
+              <article
+                data-reveal
+                data-direction="left"
+                className="flex min-h-[490px] md:min-h-[430px] lg:min-h-[490px] flex-col justify-between rounded-[20px] lg:rounded-[24px] bg-[#3D4844] p-6 md:p-8 lg:p-10"
+              >
                 <p className="font-fraunces text-[22px] md:text-[24px] lg:text-[28px] leading-[1.5] text-[#E3E5E5]">
                   "{item.review}"
                 </p>

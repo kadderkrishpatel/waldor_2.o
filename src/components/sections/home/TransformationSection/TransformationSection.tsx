@@ -9,9 +9,13 @@ import { transformationData } from "./TransformationSection.data";
 import TransformationCard from "./TransformationCard";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function TransformationSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sectionRevealRef = useSectionReveal();
+  const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -23,7 +27,7 @@ export default function TransformationSection() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={mergedRef}
       className="overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#EBE0D1] py-16 md:py-20 lg:py-28 xl:py-[120px] "
     >
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px]">
@@ -47,8 +51,9 @@ export default function TransformationSection() {
           modules={[Pagination]}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            setReady(true);
+            //setReady(true);
           }}
+          allowTouchMove={true}
           slidesPerView={1.02}
           spaceBetween={16}
           pagination={{

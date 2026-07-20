@@ -1,11 +1,18 @@
+"use client";
 import { blogSectionData } from "./BlogSection.data";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import Button from "@/src/components/ui/Button";
 import { BlogCard } from "@/src/components/ui/Cards";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function BlogSection() {
+  const sectionRef = useSectionReveal();
+
   return (
-    <section className="overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#3D4844] m-2 lg:m-4">
+    <section
+      ref={sectionRef}
+      className="overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#3D4844] m-2 lg:m-4"
+    >
       <div className="mx-auto px-5 sm:px-6 lg:px-[60px] py-16 md:py-20 lg:py-[120px]">
         {/* Header */}
         <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-end lg:justify-between">
@@ -19,7 +26,7 @@ export default function BlogSection() {
             />
           </div>
 
-          <div className="w-full lg:w-auto">
+          <div data-reveal data-direction="left" className="w-full lg:w-auto">
             <Button
               href={blogSectionData.button.href}
               variant="gold"

@@ -9,9 +9,13 @@ import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function TreatmentSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sectionRevealRef = useSectionReveal();
+  const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -23,7 +27,7 @@ export default function TreatmentSection() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={mergedRef}
       className="relative overflow-hidden bg-[#EBE0D1] rounded-3xl lg:rounded-[40px] py-14 sm:py-16 lg:py-24 xl:py-28 "
     >
       {/* Top Decoration */}
@@ -60,9 +64,9 @@ export default function TreatmentSection() {
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
-              setReady(true);
+              //setReady(true);
             }}
-            allowTouchMove={false}
+            allowTouchMove={true}
             slidesPerView={1.05}
             spaceBetween={20}
             speed={600}

@@ -10,7 +10,7 @@ export default function FooterColumn({ title, links }: FooterColumnProps) {
         {title}
       </Eyebrow>
 
-      <nav className="space-y-3">
+      <nav data-reveal data-direction="left" className="space-y-3">
         {links.map((link) => (
           <Link
             key={link.label}

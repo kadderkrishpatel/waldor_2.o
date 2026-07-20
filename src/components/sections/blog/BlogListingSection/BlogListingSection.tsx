@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Blog, BlogResponse } from "./BlogListingSection.types";
 import { blogCategories } from "./BlogListingSection.data";
 import { BlogCard } from "@/src/components/ui/Cards";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function BlogListingSection() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -10,6 +11,7 @@ export default function BlogListingSection() {
   const [totalPages, setTotalPages] = useState(1);
   const [category, setCategory] = useState("All");
   const [loading, setLoading] = useState(false);
+  const sectionRef = useSectionReveal();
 
   useEffect(() => {
     fetchBlogs();
@@ -42,8 +44,15 @@ export default function BlogListingSection() {
   };
 
   return (
-    <section className="relative bg-[#3D4844] py-16 md:py-20 lg:py-[40px] m-2 lg:m-4 overflow-hidden">
-      <div className="mx-auto px-2 sm:px-6 lg:px-[60px]">
+    <section
+      ref={sectionRef}
+      className="relative bg-[#3D4844] py-16 md:py-20 lg:py-[40px] m-2 lg:m-4 overflow-hidden"
+    >
+      <div
+        data-reveal
+        data-direction="left"
+        className="mx-auto px-2 sm:px-6 lg:px-[60px]"
+      >
         {/* Categories */}
         <div className="mb-12 flex flex-wrap gap-3">
           {blogCategories.map((item) => (

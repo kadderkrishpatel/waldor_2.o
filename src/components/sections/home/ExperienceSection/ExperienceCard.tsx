@@ -15,6 +15,8 @@ export default function ExperienceCard({
 }: Props) {
   return (
     <div
+      data-reveal
+      data-direction="left"
       className={`z-12 absolute w-[300px] rounded-[20px] bg-[#F8F2EA] p-7 shadow-xl flex flex-col gap-[20px] ${className}`}
     >
       <Image

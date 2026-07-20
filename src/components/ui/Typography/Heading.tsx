@@ -20,6 +20,8 @@ export default function Heading({
 }: HeadingProps) {
   return (
     <Component
+      data-reveal
+      data-direction="left"
       className={cn(
         "font-fraunces text-[#F3EDE3] text-[32px] md:text-7xl lg:text-[88px] font-normal leading-[100%] tracking-[-1.76px]",
         className,
