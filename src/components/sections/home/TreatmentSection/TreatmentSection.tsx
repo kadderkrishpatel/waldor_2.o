@@ -7,13 +7,10 @@ import TreatmentCard from "./TreatmentCard";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function TreatmentSection() {
-  const [enableHorizontalScroll, setEnableHorizontalScroll] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
@@ -21,7 +18,7 @@ export default function TreatmentSection() {
   useHorizontalScroll({
     section: sectionRef,
     swiper: swiperRef,
-    enabled: ready,
+    enabled: ready && typeof window !== "undefined" && window.innerWidth < 1280,
   });
 
   return (
@@ -59,7 +56,7 @@ export default function TreatmentSection() {
         {/* ============================= */}
         {/* MOBILE + TABLET HORIZONTAL */}
         {/* ============================= */}
-        <div className="block lg:hidden">
+        <div className="block lg:hidden overflow-hidden">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
@@ -101,7 +98,7 @@ export default function TreatmentSection() {
         {/* ============================= */}
         {/* DESKTOP GRID */}
         {/* ============================= */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-8 items-start">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8 items-start adsdad">
           {treatmentData.treatments.map((item, index) => (
             <div
               key={item.title}
