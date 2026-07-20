@@ -18,7 +18,7 @@ export const blogSectionData: BlogSectionProps = {
       category: "ACNE",
       readTime: "5 MIN READ",
       image: asset("/assets/waldor/blog-1.jpg"),
-      slug: "what-causes-adult-acne",
+      slug: "what-actually-causes-adult-acne",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export const blogSectionData: BlogSectionProps = {
       category: "GLASS SKIN",
       readTime: "5 MIN READ",
       image: asset("/assets/waldor/blog-2.jpg"),
-      slug: "hydrglass-treatment-explained",
+      slug: "hydraglass-explained",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export const blogSectionData: BlogSectionProps = {
       category: "PIGMENTATION",
       readTime: "5 MIN READ",
       image: asset("/assets/waldor/blog-3.jpg"),
-      slug: "treating-uneven-skin-tone",
+      slug: "treating-pigmentation-safely",
     },
   ],
 };

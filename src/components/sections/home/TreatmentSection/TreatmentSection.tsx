@@ -1,32 +1,27 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
 import { treatmentData } from "./TreatmentSection.data";
 import TreatmentCard from "./TreatmentCard";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function TreatmentSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
   const [enableHorizontalScroll, setEnableHorizontalScroll] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      setEnableHorizontalScroll(window.innerWidth < 1024); // lg breakpoint
-    };
-
-    checkScreen();
-
-    window.addEventListener("resize", checkScreen);
-
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+  const sectionRef = useRef<HTMLElement>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [ready, setReady] = useState(false);
 
   useHorizontalScroll({
     section: sectionRef,
-    track: trackRef,
-    enabled: enableHorizontalScroll,
+    swiper: swiperRef,
+    enabled: ready,
   });
 
   return (
@@ -64,20 +59,43 @@ export default function TreatmentSection() {
         {/* ============================= */}
         {/* MOBILE + TABLET HORIZONTAL */}
         {/* ============================= */}
-        <div className="block lg:hidden overflow-hidden">
-          <div
-            ref={trackRef}
-            className="flex gap-6 w-max will-change-transform"
+        <div className="block lg:hidden">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              setReady(true);
+            }}
+            allowTouchMove={false}
+            slidesPerView={1.05}
+            spaceBetween={20}
+            speed={600}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              480: {
+                slidesPerView: 1.15,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 1.25,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1.6,
+                spaceBetween: 24,
+              },
+            }}
+            className="!overflow-visible"
           >
             {treatmentData.treatments.map((item) => (
-              <div
-                key={item.title}
-                className="shrink-0 w-[85vw] sm:w-[65vw] h-[560px] sm:h-[650px]"
-              >
-                <TreatmentCard {...item} />
-              </div>
+              <SwiperSlide key={item.title}>
+                <div className="h-[560px] sm:h-[650px]">
+                  <TreatmentCard {...item} />
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
 
         {/* ============================= */}

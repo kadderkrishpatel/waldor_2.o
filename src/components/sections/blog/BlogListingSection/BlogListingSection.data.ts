@@ -79,7 +79,7 @@ export const blogs: Blog[] = [
 
     image: asset("/assets/waldor/blog-2.jpg"),
 
-    bannerImage: asset("/assets/waldor/blog-detail-banner.jpg"),
+    bannerImage: asset("/assets/waldor/blog-2.jpg"),
 
     excerpt:
       "Everything you should know before your first HydraGlass treatment.",
@@ -88,7 +88,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: asset("/assets/waldor/author.png"),
+    authorImage: asset("/assets/waldor/blog-2.jpg"),
 
     publishedAt: "April 2, 2026",
 
@@ -124,7 +124,7 @@ export const blogs: Blog[] = [
 
     image: asset("/assets/waldor/blog-3.jpg"),
 
-    bannerImage: asset("/assets/waldor/blog-detail-banner.jpg"),
+    bannerImage: asset("/assets/waldor/blog-3.jpg"),
 
     excerpt: "Why personalised pigmentation treatment matters.",
 
@@ -132,7 +132,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: asset("/assets/waldor/author.png"),
+    authorImage: asset("/assets/waldor/blog-3.jpg"),
 
     publishedAt: "May 8, 2026",
 

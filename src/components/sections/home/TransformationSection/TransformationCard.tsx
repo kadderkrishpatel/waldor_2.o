@@ -1,8 +1,6 @@
 "use client";
-
 import type { MutableRefObject } from "react";
 import type { Swiper as SwiperType } from "swiper";
-
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { Eyebrow } from "@/src/components/ui/Typography";
 

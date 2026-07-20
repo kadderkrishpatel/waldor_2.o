@@ -2,8 +2,8 @@ import { asset } from "@/src/lib/assets";
 
 export const experienceData = {
   eyebrow: "BEYOND THE SURFACE",
-  bottomDecorationImage: "/assets/waldor/exp-leaf-bottom.png",
-  topDecorationImage: "/assets/waldor/exp-leaf-top.png",
+  bottomDecorationImage: asset("/assets/waldor/exp-leaf-bottom.png"),
+  topDecorationImage: asset("/assets/waldor/exp-leaf-top.png"),
 
   heading: {
     before: "Experience",

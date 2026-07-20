@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,10 +13,12 @@ import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 export default function DoctorSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
+  const [ready, setReady] = useState(false);
 
   useHorizontalScroll({
     section: sectionRef,
     swiper: swiperRef,
+    enabled: ready,
   });
 
   return (
@@ -44,6 +46,7 @@ export default function DoctorSection() {
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
+            setReady(true);
           }}
           navigation
           pagination={{
@@ -59,13 +62,13 @@ export default function DoctorSection() {
               slidesPerView: 1.2,
             },
             640: {
-              slidesPerView: 1.4,
+              slidesPerView: 1.2,
             },
             768: {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 2.5,
+              slidesPerView: 2.4,
             },
             1280: {
               slidesPerView: 3,
@@ -74,7 +77,7 @@ export default function DoctorSection() {
         >
           {doctorSectionData.doctors.map((doctor) => (
             <SwiperSlide key={doctor.slug}>
-              <DoctorCard {...doctor} />
+              <DoctorCard {...doctor} swiper={swiperRef} />
             </SwiperSlide>
           ))}
         </Swiper>
