@@ -83,8 +83,7 @@ export const footerData: FooterDataProps = {
     email: "info@waldorclinic.com",
     address: "35 Great Portland Street London W1W 8QQ",
     timings: [
-      "Mon - Fri: 10am - 7pm",
-      "Saturday: 10am - 6pm",
+      "Mon - Sat: 10am - 6pm",
       "Sunday: Opening Soon",
     ],
   },

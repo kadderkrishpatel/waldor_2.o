@@ -36,8 +36,7 @@ export const contactSectionData: ContactSectionData = {
       icon: "clock",
       title: "OPENING HOURS",
       value: [
-        "Mon - Fri: 10am - 7pm",
-        "Saturday: 10am - 6pm",
+        "Mon - Sat: 10am - 6pm",
         "Sunday: Opening Soon",
       ],
       description: "",
@@ -52,6 +51,10 @@ export const contactSectionData: ContactSectionData = {
 
     treatmentOptions: [
       "Anti Wrinkle",
+      "Glass Skin & Facials",
+      "Acne Treatments",
+      "Body Contouring",
+      "Hair Growth",
       "Dermal Fillers",
       "Chemical Peel",
       "Laser Treatment",
