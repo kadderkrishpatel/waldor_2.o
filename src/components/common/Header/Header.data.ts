@@ -6,22 +6,27 @@ export const headerData: HeaderProps = {
 
   navigation: [
     {
+      id: 1,
       label: "Treatments",
       href: "#",
     },
     {
+      id: 2,
       label: "Concerns",
       href: "#",
     },
     {
+      id: 3,
       label: "Success Stories",
       href: "#",
     },
     {
+      id: 4,
       label: "Blog",
       href: "/blog",
     },
     {
+      id: 5,
       label: "Contact",
       href: "/contact",
     },

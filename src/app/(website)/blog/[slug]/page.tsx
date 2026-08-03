@@ -11,7 +11,6 @@ interface Props {
 
 export default async function BlogDetailPage({ params }: Props) {
   const { slug } = await params;
-
   const blog = blogs.find((item) => item.slug === slug);
 
   if (!blog) {

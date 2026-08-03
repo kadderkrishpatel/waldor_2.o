@@ -38,7 +38,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderBgProps) {
         <nav className="hidden xl:flex items-center gap-8">
           {headerData.navigation.map((item) => (
             <Link
-              key={item.href}
+              key={item.id}
               href={item.href}
               className="text-[#EBE0D1] text-sm uppercase hover:text-white transition"
             >
