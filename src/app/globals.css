@@ -104,9 +104,17 @@
   transition: all 0.3s ease;
 }
 
+.before-after .transformation-bullet {
+  background: #7E8582;
+}
+
 .transformation-bullet-active {
   width: 460px;
   background: #c7a16a;
+}
+
+.before-after .transformation-bullet-active {
+  background: #333C39 !important;
 }
 
 .swiper-slide .transformation-slide {

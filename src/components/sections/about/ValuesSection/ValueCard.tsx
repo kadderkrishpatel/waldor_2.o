@@ -11,45 +11,119 @@ export default function ValueCard({ value, reverse = false }: Props) {
   return (
     <div
       data-reveal
-      data-direction="left"
-      className="grid grid-cols-[180px_1fr_120px] items-start gap-8 border-b border-white/10 py-20"
+      data-direction={reverse ? "right" : "left"}
+      className={clsx(
+        "grid items-start",
+        "grid-cols-1 gap-6",
+        "border-b border-white/10",
+        "px-0 py-12",
+        "sm:py-16",
+        "lg:grid-cols-[140px_minmax(0,1fr)_100px] lg:gap-8 lg:py-20",
+        "xl:grid-cols-[180px_minmax(0,1fr)_120px]",
+      )}
     >
       {/* Left Number */}
       <div
         className={clsx(
-          "flex justify-start lg:justify-center",
-          reverse && "invisible",
+          "flex items-center",
+          "justify-start lg:justify-center",
+          reverse && "lg:invisible",
+          reverse && "hidden lg:flex",
         )}
       >
         {!reverse && (
-          <DisplayNumber className="text-[80px] lg:text-[140px] leading-none">
+          <DisplayNumber
+            className="
+              leading-none
+              text-[64px]
+              sm:text-[90px]
+              lg:text-[110px]
+              xl:text-[140px]
+            "
+          >
             {value.number}
           </DisplayNumber>
         )}
       </div>
 
+      {/* Mobile Number - Reverse */}
+      {reverse && (
+        <div className="flex lg:hidden">
+          <DisplayNumber
+            className="
+              leading-none
+              text-[64px]
+              sm:text-[90px]
+            "
+          >
+            {value.number}
+          </DisplayNumber>
+        </div>
+      )}
+
       {/* Content */}
-      <div className="flex flex-col gap-5">
-        <h3 className="font-fraunces text-3xl text-[#ECE0D1] lg:text-4xl">
+      <div className="min-w-0">
+        <h3
+          className="
+            font-fraunces
+            text-[28px]
+            leading-[1.15]
+            text-[#ECE0D1]
+            sm:text-[32px]
+            lg:text-4xl
+          "
+        >
           {value.title}
         </h3>
 
-        <p className="text-xl text-white">{value.subtitle}</p>
+        <p
+          className="
+            mt-4
+            text-base
+            leading-7
+            text-white
+            sm:text-lg
+            sm:leading-8
+            lg:text-xl
+          "
+        >
+          {value.subtitle}
+        </p>
 
-        <p className="max-w-4xl leading-8 text-[#A5AAA8]">
+        <p
+          className="
+            mt-4
+            max-w-4xl
+            text-sm
+            leading-6
+            text-[#A5AAA8]
+            sm:text-base
+            sm:leading-7
+            lg:mt-5
+            lg:leading-8
+          "
+        >
           {value.description}
         </p>
       </div>
 
-      {/* Right Number */}
+      {/* Right Number - Desktop */}
       <div
         className={clsx(
-          "flex justify-end lg:justify-center",
+          "hidden",
+          "items-center justify-center",
+          "lg:flex",
           !reverse && "invisible",
         )}
       >
         {reverse && (
-          <DisplayNumber className="text-[80px] lg:text-[140px] leading-none">
+          <DisplayNumber
+            className="
+              leading-none
+              text-[110px]
+              xl:text-[140px]
+            "
+          >
             {value.number}
           </DisplayNumber>
         )}

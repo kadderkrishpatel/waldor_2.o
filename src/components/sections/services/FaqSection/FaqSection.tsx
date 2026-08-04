@@ -4,9 +4,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
-import { faqData, FAQCategory } from "./FaqSection.data";
-import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
-import { Button } from "@/src/components";
+import { faqData, FAQCategory, faqSectionData } from "./FaqSection.data";
+import { Eyebrow, Heading } from "@/src/components/ui/Typography";
+import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 const filters: {
   label: string;
@@ -20,6 +20,7 @@ const filters: {
 export default function FaqSection() {
   const pathname = usePathname();
   const router = useRouter();
+  const sectionRef = useSectionReveal();
 
   const getCategoryFromPath = (): FAQCategory => {
     if (pathname.includes("/concerns")) return "concerns";
@@ -50,60 +51,34 @@ export default function FaqSection() {
     setOpenItem(firstFaq?.id ?? -1);
   }, [pathname]);
 
-  const eyebrowText =
-    filters.find((filter) => filter.value === activeFilter)?.label ??
-    "Treatments";
-
   const filteredFAQs = useMemo(() => {
     return faqData.filter((faq) => faq.category === activeFilter);
   }, [activeFilter]);
 
   return (
-    <section className="py-4">
-      <div>
-        {/* Filters */}
-        <div className="mb-20 flex flex-wrap gap-3">
-          {filters.map((filter) => (
-            <Button
-              key={filter.value}
-              type="button"
-              size="sm"
-              variant="outline"
-              onClick={() => router.push(`/faq/${filter.value}`)}
-              className={clsx(
-                "!min-h-[48px] !px-6 !py-3 !tracking-[1.6px] transition-all duration-300",
-                activeFilter === filter.value
-                  ? "!border-[#28302D] !bg-[#28302D] !text-white hover:!bg-[#28302D]"
-                  : "!border-[#9A7B4F80] !bg-transparent !text-[#28302D] hover:!bg-[#F3ECE3] hover:!border-[#9A7B4F80] hover:!text-[#28302D]",
-              )}
-            >
-              {filter.label}
-            </Button>
-          ))}
-        </div>
-
+    <section ref={sectionRef} className="m-2 lg:m-4 py-5">
+      <div className="rounded-[40px] bg-[#3D4945] mx-auto px-6 lg:px-[60px] lg:pt-[120px] pt-[80px]">
         {/* Heading */}
         <div className="mb-16">
-          <Eyebrow>{eyebrowText}</Eyebrow>
+          <Eyebrow variant="secondary">{faqSectionData.eyebrow}</Eyebrow>
 
           <Heading
-            className="mt-5 text-[48px] text-[#28302D] lg:text-[48px] lg:font-[300]"
-            before={`About ${eyebrowText.toLowerCase()}`}
+            className="mt-5 text-[48px] text-[#E4E6E5] lg:text-[64px] lg:font-[300]"
+            before={faqSectionData.heading.before}
+            highlight={faqSectionData.heading.highlight}
           />
-
-          <Description className="mt-6 text-[17px] text-[#413627]">
-            How plans are built, what to expect, and how we price them.
-          </Description>
         </div>
 
         {/* Accordion */}
-        <div className="divide-y divide-[#3D484433]">
+        <div className="divide-y divide-[#7E858266]">
           {filteredFAQs.map((faq) => {
             const isOpen = openItem === faq.id;
 
             return (
               <motion.div
                 key={faq.id}
+                data-reveal
+                data-direction="left"
                 layout
                 transition={{
                   layout: {
@@ -113,14 +88,14 @@ export default function FaqSection() {
                 }}
                 className={clsx(
                   "overflow-hidden px-8 transition-colors duration-300",
-                  isOpen ? "bg-[#F3EDE3]" : "bg-transparent",
+                  isOpen ? "bg-[#515D59]" : "bg-transparent",
                 )}
               >
                 <button
                   onClick={() => setOpenItem(isOpen ? -1 : faq.id)}
                   className="flex w-full items-center justify-between py-8 text-left"
                 >
-                  <h3 className="text-[22px] text-[#28302D]">{faq.question}</h3>
+                  <h3 className="text-[22px] text-[#C5A375]">{faq.question}</h3>
 
                   <motion.div
                     animate={{
@@ -131,9 +106,9 @@ export default function FaqSection() {
                     }}
                   >
                     {isOpen ? (
-                      <Minus size={28} className="text-[#28302D]" />
+                      <Minus size={28} className="text-[#C5A375]" />
                     ) : (
-                      <Plus size={28} className="text-[#28302D]" />
+                      <Plus size={28} className="text-[#C5A375]" />
                     )}
                   </motion.div>
                 </button>
@@ -169,7 +144,7 @@ export default function FaqSection() {
                         }}
                         className="pb-8 pr-20"
                       >
-                        <p className="text-[15px] leading-7 text-[#C5A375]">
+                        <p className="text-[15px] leading-7 text-[#E4E6E5] max-w-[80%]">
                           {faq.answer}
                         </p>
                       </motion.div>

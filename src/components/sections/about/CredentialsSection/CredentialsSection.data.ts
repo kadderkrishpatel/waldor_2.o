@@ -1,3 +1,5 @@
+import { asset } from "@/src/lib/assets";
+
 export const credData = {
   eyebrow: "OUR CREDENTIALS",
   before: "Excellence",
@@ -16,26 +18,26 @@ export const credentials: Credential[] = [
   {
     id: 1,
     name: "CPD",
-    image: "/images/about/credentials/logo-1.svg",
+    image: asset("/assets/waldor/about-logo-1.png"),
   },
   {
     id: 2,
     name: "JCCP",
-    image: "/images/about/credentials/logo-2.svg",
+    image: asset("/assets/waldor/about-logo-2.png"),
   },
   {
     id: 3,
     name: "Save Face",
-    image: "/images/about/credentials/logo-3.svg",
+    image: asset("/assets/waldor/about-logo-3.png"),
   },
   {
     id: 4,
     name: "ACE Group",
-    image: "/images/about/credentials/logo-4.svg",
+    image: asset("/assets/waldor/about-logo-4.png"),
   },
   {
     id: 5,
     name: "BACN",
-    image: "/images/about/credentials/logo-5.svg",
+    image: asset("/assets/waldor/about-logo-5.png"),
   },
 ];

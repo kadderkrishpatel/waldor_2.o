@@ -51,7 +51,7 @@ export const stories: Story[] = [
       "The people I work with aren't just colleagues. They're my WALDOR family. They're driven. They're attentive. They're caring. They're special. Most importantly, they genuinely care about people.",
     ],
     quote: {
-      title: "Technology can be taught. Kindness can't.",
+      title: "“Technology can be taught. Kindness can’t.”",
       description:
         "That's why I believe the people behind the treatments matter just as much as the treatments themselves.",
     },
@@ -92,7 +92,7 @@ export const stories: Story[] = [
     ],
     quote: {
       title:
-        "We don't believe beautiful skin changes your life. We believe confidence does.",
+        "We don’t believe beautiful skin changes your life. We believe confidence does.",
       description:
         "If we can help someone feel more confident in their own skin, then we've done our job.",
     },
