@@ -11,7 +11,7 @@ export const footerData: FooterDataProps = {
       links: [
         {
           label: "Waldor Signature",
-          href: "#",
+          href: "/treatments/waldor-signature",
         },
         {
           label: "Skin",
@@ -23,11 +23,15 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Body",
-          href: "#",
+          href: "/treatments/body-treatment",
         },
         {
           label: "Hair",
-          href: "#",
+          href: "/treatments/hair-growth",
+        },
+        {
+          label: "Injectables Consultation",
+          href: "/treatments/injectables",
         },
       ],
     },
@@ -48,6 +52,18 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Fine Lines & Wrinkles",
+          href: "#",
+        },
+        {
+          label: "Uneven Skin Tone",
+          href: "#",
+        },
+        {
+          label: "Sagging & Loose Skin",
+          href: "#",
+        },
+        {
+          label: "Premature Aging",
           href: "#",
         },
       ],
@@ -75,6 +91,10 @@ export const footerData: FooterDataProps = {
           label: "FAQ",
           href: "/faq",
         },
+        {
+          label: "Book a Consultation",
+          href: "#",
+        },
       ],
     },
   ],
@@ -82,10 +102,7 @@ export const footerData: FooterDataProps = {
     phone: "07464 745 114",
     email: "info@waldorclinic.com",
     address: "35 Great Portland Street London W1W 8QQ",
-    timings: [
-      "Mon - Sat: 10am - 6pm",
-      "Sunday: Opening Soon",
-    ],
+    timings: ["Mon - Sat: 10am - 6pm", "Sunday: Opening Soon"],
   },
   socialLinks: [
     {

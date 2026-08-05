@@ -27,6 +27,7 @@ export interface FooterCTA {
     highlight: string;
   };
   description: string;
+  highlightcolor?: string;
   button: {
     label: string;
     href: string;

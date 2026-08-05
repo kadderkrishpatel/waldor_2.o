@@ -7,6 +7,10 @@ import { footerData } from "@/src/components/common/Footer/Footer.data";
 import { FooterCTA } from "@/src/components/common/Footer/Footer.types";
 import { homeFooterCTA } from "@/src/components/sections/home/FooterCTA.data";
 import { contactFooterCTA as defaultFooterCTA } from "@/src/components/sections/contact/contactFooterCTA.data";
+import { bodyTreatmentFooterCTA } from "@/src/components/sections/treatments/body-treatment/FooterCTA.data";
+import { signatureTreatmentFooterCTA } from "@/src/components/sections/treatments/waldor-signature/FooterCTA.data";
+import { injectableTreatmentFooterCTA } from "@/src/components/sections/treatments/injectables/FooterCTA.data";
+import { hairTreatmentFooterCTA } from "@/src/components/sections/treatments/hair-growth/FooterCTA.data";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
@@ -35,6 +39,26 @@ const footerCTAByRoute: {
     bg: "bg-black/30",
   },
   {
+    match: "/treatments/waldor-signature",
+    cta: signatureTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/treatments/body-treatment",
+    cta: bodyTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/treatments/injectables",
+    cta: injectableTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/treatments/hair-growth",
+    cta: hairTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
     match: "/doctors",
     cta: defaultFooterCTA,
     bg: "bg-black/30",
@@ -51,9 +75,7 @@ export default function WebsiteLayout({ children }: WebsiteLayoutProps) {
 
   const route = useMemo(() => {
     return (
-      footerCTAByRoute.find((item) =>
-        item.exact ? pathname === item.match : pathname.startsWith(item.match),
-      ) ?? {
+      footerCTAByRoute.find((item) => pathname === item.match) ?? {
         cta: defaultFooterCTA,
         bg: "bg-black/30",
       }

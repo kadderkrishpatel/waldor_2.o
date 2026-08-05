@@ -1,0 +1,66 @@
+import { asset } from "@/src/lib/assets";
+import type { SocialPost, SocialProfile } from "./types";
+
+export const socialSectionData = {
+  eyebrow: "EXPERIENCE WALDOR",
+  heading: {
+    before: "Let’s",
+    highlight: "Socialise",
+  },
+  description:
+    "Follow our journey and experience the world of WALDOR through expert skincare insights, inspiring treatment transformations and exclusive behind-the-scenes moments.",
+};
+
+export const socialProfile: SocialProfile = {
+  name: "WALDOR Clinic",
+  handle: "@waldor.clinic",
+  avatar: `${asset("/assets/waldor/waldor-profile.jpg")}`,
+  posts: "100",
+  followers: "5K",
+  href: "#",
+};
+
+export const socialPosts: SocialPost[] = [
+  {
+    id: "post-01",
+    type: "image",
+    image: `${asset("/assets/waldor/post-01.jpg")}`,
+    alt: "Waldor treatment experience",
+    href: "#",
+  },
+  {
+    id: "post-02",
+    type: "image",
+    image: `${asset("/assets/waldor/post-02.jpg")}`,
+    alt: "Waldor facial treatment",
+    href: "#",
+  },
+  {
+    id: "post-03",
+    type: "video",
+    image: `${asset("/assets/waldor/post-03.mp4")}`,
+    alt: "Waldor skincare treatment",
+    href: "#",
+  },
+  {
+    id: "post-04",
+    type: "image",
+    image: `${asset("/assets/waldor/post-04.jpg")}`,
+    alt: "Waldor treatment",
+    href: "#",
+  },
+  {
+    id: "post-05",
+    type: "image",
+    image: `${asset("/assets/waldor/post-05.jpg")}`,
+    alt: "Waldor skincare experience",
+    href: "#",
+  },
+  {
+    id: "post-06",
+    type: "image",
+    image: `${asset("/assets/waldor/post-06.jpg")}`,
+    alt: "Waldor clinic experience",
+    href: "#",
+  },
+];

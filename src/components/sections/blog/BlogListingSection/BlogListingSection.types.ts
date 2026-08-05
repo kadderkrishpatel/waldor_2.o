@@ -19,3 +19,17 @@ export interface BlogResponse {
   page: number;
   totalPages: number;
 }
+
+export interface BlogPagination {
+  page: number;
+  perPage: number;
+  total: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+}
+
+export interface BlogsResponse {
+  blogs: Blog[];
+  pagination: BlogPagination;
+}

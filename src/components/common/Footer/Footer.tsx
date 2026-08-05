@@ -49,7 +49,7 @@ export default function Footer({
         <div className="mb-20 flex flex-col items-center text-center">
           <Heading
             className="max-w-[700px] text-[#F3EDE3]"
-            highlightClassName="text-[#836D4E]"
+            highlightClassName={cta.highlightcolor || "text-[#836D4E]"}
             before={cta.heading.before}
             highlight={cta.heading.highlight}
           />
