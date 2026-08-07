@@ -1,46 +1,52 @@
-import { NextRequest, NextResponse } from "next/server";
-import { blogs } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.data";
+import { getBlogBySlug } from "@/src/services/blogs";
+import { NextResponse } from "next/server";
 
-interface Context {
+interface RouteContext {
   params: Promise<{
     slug: string;
   }>;
 }
 
-export async function GET(req: NextRequest, { params }: Context) {
-  const { slug } = await params;
+export async function GET(request: Request, context: RouteContext) {
+  try {
+    const { slug } = await context.params;
 
-  const blog = blogs.find((item) => item.slug === slug);
+    if (!slug) {
+      return NextResponse.json(
+        {
+          error: "Slug is required",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
 
-  if (!blog) {
+    const blog = await getBlogBySlug(slug);
+
+    if (!blog) {
+      return NextResponse.json(
+        {
+          error: "Blog not found",
+        },
+        {
+          status: 404,
+        },
+      );
+    }
+
+    return NextResponse.json(blog);
+  } catch (error) {
+    console.error("[BLOG API] Error:", error);
     return NextResponse.json(
       {
-        message: "Blog not found",
+        error: "Failed to fetch blog",
+
+        details: error instanceof Error ? error.message : String(error),
       },
       {
-        status: 404,
+        status: 500,
       },
     );
   }
-
-  // Related blogs from same category
-  let relatedBlogs = blogs.filter(
-    (item) => item.slug !== slug && item.category === blog.category,
-  );
-
-  // Fallback if less than 3 blogs exist in same category
-  if (relatedBlogs.length < 3) {
-    const remainingBlogs = blogs.filter(
-      (item) => item.slug !== slug && item.category !== blog.category,
-    );
-
-    relatedBlogs = [...relatedBlogs, ...remainingBlogs];
-  }
-
-  relatedBlogs = relatedBlogs.slice(0, 3);
-
-  return NextResponse.json({
-    blog,
-    relatedBlogs,
-  });
 }

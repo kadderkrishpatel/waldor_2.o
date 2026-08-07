@@ -14,10 +14,11 @@ export interface Blog {
   content: string;
 }
 
-export interface BlogResponse {
-  blogs: Blog[];
-  page: number;
-  totalPages: number;
+export interface BlogCategory {
+  id: number;
+  name: string;
+  slug: string;
+  count: number;
 }
 
 export interface BlogPagination {
@@ -31,5 +32,6 @@ export interface BlogPagination {
 
 export interface BlogsResponse {
   blogs: Blog[];
+  categories: BlogCategory[];
   pagination: BlogPagination;
 }

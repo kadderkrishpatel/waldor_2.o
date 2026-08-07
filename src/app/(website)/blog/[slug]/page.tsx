@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import BlogDetailSection from "@/src/components/sections/blog/BlogDetailSection/BlogDetailSection";
 import RelatedBlogsSection from "@/src/components/sections/blog/RelatedBlogsSection/RelatedBlogsSection";
-import { blogs } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.data";
+import { getBlogBySlug, getBlogs } from "@/src/services/blogs";
+import type { Blog } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.types";
 
 interface Props {
   params: Promise<{
@@ -10,31 +11,64 @@ interface Props {
 }
 
 export default async function BlogDetailPage({ params }: Props) {
+  /**
+   * ==========================================
+   * GET SLUG
+   * ==========================================
+   */
+
   const { slug } = await params;
-  const blog = blogs.find((item) => item.slug === slug);
+
+  /**
+   * ==========================================
+   * GET BLOG
+   * ==========================================
+   */
+
+  const blog = await getBlogBySlug(slug);
+
+  /**
+   * ==========================================
+   * BLOG NOT FOUND
+   * ==========================================
+   */
 
   if (!blog) {
     notFound();
   }
 
-  let relatedBlogs = blogs.filter(
-    (item) => item.slug !== slug && item.category === blog.category,
-  );
+  /**
+   * ==========================================
+   * GET RELATED BLOGS
+   * ==========================================
+   */
 
-  if (relatedBlogs.length < 3) {
-    relatedBlogs = [
-      ...relatedBlogs,
-      ...blogs.filter(
-        (item) => item.slug !== slug && item.category !== blog.category,
-      ),
-    ];
+  let relatedBlogs: Blog[] = [];
+
+  try {
+    const relatedResponse = await getBlogs({
+      page: 1,
+      perPage: 6,
+      category: blog.category,
+    });
+
+    relatedBlogs = relatedResponse.blogs
+      .filter((item) => item.slug !== blog.slug)
+      .slice(0, 3);
+  } catch (error) {
+    console.error("Related blogs error:", error);
   }
 
-  relatedBlogs = relatedBlogs.slice(0, 3);
+  /**
+   * ==========================================
+   * RENDER
+   * ==========================================
+   */
 
   return (
     <>
       <BlogDetailSection blog={blog} />
+
       <RelatedBlogsSection blogs={relatedBlogs} />
     </>
   );

@@ -31,9 +31,9 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
             <div
               data-reveal
               data-direction="left"
-              className="flex flex-wrap items-center justify-center gap-1 lg:gap-12"
+              className="flex flex-wrap items-center justify-center gap-1 lg:gap-x-7"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 border-r border-r-[#7E8582]">
                 <Image
                   src={blog.authorImage}
                   alt={blog.author}
@@ -42,12 +42,12 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
                   className="rounded-full h-[32px] w-[32px] object-cover"
                 />
 
-                <span className="text-sm uppercase tracking-[0.08em] text-[#3D4844] after:border-[1px] after:border-[#7E8582] after:mx-2 lg:after:ml-5">
+                <span className="text-sm uppercase tracking-[0.08em] text-[#3D4844]  after:mx-2 lg:after:ml-5">
                   {blog.author}
                 </span>
               </div>
 
-              <span className="text-sm uppercase text-[#3D4844] after:border-[1px] after:border-[#7E8582] after:mx-2 lg:after:ml-5">
+              <span className="text-sm uppercase text-[#3D4844] border-r border-r-[#7E8582] h-[32px] flex items-center justify-center after:mx-2 lg:after:ml-5">
                 {blog.publishedAt}
               </span>
 

@@ -1,25 +1,48 @@
-import { blogs } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.data";
+import { getBlogs, getBlogCategories } from "@/src/services/blogs";
 import { NextRequest, NextResponse } from "next/server";
 
-const PER_PAGE = 9;
+export async function GET(request: NextRequest) {
+  try {
+    const searchParams = request.nextUrl.searchParams;
+    const page = Math.max(1, Number(searchParams.get("page") || "1"));
+    const perPage = Math.max(1, Number(searchParams.get("per_page") || "6"));
+    const category = searchParams.get("category") || "All";
 
-export async function GET(req: NextRequest) {
-  const searchParams = req.nextUrl.searchParams;
+    const [blogResponse, categories] = await Promise.all([
+      getBlogs({
+        page,
+        perPage,
+        category,
+      }),
 
-  const page = Number(searchParams.get("page") || 1);
-  const category = searchParams.get("category") || "All";
+      getBlogCategories(),
+    ]);
 
-  const filtered =
-    category === "All"
-      ? blogs
-      : blogs.filter((blog) => blog.category === category);
+    return NextResponse.json({
+      blogs: blogResponse.blogs,
+      categories,
+      pagination: blogResponse.pagination,
+    });
+  } catch (error) {
+    console.error("Blog API error:", error);
 
-  const totalPages = Math.ceil(filtered.length / PER_PAGE);
-  const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
-
-  return NextResponse.json({
-    blogs: paginated,
-    page,
-    totalPages,
-  });
+    return NextResponse.json(
+      {
+        blogs: [],
+        categories: [],
+        pagination: {
+          page: 1,
+          perPage: 6,
+          total: 0,
+          totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
+        },
+        error: "Failed to fetch blogs",
+      },
+      {
+        status: 500,
+      },
+    );
+  }
 }

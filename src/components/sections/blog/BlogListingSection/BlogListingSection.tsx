@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Blog, BlogResponse } from "./BlogListingSection.types";
+import { Blog, BlogsResponse } from "./BlogListingSection.types";
 import { blogCategories } from "./BlogListingSection.data";
 import { BlogCard } from "@/src/components/ui/Cards";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
@@ -13,106 +13,148 @@ export default function BlogListingSection() {
   const [loading, setLoading] = useState(false);
   const sectionRef = useSectionReveal();
 
+  /**
+   * ==========================================
+   * FETCH BLOGS
+   * ==========================================
+   */
   useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        const params = new URLSearchParams();
+        params.set("page", String(page));
+
+        if (category && category !== "All") {
+          params.set("category", category);
+        }
+
+        const url = `/api/blog?${params.toString()}`;
+        const res = await fetch(url, { cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+
+        const data: BlogsResponse = await res.json();
+        setBlogs(data.blogs || []);
+        setTotalPages(data.pagination.totalPages || 1);
+      } catch (error) {
+        console.error("Blog fetch error:", error);
+        setBlogs([]);
+        setTotalPages(1);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchBlogs();
   }, [page, category]);
 
-  const fetchBlogs = async () => {
-    try {
-      setLoading(true);
+  const handleCategoryChange = (selectedCategory: string) => {
+    setPage(1);
+    setCategory(selectedCategory);
+  };
 
-      const res = await fetch(
-        `/api/blog?page=${page}&category=${encodeURIComponent(category)}`,
-        {
-          cache: "no-store",
-        },
-      );
-
-      if (!res.ok) {
-        throw new Error("Failed to fetch blogs");
-      }
-
-      const data: BlogResponse = await res.json();
-
-      setBlogs(data.blogs);
-      setTotalPages(data.totalPages);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
+  const handlePageChange = (selectedPage: number) => {
+    if (
+      selectedPage < 1 ||
+      selectedPage > totalPages ||
+      selectedPage === page
+    ) {
+      return;
     }
+
+    setPage(selectedPage);
+    sectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#3D4844] py-16 md:py-20 lg:py-[40px] m-2 lg:m-4 overflow-hidden"
+      className="relative m-2 overflow-hidden bg-[#3D4844] py-16 md:py-20 lg:m-4 lg:py-[40px]"
     >
       <div
         data-reveal
         data-direction="left"
         className="mx-auto px-2 sm:px-6 lg:px-[60px]"
       >
-        {/* Categories */}
+        {/* ===== CATEGORIES ===== */}
         <div className="mb-12 flex flex-wrap gap-3">
           {blogCategories.map((item) => (
             <button
               key={item}
-              onClick={() => {
-                setCategory(item);
-                setPage(1);
-              }}
-              className={`rounded-full border px-6 py-3 transition-all ${
-                category === item
-                  ? "border-[#C5A375] bg-[#C5A375] text-[#29302D]"
-                  : "border-[#7E8582] text-[#ECE0D1]"
-              }`}
+              type="button"
+              onClick={() => handleCategoryChange(item)}
+              className={`rounded-full border px-6 py-3 transition-all
+                  ${
+                    category === item
+                      ? `border-[#C5A375] bg-[#C5A375] text-[#29302D]`
+                      : `border-[#7E8582] text-[#ECE0D1]`
+                  }
+                `}
             >
               {item}
             </button>
           ))}
         </div>
 
-        {/* Grid */}
+        {/* ===== BLOG GRID ===== */}
         {loading ? (
-          <div className="container py-20 text-center text-[#ECE0D1]">
-            Loading...
-          </div>
-        ) : (
+          <div className="py-20 text-center text-[#ECE0D1]">Loading...</div>
+        ) : blogs.length > 0 ? (
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog) => (
               <BlogCard key={blog.id} {...blog} />
             ))}
           </div>
+        ) : (
+          <div className="py-20 text-center text-[#ECE0D1]">
+            No blogs found.
+          </div>
         )}
 
-        {/* Pagination */}
-        <div className="mt-20 flex items-center justify-center gap-6">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setPage(index + 1)}
-              className={`text-sm transition ${
-                page === index + 1 ? "text-[#C5A375]" : "text-[#7E8582]"
-              }`}
-            >
-              {(index + 1).toString().padStart(2, "0")}
-            </button>
-          ))}
+        {/* ===== PAGINATION ===== */}
+        {totalPages > 1 && (
+          <div className="mt-20 flex items-center justify-center gap-6">
+            {/* Page numbers */}
 
-          {page < totalPages && (
-            <>
-              <div className="h-px w-10 bg-[#7E8582]" />
+            {Array.from({
+              length: totalPages,
+            }).map((_, index) => {
+              const pageNumber = index + 1;
 
-              <button
-                onClick={() => setPage((prev) => prev + 1)}
-                className="text-sm text-[#ECE0D1]"
-              >
-                NEXT
-              </button>
-            </>
-          )}
-        </div>
+              return (
+                <button
+                  key={pageNumber}
+                  type="button"
+                  onClick={() => handlePageChange(pageNumber)}
+                  className={`text-sm transition ${page === pageNumber ? "text-[#C5A375]" : "text-[#7E8582]"}`}
+                >
+                  {pageNumber.toString().padStart(2, "0")}
+                </button>
+              );
+            })}
+
+            {/* Divider */}
+            {page < totalPages && (
+              <>
+                <div className="h-px w-10 bg-[#7E8582]" />
+                {/* Next */}
+                <button
+                  type="button"
+                  onClick={() => handlePageChange(page + 1)}
+                  className="text-sm text-[#ECE0D1] transition-opacity hover:opacity-70"
+                >
+                  NEXT
+                </button>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
