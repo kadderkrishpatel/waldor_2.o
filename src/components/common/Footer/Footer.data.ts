@@ -44,7 +44,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Acne Scarring",
-          href: "#",
+          href: "/concerns/acne-scarring",
         },
         {
           label: "Dull Skin",

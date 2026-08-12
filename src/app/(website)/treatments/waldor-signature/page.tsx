@@ -13,7 +13,7 @@ import {
   WhyChooseUs,
 } from "@/src/components/sections/treatments/waldor-signature";
 
-export default function AboutPage() {
+export default function WaldorSIgnaturePage() {
   return (
     <>
       <ServiceHero />

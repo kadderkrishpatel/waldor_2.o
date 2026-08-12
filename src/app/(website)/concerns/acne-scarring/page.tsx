@@ -4,30 +4,27 @@ import {
   Practitioners,
   ServiceFAQ,
   ServiceHero,
-  ServiceStats,
   SignatureTreatments,
-  SocialSection,
   SuccessStories,
   TreatmentApproach,
   TreatmentBenefits,
   WhyChooseUs,
-} from "@/src/components/sections/treatments/injectables";
+} from "@/src/components/sections/concerns/acne-scarring";
 
-export default function InjectablesPage() {
+export default function AcneScarringPage() {
   return (
     <>
       <ServiceHero />
       <SignatureTreatments />
-      <ServiceStats />
       <PatientSafety />
-      <BeforeAfter />
+      <TreatmentBenefits items="indications" />
       <WhyChooseUs />
+      <BeforeAfter />
       <TreatmentApproach />
-      <TreatmentBenefits />
+      <TreatmentBenefits items="preventions" />
+      <ServiceFAQ />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
-      <SocialSection />
     </>
   );
 }

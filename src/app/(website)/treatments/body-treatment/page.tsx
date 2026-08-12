@@ -13,7 +13,7 @@ import {
   WhyChooseUs,
 } from "@/src/components/sections/treatments/body-treatment";
 
-export default function AboutPage() {
+export default function BodyTreatmentPage() {
   return (
     <>
       <ServiceHero />

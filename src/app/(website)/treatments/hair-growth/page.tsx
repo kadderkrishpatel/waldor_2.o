@@ -13,7 +13,7 @@ import {
   WhyChooseUs,
 } from "@/src/components/sections/treatments/hair-growth";
 
-export default function AboutPage() {
+export default function HairGrowthPage() {
   return (
     <>
       <ServiceHero />
