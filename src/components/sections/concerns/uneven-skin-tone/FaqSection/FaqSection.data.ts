@@ -29,7 +29,7 @@ export const faqData: FAQItem[] = [
     category: "concerns",
     question: "How long does uneven skin tone treatment take to show results?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "The timeframe varies according to the cause and extent of uneven tone, the treatment selected and how your skin responds. Some changes may become noticeable sooner, while pigmentation concerns can require a more gradual approach. Your practitioner can discuss realistic expectations during your consultation.",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const faqData: FAQItem[] = [
     question:
       "Can WALDOR treatments be personalised to my skin type and concerns?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes. WALDOR treatments can be considered according to your skin type, sensitivity, pigmentation pattern and individual concerns. A professional assessment helps determine the most appropriate approach, allowing treatment considerations to be tailored rather than relying on a standard protocol.",
   },
   {
     id: 4,
@@ -45,13 +45,21 @@ export const faqData: FAQItem[] = [
     question:
       "Can uneven skin tone treatments improve pigmentation and post-acne marks?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes, certain treatments may help improve the appearance of pigmentation and post-acne marks, depending on their type, depth and underlying cause. Your practitioner can assess the areas of concern and determine whether treatment may be appropriate, while discussing realistic expectations for your skin.",
   },
   {
     id: 5,
     category: "concerns",
     question: "Can I have uneven skin tone treatment if I have sensitive skin?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Sensitive skin does not necessarily mean that treatment is unsuitable. However, your skin's sensitivity, current condition and existing skincare routine should be considered when selecting an approach. Your practitioner can recommend options that are appropriate for your individual skin and adjust treatment where necessary.",
+  },
+  {
+    id: 6,
+    category: "concerns",
+    question:
+      "How can I maintain a more even-looking skin tone after treatment?",
+    answer:
+      "A consistent skincare routine, daily sun protection and following your practitioner's recommended aftercare can help support your results. Periodic professional reviews may also help determine whether your routine or treatment approach should be adjusted as your skin changes over time.",
   },
 ];

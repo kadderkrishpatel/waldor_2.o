@@ -28,7 +28,7 @@ export const faqData: FAQItem[] = [
     category: "concerns",
     question: "How long does skin tightening treatment take to show results?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "Results can vary depending on the treatment selected, the degree of laxity and your individual response. Some changes may become noticeable relatively early, while other improvements can develop progressively. Your practitioner can provide a more personalised timeframe following assessment.",
   },
   {
     id: 3,
@@ -36,20 +36,27 @@ export const faqData: FAQItem[] = [
     question:
       "Can WALDOR skin tightening treatments be personalised to my skin?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes. WALDOR can tailor treatment considerations according to your skin condition,firmness, facial structure and individual aesthetic concerns. A consultation allows your practitioner to assess your skin and determine which treatment approach may be most appropriate for you.",
   },
   {
     id: 4,
     category: "concerns",
     question: "How long can I expect skin tightening results to last?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "The longevity of results varies according to the treatment, individual skin characteristics and the natural ageing process. Results may be supported through appropriate skincare, lifestyle measures and maintenance treatments where recommended. Your practitioner can discuss what may be appropriate for your individual needs.",
   },
   {
     id: 5,
     category: "concerns",
     question: "Can skin tightening improve loose skin after weight loss?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes, skin tightening treatments may help improve the appearance of loose or less firm skin following weight loss, depending on the amount of excess skin and its underlying characteristics. A consultation can help establish whether treatment is suitable and what level of improvement may be realistic.",
+  },
+  {
+    id: 6,
+    category: "concerns",
+    question: "How can I maintain firmer-looking skin after treatment?",
+    answer:
+      "Following your practitioner's recommended aftercare, maintaining consistent skincare and using daily sun protection can help support your skin following treatment. Depending on your individual needs, periodic maintenance treatments may also be considered as part of a longer-term skin health approach.",
   },
 ];

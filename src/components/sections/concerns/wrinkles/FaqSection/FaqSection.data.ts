@@ -29,7 +29,7 @@ export const faqData: FAQItem[] = [
     category: "concerns",
     question: "Are fine lines normal in your 20s or 30s?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "Fine lines can become visible at different ages and are not necessarily an indication of premature ageing. Factors such as genetics, facial movement, sun exposure and skin characteristics can influence when they appear. If you have concerns about changes in your skin, a professional assessment can help provide appropriate guidance.",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const faqData: FAQItem[] = [
     question:
       "How long does fine line and wrinkle treatment take to show results?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "The timeframe varies according to the treatment selected, the extent of the concern and individual skin response. Some treatments may produce an initial visible change, while others are designed to support more gradual improvements over time. Your practitioner can discuss realistic expectations during your consultation.",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const faqData: FAQItem[] = [
     question:
       "How can I maintain the results of fine line and wrinkle treatment?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Maintaining results can involve a combination of appropriate skincare, daily sun protection and treatments recommended according to your skin’s changing needs. Regular professional reviews can also help refine your approach over time and support the continued appearance, health and quality of your skin.",
   },
   {
     id: 5,
@@ -53,6 +53,6 @@ export const faqData: FAQItem[] = [
     question:
       "Can WALDOR fine line and wrinkle treatments be personalised to my skin?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes. WALDOR can tailor treatment considerations according to your skin's condition, concerns, facial characteristics and treatment history. Your practitioner can assess your individual needs before recommending an appropriate approach, including whether a single treatment or combination of options may be suitable.",
   },
 ];

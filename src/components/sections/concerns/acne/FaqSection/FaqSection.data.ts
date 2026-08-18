@@ -28,27 +28,27 @@ export const faqData: FAQItem[] = [
     category: "concerns",
     question: "Can acne be treated permanently, or can it come back?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "Acne can be effectively managed, although recurrence is possible. Its behaviour can be influenced by factors such as hormones, genetics, lifestyle and skin changes over time. Treatment focuses on addressing active breakouts while supporting longer-term skin management, with ongoing care recommended where appropriate.",
   },
   {
     id: 3,
     category: "concerns",
     question: "Can WALDOR acne treatment be personalised to my skin type and severity?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes. Acne can present differently from person to person, so treatment may be selected according to factors such as your skin type, severity, breakout pattern and previous treatment history. A professional assessment can help determine which options may be appropriate for your individual needs.",
   },
   {
     id: 4,
     category: "concerns",
     question: "Is adult acne different from teenage acne?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Adult acne can share many characteristics with teenage acne, but the contributing factors and presentation may differ. Hormonal fluctuations, stress, skincare products and other individual factors can influence adult breakouts. An assessment can help identify relevant contributing factors and guide an appropriate treatment approach.",
   },
   {
     id: 5,
     category: "concerns",
     question: "Can I have acne treatment if I have sensitive skin?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Sensitive skin does not necessarily prevent you from having acne treatment, but it may influence which options are considered appropriate. Your practitioner can assess your skin's condition, sensitivity and current routine before recommending a suitable approach, with treatment intensity and aftercare adapted where appropriate.",
   },
 ];
