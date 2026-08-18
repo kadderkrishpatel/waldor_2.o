@@ -9,9 +9,9 @@ import {
   TreatmentApproach,
   TreatmentBenefits,
   WhyChooseUs,
-} from "@/src/components/sections/concerns/acne";
+} from "@/src/components/sections/concerns/wrinkles";
 
-export default function AcnePage() {
+export default function WrinklesPage() {
   return (
     <>
       <ServiceHero />

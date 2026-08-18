@@ -52,7 +52,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Fine Lines & Wrinkles",
-          href: "#",
+          href: "/concerns/wrinkles",
         },
         {
           label: "Uneven Skin Tone",
