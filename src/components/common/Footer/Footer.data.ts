@@ -48,7 +48,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Dull Skin",
-          href: "#",
+          href: "/concerns/dull-skin",
         },
         {
           label: "Fine Lines & Wrinkles",

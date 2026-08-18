@@ -1,0 +1,10 @@
+export { default as ServiceHero } from "./ServiceHero";
+export { default as SignatureTreatments } from "./SignatureTreatments";
+export { default as PatientSafety } from "./PatientSafety";
+export { default as BeforeAfter } from "./BeforeAfter";
+export { default as WhyChooseUs } from "./WhyChooseUsSection";
+export { default as TreatmentApproach } from "./OurApproach";
+export { default as TreatmentBenefits } from "./BenefitsSection";
+export { default as Practitioners } from "./DoctorSection";
+export { default as SuccessStories } from "./SuccessStoriesSection";
+export { default as ServiceFAQ } from "./FaqSection";
