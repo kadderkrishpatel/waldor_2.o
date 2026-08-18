@@ -15,6 +15,7 @@ import { acneScarringFooterCTA } from "@/src/components/sections/concerns/acne-s
 import { acneFooterCTA } from "@/src/components/sections/concerns/acne/FooterCTA.data";
 import { wrinklesFooterCTA } from "@/src/components/sections/concerns/wrinkles/FooterCTA.data";
 import { dullSkinFooterCTA } from "@/src/components/sections/concerns/dull-skin/FooterCTA.data";
+import { unevenSkinToneFooterCTA } from "@/src/components/sections/concerns/uneven-skin-tone/FooterCTA.data";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
@@ -80,6 +81,11 @@ const footerCTAByRoute: {
   {
     match: "/concerns/wrinkles",
     cta: wrinklesFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/concerns/uneven-skin-tone",
+    cta: unevenSkinToneFooterCTA,
     bg: "bg-black/30",
   },
   {

@@ -56,7 +56,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Uneven Skin Tone",
-          href: "#",
+          href: "/concerns/uneven-skin-tone",
         },
         {
           label: "Sagging & Loose Skin",
