@@ -60,7 +60,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Sagging & Loose Skin",
-          href: "#",
+          href: "/concerns/loose-skin",
         },
         {
           label: "Premature Aging",
