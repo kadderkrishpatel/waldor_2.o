@@ -12,6 +12,7 @@ import { signatureTreatmentFooterCTA } from "@/src/components/sections/treatment
 import { injectableTreatmentFooterCTA } from "@/src/components/sections/treatments/injectables/FooterCTA.data";
 import { hairTreatmentFooterCTA } from "@/src/components/sections/treatments/hair-growth/FooterCTA.data";
 import { acneScarringFooterCTA } from "@/src/components/sections/concerns/acne-scarring/FooterCTA.data";
+import { acneFooterCTA } from "@/src/components/sections/concerns/acne/FooterCTA.data";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
@@ -57,6 +58,11 @@ const footerCTAByRoute: {
   {
     match: "/treatments/hair-growth",
     cta: hairTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/concerns/acne",
+    cta: acneFooterCTA,
     bg: "bg-black/30",
   },
   {

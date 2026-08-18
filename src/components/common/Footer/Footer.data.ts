@@ -40,7 +40,7 @@ export const footerData: FooterDataProps = {
       links: [
         {
           label: "Acne",
-          href: "#",
+          href: "/concerns/acne",
         },
         {
           label: "Acne Scarring",
