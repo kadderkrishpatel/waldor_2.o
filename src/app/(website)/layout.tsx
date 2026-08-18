@@ -17,6 +17,7 @@ import { wrinklesFooterCTA } from "@/src/components/sections/concerns/wrinkles/F
 import { dullSkinFooterCTA } from "@/src/components/sections/concerns/dull-skin/FooterCTA.data";
 import { unevenSkinToneFooterCTA } from "@/src/components/sections/concerns/uneven-skin-tone/FooterCTA.data";
 import { looseSkinFooterCTA } from "@/src/components/sections/concerns/loose-skin/FooterCTA.data";
+import { prematureAgingFooterCTA } from "@/src/components/sections/concerns/premature-aging/FooterCTA.data";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
@@ -92,6 +93,11 @@ const footerCTAByRoute: {
   {
     match: "/concerns/loose-skin",
     cta: looseSkinFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/concerns/premature-aging",
+    cta: prematureAgingFooterCTA,
     bg: "bg-black/30",
   },
   {

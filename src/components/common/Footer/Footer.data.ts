@@ -64,7 +64,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Premature Aging",
-          href: "#",
+          href: "/concerns/premature-aging",
         },
       ],
     },
