@@ -11,7 +11,7 @@ export default function TreatmentGrid({ cards }: Props) {
       {cards.map((card, index) => (
         <div
           key={card.id}
-          className={index === cards.length - 1 ? "lg:col-span-2" : ""}
+          className={index === cards.length - 1 ? "" : ""}
         >
           <TreatmentCard card={card} />
         </div>

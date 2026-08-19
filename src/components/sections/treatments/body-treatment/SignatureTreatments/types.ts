@@ -10,7 +10,7 @@ export interface TreatmentCard {
   id: string;
   title: string;
   description: string;
-  areas?: {};
+  areas?: string[];
   rows: TreatmentRow[];
   fullWidth?: boolean;
 }

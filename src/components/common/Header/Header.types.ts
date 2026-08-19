@@ -4,7 +4,19 @@ export interface NavItem {
   href: string;
 }
 
+export interface HeaderSubMenuItem {
+  id: number;
+  label: string;
+  description: string;
+  href: string;
+}
+
+export interface HeaderMegaMenu {
+  id: number;
+  label: string;
+  items: HeaderSubMenuItem[];
+}
+
 export interface HeaderProps {
-  logo: string;
-  navigation: NavItem[];
+  bg?: string;
 }

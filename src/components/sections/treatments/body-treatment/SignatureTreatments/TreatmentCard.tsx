@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import TreatmentRow from "./TreatmentRow";
 import type { TreatmentCard as TreatmentCardType } from "./types";
@@ -9,7 +10,6 @@ interface Props {
 }
 
 export default function TreatmentCard({ card }: Props) {
-  // First accordion open by default
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index: number) => {
@@ -21,14 +21,33 @@ export default function TreatmentCard({ card }: Props) {
       data-reveal
       data-direction="left"
       className={clsx(
-        "rounded-[32px] bg-[#29302D] h-full overflow-hidden",
-        card.fullWidth && "lg:col-span-2 h-auto",
+        "h-full overflow-hidden rounded-[32px] bg-[#29302D]",
+        card.fullWidth === true && "h-auto lg:col-span-2",
       )}
     >
       <div className="p-8">
         <h3 className="text-[32px] text-[#ECE0D1]">{card.title}</h3>
 
         <p className="mt-4 text-[#9EA3A1]">{card.description}</p>
+
+        {card.areas && (
+          <div className="mt-6 flex flex-col gap-2">
+            <p className="font-hanken text-sm uppercase tracking-[0.08em] text-[#9EA3A1]">
+              Areas
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {card.areas.map((area) => (
+                <span
+                  key={area}
+                  className="rounded-full border border-[#9EA3A1]/30 px-4 py-2 font-hanken text-sm text-[#ECE0D1]"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {card.rows.map((row, index) => (
