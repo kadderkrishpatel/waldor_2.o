@@ -225,32 +225,6 @@ export const treatmentCards: TreatmentCard[] = [
       },
     ],
   },
-
-  {
-    id: "bpl",
-    title: "Broad-Pulse Light (B-PL)",
-    description:
-      "A transformative light-therapy treatment that uses Intense Pulsed Light to reduce pigmentation, calm redness, and refine skin texture. Leaves skin brighter, more even-toned and radiant.",
-
-    fullWidth: true,
-
-    rows: [
-      {
-        id: "bpl-large-area",
-        title: "BPL - Body Large Area",
-        price: "£295",
-        description:
-          "Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin.",
-      },
-      {
-        id: "bpl-medium-area",
-        title: "BPL - Body Medium Area",
-        price: "£245",
-        description:
-          "Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin.",
-      },
-    ],
-  },
 ];
 
 export const infoCards: InfoCard[] = [
