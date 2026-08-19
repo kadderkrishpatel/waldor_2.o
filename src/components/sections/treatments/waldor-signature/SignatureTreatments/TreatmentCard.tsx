@@ -1,7 +1,5 @@
 "use client";
-
 import { useState } from "react";
-
 import TreatmentRow from "./TreatmentRow";
 import type { TreatmentCard as TreatmentCardType } from "./types";
 import clsx from "clsx";
@@ -23,7 +21,7 @@ export default function TreatmentCard({ card }: Props) {
       data-reveal
       data-direction="left"
       className={clsx(
-        "rounded-[32px] bg-[#29302D] h-auto lg:h-[650px] overflow-hidden",
+        "rounded-[32px] bg-[#29302D] h-full min-h-[680px] overflow-hidden",
         card.fullWidth && "lg:col-span-2 h-auto",
       )}
     >

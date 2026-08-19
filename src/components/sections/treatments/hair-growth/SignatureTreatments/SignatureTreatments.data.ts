@@ -24,9 +24,10 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "prp-therapy-item",
-        title: "",
-        price: "£375",
-        description: "",
+        title: "PRP Hair",
+        price: "£495",
+        description:
+          "Our PRP Hair Restoration treatment uses your body’s own platelet-rich plasma, rich in growth factors, to naturally stimulate hair follicles and encourage regrowth. The plasma is microneedled into the scalp to revitalise thinning areas and support stronger, denser hair over time.",
       },
     ],
   },
@@ -39,9 +40,10 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "exosomes-for-hair-item",
-        title: "",
+        title: "Microneedling X Hair Growth Exosome",
         price: "£495",
-        description: "",
+        description:
+          "Our Exosome Hair Regeneration treatment delivers billions of stem-cell–derived exosomes to awaken dormant follicles, reduce inflammation, and promote thicker, healthier hair. The exosome serum is microneedled into the scalp to enhance absorption and accelerate visible results.",
       },
     ],
   },
@@ -54,9 +56,10 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "polynucleotides-for-hair-item",
-        title: "",
+        title: "Polynucleotides (Hair)",
         price: "£495",
-        description: "",
+        description:
+          "Our Polynucleotide Hair Revitalisation treatment uses regenerative DNA-based molecules to repair the scalp and stimulate healthier, stronger hair growth. The formula is microneedled into the scalp to boost cell renewal, improve circulation, and strengthen follicles from within.",
       },
     ],
   },

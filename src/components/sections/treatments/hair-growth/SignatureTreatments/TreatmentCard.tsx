@@ -1,7 +1,5 @@
 "use client";
-
 import { useState } from "react";
-
 import TreatmentRow from "./TreatmentRow";
 import type { TreatmentCard as TreatmentCardType } from "./types";
 import clsx from "clsx";
@@ -23,14 +21,14 @@ export default function TreatmentCard({ card }: Props) {
       data-reveal
       data-direction="left"
       className={clsx(
-        "rounded-[32px] bg-[#29302D] h-[320px] overflow-hidden",
-        card.fullWidth && "lg:col-span-2",
+        "rounded-[32px] bg-[#29302D] h-full min-h-[680px] overflow-hidden",
+        card.fullWidth && "lg:col-span-2 h-auto",
       )}
     >
-      <div className="p-8">
-        <h3 className="text-[32px] text-[#ECE0D1] h-[90px]">{card.title}</h3>
+      <div className="p-8" style={{ minHeight: "225px" }}>
+        <h3 className="text-[32px] text-[#ECE0D1]">{card.title}</h3>
 
-        <p className="mt-4 text-[#9EA3A1] h-[80px]">{card.description}</p>
+        <p className="mt-4 text-[#9EA3A1]">{card.description}</p>
       </div>
 
       {card.rows.map((row, index) => (

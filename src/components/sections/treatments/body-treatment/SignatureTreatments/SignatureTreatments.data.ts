@@ -33,16 +33,16 @@ export const treatmentCards: TreatmentCard[] = [
     id: "ems-rf",
     title: "EMS + RF",
     description:
-      "Targets stubborn fat, tones and builds muscle, while tightening skin using electrical muscle stimulation and radiofrequency.",
+      "Targets stubborn fat, tones and builds muscle, while tightening skin using electrical muscle stimulation and radio-frequency.",
     rows: [
       {
         id: "ems-rf-item",
-        title: "",
+        title: "EMS + RF",
         price: "£295",
-        description: "",
+        description:
+          "Our EMS with Radio Frequency Body Treatment combines muscle stimulation and skin tightening in one powerful session. The EMS technology contracts and sculpts targeted muscles, while radio frequency gently heats the skin to boost collagen, tighten, and smooth. This dual-action treatment helps tone, lift, and contour the body while improving firmness and overall skin texture. Ideal for the abdomen, thighs, buttocks, or arms.",
       },
     ],
-    areas: ["Abs", "Glutes", "Thighs", "Biceps", "Triceps", "Calves"],
   },
 
   {
@@ -52,10 +52,18 @@ export const treatmentCards: TreatmentCard[] = [
       "Body skin resurfacing to improve texture, scars, or stretch marks, ranging from mild to deep treatments.",
     rows: [
       {
-        id: "co2item",
-        title: "",
-        price: "£495-£695",
-        description: "",
+        id: "co2-large",
+        title: "CO2 - Large",
+        price: "£625",
+        description:
+          "Our CO₂ laser treatment for the body improves texture, tightness, and tone by stimulating deep collagen renewal. Ideal for larger areas such as the abdomen, thighs, or buttocks to smooth, firm, and rejuvenate the skin.",
+      },
+      {
+        id: "co2-medium",
+        title: "CO2 - Medium",
+        price: "£495",
+        description:
+          "Our CO₂ laser treatment for the body improves texture, tightness, and tone by stimulating deep collagen renewal. Ideal for treating scars, stretch marks, and skin laxity on areas such as the arms, neck, or décolletage.",
       },
     ],
   },
@@ -64,13 +72,22 @@ export const treatmentCards: TreatmentCard[] = [
     id: "baby-body-glass",
     title: "Baby Korean Body Glass",
     description:
-      "A body-specific glass skin laser treatment to brighten and smooth areas like the arms, legs, or back.",
+      "A body-specific glass skin laser treatment to brighten and smooth areas like the arms, legs, or back",
 
     rows: [
       {
-        id: "baby-body-glass-item",
-        title: "",
-        price: "£425-£625",
+        id: "baby-body-glass-large",
+        title: "Baby Korean Body Glass - Large",
+        price: "£625",
+        description:
+          "Our Baby Korean Glass Laser uses advanced fractional Erbium technology to smooth uneven texture, improve skin tone, and restore a luminous, refined finish. It helps tighten lax skin, fade pigmentation, and visibly reduce stretch marks while stimulating collagen and elastin for a firmer, glass-like glow. Ideal for larger areas such as the abdomen, thighs, or buttocks. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
+      },
+      {
+        id: "baby-body-glass-medium",
+        title: "Baby Korean Body Glass - Medium",
+        price: "£425",
+        description:
+          "Our Baby Korean Glass Laser uses advanced fractional Erbium technology to smooth uneven texture, improve skin tone, and restore a luminous, refined finish. It helps tighten lax skin, fade pigmentation, and visibly reduce stretch marks while stimulating collagen and elastin for a firmer, glass-like glow. Ideal for medium areas such as the arms, flanks, or knees. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
       },
     ],
   },

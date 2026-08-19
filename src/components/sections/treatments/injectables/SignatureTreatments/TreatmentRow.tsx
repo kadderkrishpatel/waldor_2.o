@@ -26,20 +26,14 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
         onClick={onToggle}
         className="flex w-full items-center justify-between px-8 py-6 text-left"
       >
-        {row.title ? (
-          <h4
-            className={clsx(
-              "text-[20px] font-medium",
-              isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
-            )}
-          >
-            {row.title}
-          </h4>
-        ) : (
-          <h5 className="font-hanken text-[11px] font-medium uppercase text-[#ECE0D1]">
-            From
-          </h5>
-        )}
+        <h4
+          className={clsx(
+            "text-[20px] font-medium",
+            isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
+          )}
+        >
+          {row.title}
+        </h4>
 
         <div
           className={clsx(
@@ -48,6 +42,12 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
           )}
         >
           <p>{row.price}</p>
+
+          {isOpen ? (
+            <ChevronUp size={24} className="text-[#C5A375]" />
+          ) : (
+            <ChevronDown size={24} className="text-[#ECE0D1]" />
+          )}
         </div>
       </button>
 
@@ -80,7 +80,10 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
               className="px-8 pb-8"
             >
               {row.description && (
-                <p className="text-[15px] leading-7 text-[#C5A375]">
+                <p
+                  className="text-[15px] leading-5 text-[#BEC2C1]"
+                  style={{ width: "88%" }}
+                >
                   {row.description}
                 </p>
               )}

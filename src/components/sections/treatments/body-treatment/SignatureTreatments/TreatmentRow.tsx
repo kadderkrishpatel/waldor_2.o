@@ -48,6 +48,12 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
           )}
         >
           <p>{row.price}</p>
+
+          {isOpen ? (
+            <ChevronUp size={24} className="text-[#C5A375]" />
+          ) : (
+            <ChevronDown size={24} className="text-[#ECE0D1]" />
+          )}
         </div>
       </button>
 
@@ -80,7 +86,10 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
               className="px-8 pb-8"
             >
               {row.description && (
-                <p className="text-[15px] leading-7 text-[#C5A375]">
+                <p
+                  className="text-[15px] leading-5 text-[#BEC2C1]"
+                  style={{ width: "88%" }}
+                >
                   {row.description}
                 </p>
               )}

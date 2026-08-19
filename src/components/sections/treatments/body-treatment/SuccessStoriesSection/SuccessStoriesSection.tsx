@@ -35,7 +35,7 @@ export default function SuccessStoriesSection() {
         alt=""
         width={320}
         height={371}
-        className="absolute right-0 top-0 w-[120px] md:w-[180px] lg:w-[320px]"
+        className="absolute right-0 top-5 w-[120px] md:w-[180px] lg:w-[320px]"
         priority
       />
 
