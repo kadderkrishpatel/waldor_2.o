@@ -21,7 +21,7 @@ export default function TreatmentCard({ card }: Props) {
       data-reveal
       data-direction="left"
       className={clsx(
-        "rounded-[32px] bg-[#29302D] h-full min-h-[680px] overflow-hidden",
+        "rounded-[32px] bg-[#29302D] h-full overflow-hidden",
         card.fullWidth && "lg:col-span-2 h-auto",
       )}
     >
