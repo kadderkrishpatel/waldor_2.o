@@ -27,6 +27,8 @@ const sizes = {
 export default function Button({
   children,
   href,
+  target,
+  rel,
   onClick,
   variant = "primary",
   size = "lg",
@@ -44,7 +46,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} target={target} rel={rel} className={classes}>
         {children}
       </Link>
     );

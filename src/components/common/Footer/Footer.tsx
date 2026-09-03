@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Button from "@/src/components/ui/Button";
-import { Description, Heading } from "@/src/components/ui/Typography";
+import { Heading } from "@/src/components/ui/Typography";
 import { footerData } from "./Footer.data";
 import FooterColumn from "./FooterColumn";
 import FooterContact from "./FooterContact";
@@ -54,9 +54,13 @@ export default function Footer({
             highlight={cta.heading.highlight}
           />
 
-          <Description className="mt-8 max-w-[650px] text-white">
+          <p
+            data-reveal
+            data-direction="left"
+            className="mt-8 max-w-[650px] font-hanken text-base font-normal leading-7 text-white/80"
+          >
             {cta.description}
-          </Description>
+          </p>
 
           <div data-reveal data-direction="left">
             <Button href={cta.button.href} variant="gold" className="mt-10">

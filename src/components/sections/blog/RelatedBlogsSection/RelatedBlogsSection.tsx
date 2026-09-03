@@ -32,7 +32,7 @@ export default function RelatedBlogsSection({
             highlightClassName="text-[#C5A375]"
           />
 
-          <Link data-reveal data-direction="left" href="/blogs">
+          <Link data-reveal data-direction="left" href="/blog">
             <Button variant="gold" className="rounded-full px-8 py-5">
               View all
             </Button>

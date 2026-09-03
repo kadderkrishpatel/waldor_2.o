@@ -13,8 +13,8 @@ export const blogCategories = [
 export const blogs: Blog[] = [
   {
     id: 1,
-    slug: "what-actually-causes-adult-acne",
-    title: "What actually causes adult acne",
+    slug: "what-actually-causes-adult-acneeee",
+    title: "What actually causes adult acneee",
     subtitle: "and what doesn't.",
     category: "Acne",
 

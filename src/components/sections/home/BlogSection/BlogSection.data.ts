@@ -9,7 +9,7 @@ export const blogSectionData: BlogSectionProps = {
   },
   button: {
     label: "View All",
-    href: "#",
+    href: "/blog",
   },
   posts: [
     {

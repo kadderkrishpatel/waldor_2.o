@@ -1,0 +1,112 @@
+import { asset } from "@/src/lib/assets";
+import type { Product, ProductFilter, SortOption } from "./ProductGrid.types";
+
+const SHOP_URL = "https://waldor.skin";
+
+export const products: Product[] = [
+  {
+    id: "hydraglass-pads",
+    name: "HydraGlass™ Pads",
+    price: 59,
+    image: asset("/assets/waldor/product01.png"),
+    imageAlt: "HydraGlass Pads",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "exosome-peptide-serum",
+    name: "Exosome Peptide Stem Cell Serum 5ml",
+    price: 99,
+    image: asset("/assets/waldor/product02.png"),
+    imageAlt: "Exosome Peptide Stem Cell Serum 5ml",
+    category: "skin-care",
+    href: SHOP_URL,
+    badge: "BESTSELLER",
+  },
+  {
+    id: "hydraglass-collection",
+    name: "HydraGlass™ Collection",
+    price: 159,
+    image: asset("/assets/waldor/product03.png"),
+    imageAlt: "HydraGlass Collection",
+    category: "skin-care",
+    href: SHOP_URL,
+    badge: "SET",
+  },
+  {
+    id: "hydraglass-cream",
+    name: "HydraGlass™ Cream",
+    price: 59,
+    image: asset("/assets/waldor/product04.png"),
+    imageAlt: "HydraGlass Cream",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "hydraglass-serum",
+    name: "HydraGlass™ Serum",
+    price: 69,
+    image: asset("/assets/waldor/product05.png"),
+    imageAlt: "HydraGlass Serum",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "hydraglass-eye-lift-cream",
+    name: "HydraGlass™ Eye Lift Cream",
+    price: 89,
+    image: asset("/assets/waldor/product06.png"),
+    imageAlt: "HydraGlass Eye Lift Cream",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "hydraglass-cleanser",
+    name: "HydraGlass™ Cleanser",
+    price: 39,
+    image: asset("/assets/waldor/product07.png"),
+    imageAlt: "HydraGlass Cleanser",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "microneedle-longevity-cream",
+    name: "Microneedle Longevity Cream",
+    price: 89,
+    image: asset("/assets/waldor/product08.png"),
+    imageAlt: "Microneedle Longevity Cream",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "glow-facial-mask",
+    name: "GLOW Facial Mask",
+    price: 10,
+    image: asset("/assets/waldor/product09.png"),
+    imageAlt: "GLOW Facial Mask",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+  {
+    id: "lift-facial-mask",
+    name: "Lift Facial Mask",
+    price: 10,
+    image: asset("/assets/waldor/product10.png"),
+    imageAlt: "Lift Facial Mask",
+    category: "skin-care",
+    href: SHOP_URL,
+  },
+];
+
+export const filterTabs: { label: string; value: ProductFilter }[] = [
+  { label: "All", value: "all" },
+  { label: "Skin Care", value: "skin-care" },
+  { label: "Merch", value: "merch" },
+];
+
+export const sortOptions: { label: string; value: SortOption }[] = [
+  { label: "Featured", value: "featured" },
+  { label: "Price: Low to High", value: "price-asc" },
+  { label: "Price: High to Low", value: "price-desc" },
+  { label: "Name: A to Z", value: "name-asc" },
+];

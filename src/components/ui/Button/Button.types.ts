@@ -11,6 +11,8 @@ export type ButtonSize = "sm" | "md" | "lg";
 export interface ButtonProps {
   children: ReactNode;
   href?: string;
+  target?: string;
+  rel?: string;
   onClick?: () => void;
   variant?: ButtonVariant;
   size?: ButtonSize;

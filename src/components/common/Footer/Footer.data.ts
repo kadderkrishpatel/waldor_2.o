@@ -76,6 +76,10 @@ export const footerData: FooterDataProps = {
           href: "/about",
         },
         {
+          label: "Products",
+          href: "/products",
+        },
+        {
           label: "Doctors",
           href: "/doctors",
         },

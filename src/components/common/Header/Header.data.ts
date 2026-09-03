@@ -17,6 +17,11 @@ export const headerData: HeaderData = {
       href: "#",
     },
     {
+      id: 6,
+      label: "Products",
+      href: "/products",
+    },
+    {
       id: 2,
       label: "Concerns",
       href: "#",
@@ -30,11 +35,6 @@ export const headerData: HeaderData = {
       id: 4,
       label: "Blog",
       href: "/blog",
-    },
-    {
-      id: 5,
-      label: "Contact",
-      href: "/contact",
     },
   ],
 

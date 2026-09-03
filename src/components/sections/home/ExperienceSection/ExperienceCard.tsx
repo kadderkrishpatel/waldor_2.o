@@ -17,7 +17,7 @@ export default function ExperienceCard({
     <div
       data-reveal
       data-direction="left"
-      className={`z-12 absolute w-[300px] rounded-[20px] bg-[#F8F2EA] p-7 shadow-xl flex flex-col gap-[20px] ${className}`}
+      className={`z-12 w-full max-w-[300px] rounded-[20px] bg-[#F8F2EA] p-7 shadow-xl flex flex-col gap-[20px] ${className}`}
     >
       <Image
         src={icon}

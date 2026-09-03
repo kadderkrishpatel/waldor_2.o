@@ -62,6 +62,7 @@ export default function useSectionReveal() {
           duration: 0.9,
           delay,
           ease: "power3.out",
+          clearProps: "transform,opacity",
 
           scrollTrigger: {
             trigger: el,

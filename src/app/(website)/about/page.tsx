@@ -4,6 +4,7 @@ import {
   TeamSection,
   CredentialsSection,
   ValuesSection,
+  GoalQuoteSection,
 } from "@/src/components/sections/about";
 
 export default function AboutPage() {
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <TeamSection />
       <CredentialsSection />
       <ValuesSection />
+      <GoalQuoteSection />
     </>
   );
 }

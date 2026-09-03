@@ -8,7 +8,7 @@ export default function ValuesSection() {
   const sectionRef = useSectionReveal();
 
   return (
-    <section ref={sectionRef} className="bg-[#3D4844] py-32">
+    <section ref={sectionRef} className="bg-[#3D4844] pt-32 pb-0">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-24 max-w-4xl text-center">
           <Eyebrow variant="secondary">{valueData.eyebrow}</Eyebrow>
@@ -22,7 +22,12 @@ export default function ValuesSection() {
         </div>
 
         {values.map((value, index) => (
-          <ValueCard key={value.id} value={value} reverse={index % 2 !== 0} />
+          <ValueCard
+            key={value.id}
+            value={value}
+            reverse={index % 2 !== 0}
+            isLast={index === values.length - 1}
+          />
         ))}
       </div>
     </section>

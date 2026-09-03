@@ -29,13 +29,13 @@ export const values: Value[] = [
     title: "Natural Results",
     subtitle: "The best aesthetic treatments are the ones nobody notices.",
     description:
-      "We believe you're already beautiful. Our role isn't to change who you are. It's to help you become a better version of yourself.",
+      "We believe you're already beautiful. Our role isn't to change who you are. It's to help you become a better version of yourself. Every treatment is designed to enhance your natural features while keeping you looking like you.",
   },
   {
     id: 3,
     number: "03",
     title: "Korean & Japanese Innovation",
-    subtitle: "We travel extensively to discover the latest technologies.",
+    subtitle: "We travel extensively throughout South Korea and Japan to discover the latest technologies, ingredients and treatment philosophies.  ",
     description:
       "Every device, every protocol and every product at WALDOR has been carefully selected because we believe our clients deserve the very best.",
   },
@@ -46,6 +46,6 @@ export const values: Value[] = [
     subtitle:
       "No two people are the same, so no two treatment plans should be either.",
     description:
-      "Every journey starts with a consultation. Sometimes that's one treatment. Sometimes it's a combination. Sometimes it's no treatment at all.",
+      "Whether you're visiting us for your skin, body, hair or injectables, every journey starts with a consultation. We take the time to understand your goals, assess your concerns and recommend only what we genuinely believe is right for you. Sometimes that's one treatment. Sometimes it's a combination. Sometimes it's no treatment at all.",
   },
 ];

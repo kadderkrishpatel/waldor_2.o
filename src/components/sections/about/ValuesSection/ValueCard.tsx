@@ -5,9 +5,14 @@ import { Value } from "./ValuesSection.data";
 interface Props {
   value: Value;
   reverse?: boolean;
+  isLast?: boolean;
 }
 
-export default function ValueCard({ value, reverse = false }: Props) {
+export default function ValueCard({
+  value,
+  reverse = false,
+  isLast = false,
+}: Props) {
   return (
     <div
       data-reveal
@@ -15,10 +20,12 @@ export default function ValueCard({ value, reverse = false }: Props) {
       className={clsx(
         "grid items-start",
         "grid-cols-1 gap-6",
-        "border-b border-white/10",
-        "px-0 py-12",
-        "sm:py-16",
-        "lg:grid-cols-[140px_minmax(0,1fr)_100px] lg:gap-8 lg:py-20",
+        !isLast && "border-b border-white/10",
+        "px-0 pt-12",
+        isLast ? "pb-8" : "pb-12",
+        isLast ? "sm:pt-16 sm:pb-10" : "sm:py-16",
+        "lg:grid-cols-[140px_minmax(0,1fr)_100px] lg:gap-8 lg:pt-20",
+        isLast ? "lg:pb-12" : "lg:pb-20",
         "xl:grid-cols-[180px_minmax(0,1fr)_120px]",
       )}
     >

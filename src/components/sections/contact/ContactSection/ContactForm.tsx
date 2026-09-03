@@ -34,6 +34,9 @@ export default function ContactForm({
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
+    trigger,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -132,7 +135,9 @@ export default function ContactForm({
         <SelectField
           label="WHAT CAN WE HELP WITH?"
           options={treatmentOptions}
-          registration={register("treatment")}
+          value={watch("treatment") ?? ""}
+          onChange={(value) => setValue("treatment", value, { shouldValidate: true })}
+          onBlur={() => trigger("treatment")}
           error={errors.treatment}
         />
 

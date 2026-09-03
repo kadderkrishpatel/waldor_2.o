@@ -108,7 +108,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
               return (
                 <div
                   key={item.id}
-                  className="static"
+                  className="static flex items-center"
                   onMouseEnter={() => setActiveMenu(item.id)}
                   onMouseLeave={() => setActiveMenu(null)}
                 >

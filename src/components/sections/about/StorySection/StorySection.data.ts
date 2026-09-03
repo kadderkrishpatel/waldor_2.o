@@ -12,6 +12,8 @@ export interface Story {
   quote?: {
     title: string;
     description: string;
+    author?: string;
+    role?: string;
   };
 }
 
@@ -60,12 +62,12 @@ export const stories: Story[] = [
   {
     id: 3,
     number: "03",
-    title: "Longevity",
+    title: "Restoration",
     beforeHeadingParagraph: [
       "Over the past few years, my curiosity has taken me somewhere I never expected.",
     ],
     before: "",
-    highlight: "Longevity",
+    highlight: "Longevity.",
     image: "",
     paragraphs: [
       "I've spent time in Okinawa and Sardinia, two of the world's recognised Blue Zones, learning from communities where people regularly live healthy lives into their nineties and beyond.",
@@ -95,6 +97,8 @@ export const stories: Story[] = [
         "We don’t believe beautiful skin changes your life. We believe confidence does.",
       description:
         "If we can help someone feel more confident in their own skin, then we've done our job.",
+      author: "Dor Bukobza",
+      role: "Founder, WALDOR Clinic",
     },
   },
 ];

@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Header from "@/src/components/common/Header";
 import { Footer } from "@/src/components";
+import FloatingBookButton from "@/src/components/common/FloatingBookButton";
 import { footerData } from "@/src/components/common/Footer/Footer.data";
 import { FooterCTA } from "@/src/components/common/Footer/Footer.types";
 import { homeFooterCTA } from "@/src/components/sections/home/FooterCTA.data";
@@ -18,6 +19,7 @@ import { dullSkinFooterCTA } from "@/src/components/sections/concerns/dull-skin/
 import { unevenSkinToneFooterCTA } from "@/src/components/sections/concerns/uneven-skin-tone/FooterCTA.data";
 import { looseSkinFooterCTA } from "@/src/components/sections/concerns/loose-skin/FooterCTA.data";
 import { prematureAgingFooterCTA } from "@/src/components/sections/concerns/premature-aging/FooterCTA.data";
+import { productsFooterCTA } from "@/src/components/sections/products/FooterCTA.data";
 
 interface WebsiteLayoutProps {
   children: React.ReactNode;
@@ -43,6 +45,11 @@ const footerCTAByRoute: {
   {
     match: "/treatments",
     cta: defaultFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/products",
+    cta: productsFooterCTA,
     bg: "bg-black/30",
   },
   {
@@ -129,6 +136,7 @@ export default function WebsiteLayout({ children }: WebsiteLayoutProps) {
       <Header bg={route.bg} />
       <main>{children}</main>
       <Footer {...footerData} cta={route.cta} />
+      <FloatingBookButton />
     </>
   );
 }
