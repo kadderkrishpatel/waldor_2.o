@@ -23,7 +23,7 @@ export const teamMembers: TeamMember[] = [
     name: "Abbie",
     designation: "Lead Aesthetician",
     description:
-      "Abbie believes the treatment is only half the result. She is drawn to microneedling and the precision it takes to do it beautifully, and she has a real fondness for congested skin, the kind that needs patience as much as technology.",
+      "Abbie believes the treatment is only half the result. She is drawn to microneedling and the precision it takes to do it beautifully, and she has a real fondness for congested skin, the kind that needs proper extraction work before anything else can be built on top of it. Clearing acne and blackheads is, in her words, the satisfying part. What follows is the aftercare journey she maps out around it, exactly what your skin needs in the days and weeks afterwards. Clients tend to leave her room understanding their own skin properly, often for the first time.",
     image: asset("/assets/waldor/team-1.png"),
   },
   {
