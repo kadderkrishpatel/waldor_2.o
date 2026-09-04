@@ -294,7 +294,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
               href="/contact"
               className="rounded-full px-8 py-5"
             >
-              Book a Consultation
+              Book Now
             </Button>
           </div>
 
