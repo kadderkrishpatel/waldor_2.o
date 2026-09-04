@@ -1,8 +1,6 @@
 import { asset } from "@/src/lib/assets";
 import type { Product, ProductFilter, SortOption } from "./ProductGrid.types";
 
-const SHOP_URL = "https://waldor.skin";
-
 export const products: Product[] = [
   {
     id: "hydraglass-pads",
@@ -12,7 +10,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product01_secondImage.png"),
     imageAlt: "HydraGlass Pads",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/hydraglass%E2%84%A2-longevity-pads?variant=54047116427528",
   },
   {
     id: "exosome-peptide-serum",
@@ -22,7 +20,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product02_secondImage.png"),
     imageAlt: "Exosome Peptide Stem Cell Serum 5ml",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/exosome-peptide-stem-cell-serum-5ml?variant=54047107842312",
     badge: "BESTSELLER",
   },
   {
@@ -33,7 +31,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product03_secondImage.png"),
     imageAlt: "HydraGlass Collection",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/korean-hydraglass%E2%84%A2-collection?variant=53383412842760",
     badge: "SET",
   },
   {
@@ -44,7 +42,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product04_secondImage.png"),
     imageAlt: "HydraGlass Cream",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/hydraglass%E2%84%A2-cream?variant=53374587961608",
   },
   {
     id: "hydraglass-serum",
@@ -54,7 +52,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product05_secondImage.png"),
     imageAlt: "HydraGlass Serum",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/hydraglass%E2%84%A2-serum?variant=53374495850760",
   },
   {
     id: "hydraglass-eye-lift-cream",
@@ -64,7 +62,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product06_secondImage.png"),
     imageAlt: "HydraGlass Eye Lift Cream",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/hydraglass%E2%84%A2-eye-lift-cream?variant=53374448861448",
   },
   {
     id: "hydraglass-cleanser",
@@ -74,7 +72,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product07_secondImage.png"),
     imageAlt: "HydraGlass Cleanser",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/hydraglass-cleanser?variant=53306421313800",
   },
   {
     id: "microneedle-longevity-cream",
@@ -84,7 +82,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product08_secondImage.png"),
     imageAlt: "Microneedle Longevity Cream",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/microneedle-longevity-bottle?variant=53297631854856",
   },
   {
     id: "glow-facial-mask",
@@ -94,7 +92,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product09_secondImage.png"),
     imageAlt: "GLOW Facial Mask",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/glow-facial-mask?variant=54590813405448",
   },
   {
     id: "lift-facial-mask",
@@ -104,7 +102,7 @@ export const products: Product[] = [
     secondImage: asset("/assets/waldor/product10_secondImage.png"),
     imageAlt: "Lift Facial Mask",
     category: "skin-care",
-    href: SHOP_URL,
+    href: "https://www.waldor.skin/products/lift-facial-mask?variant=54592956170504",
   },
 ];
 
