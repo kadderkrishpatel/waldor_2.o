@@ -28,6 +28,8 @@ export interface FooterCTA {
   };
   description: string;
   highlightcolor?: string;
+  /** Overrides the heading's default max-w-[700px], for CTAs whose text needs a different line-wrap width */
+  headingMaxWidth?: string;
   button: {
     label: string;
     href: string;

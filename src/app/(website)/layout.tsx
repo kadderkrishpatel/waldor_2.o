@@ -12,6 +12,7 @@ import { bodyTreatmentFooterCTA } from "@/src/components/sections/treatments/bod
 import { signatureTreatmentFooterCTA } from "@/src/components/sections/treatments/waldor-signature/FooterCTA.data";
 import { injectableTreatmentFooterCTA } from "@/src/components/sections/treatments/injectables/FooterCTA.data";
 import { hairTreatmentFooterCTA } from "@/src/components/sections/treatments/hair-growth/FooterCTA.data";
+import { hydraGlassFooterCTA } from "@/src/components/sections/treatments/hydra-glass/FooterCTA.data";
 import { acneScarringFooterCTA } from "@/src/components/sections/concerns/acne-scarring/FooterCTA.data";
 import { acneFooterCTA } from "@/src/components/sections/concerns/acne/FooterCTA.data";
 import { wrinklesFooterCTA } from "@/src/components/sections/concerns/wrinkles/FooterCTA.data";
@@ -70,6 +71,11 @@ const footerCTAByRoute: {
   {
     match: "/treatments/hair-growth",
     cta: hairTreatmentFooterCTA,
+    bg: "bg-black/30",
+  },
+  {
+    match: "/treatments/hydra-glass",
+    cta: hydraGlassFooterCTA,
     bg: "bg-black/30",
   },
   {

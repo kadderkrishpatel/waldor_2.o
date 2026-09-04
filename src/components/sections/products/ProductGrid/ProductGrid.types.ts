@@ -7,6 +7,7 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  secondImage?: string;
   imageAlt: string;
   category: ProductCategory;
   href: string;

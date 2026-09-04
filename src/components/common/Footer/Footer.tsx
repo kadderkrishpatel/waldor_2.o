@@ -8,6 +8,7 @@ import FooterContact from "./FooterContact";
 import Image from "next/image";
 import { FooterProps } from "./Footer.types";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import { cn } from "@/src/lib/utils";
 
 export default function Footer({
   footerImg,
@@ -48,7 +49,7 @@ export default function Footer({
         {/* CTA */}
         <div className="mb-20 flex flex-col items-center text-center">
           <Heading
-            className="max-w-[700px] text-[#F3EDE3]"
+            className={cn("max-w-[700px] text-[#F3EDE3]", cta.headingMaxWidth)}
             highlightClassName={cta.highlightcolor || "text-[#836D4E]"}
             before={cta.heading.before}
             highlight={cta.heading.highlight}

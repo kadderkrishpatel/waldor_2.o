@@ -32,19 +32,16 @@ export default function WhyChooseUsSection() {
 
       {/* Left Decorative Image */}
       {whyChooseUsData.leftImage && (
-        <div className="pointer-events-none absolute left-0 bottom-0 z-10 md:block">
-          <div className="relative w-[160px] h-[280px] lg:w-[271px] lg:h-[450px]">
-            <Image
-              src={whyChooseUsData.leftImage}
-              alt=""
-              fill
-              className="object-contain"
-              sizes="(max-width:768px) 160px, 271px"
-              priority
-            />
-          </div>
-
-          <div className="absolute inset-0 from-[#3D4844] via-transparent to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-10 w-[160px] lg:w-[271px]">
+          <Image
+            src={whyChooseUsData.leftImage}
+            alt=""
+            width={265}
+            height={310}
+            className="h-auto w-full"
+            sizes="(max-width:768px) 160px, 271px"
+            priority
+          />
         </div>
       )}
     </section>

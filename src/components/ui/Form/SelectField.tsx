@@ -100,7 +100,7 @@ export default function SelectField({
               : "pointer-events-none max-h-0 scale-95 opacity-0",
           )}
         >
-          <div className="max-h-64 overflow-y-auto py-1.5">
+          <div className="scrollbar-hide max-h-64 overflow-y-auto py-1.5">
             {options.map((option) => (
               <button
                 key={option}

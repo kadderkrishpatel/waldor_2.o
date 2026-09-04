@@ -67,6 +67,12 @@ export const headerData: HeaderData = {
           description: "Restore fullness and stimulate regrowth",
           href: "/treatments/hair-growth",
         },
+        {
+          id: 5,
+          label: "HydraGlass",
+          description: "Deep hydration facial for glass-like skin",
+          href: "/treatments/hydra-glass",
+        },
       ],
     },
 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { headerData } from "./Header.data";
 import type { HeaderProps } from "./Header.types";
@@ -13,9 +13,26 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [mobileSubMenu, setMobileSubMenu] = useState<number | null>(null);
+  const closeMenuTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   const getMegaMenu = (id: number) => {
     return headerData.megaMenus?.find((menu) => menu.id === id);
+  };
+
+  const openMegaMenu = (id: number) => {
+    if (closeMenuTimeoutRef.current) {
+      clearTimeout(closeMenuTimeoutRef.current);
+      closeMenuTimeoutRef.current = null;
+    }
+    setActiveMenu(id);
+  };
+
+  const scheduleCloseMegaMenu = () => {
+    closeMenuTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
   };
 
   const handleMobileMenuToggle = (id: number) => {
@@ -109,8 +126,8 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                 <div
                   key={item.id}
                   className="static flex items-center"
-                  onMouseEnter={() => setActiveMenu(item.id)}
-                  onMouseLeave={() => setActiveMenu(null)}
+                  onMouseEnter={() => openMegaMenu(item.id)}
+                  onMouseLeave={scheduleCloseMegaMenu}
                 >
                   {/* Navigation Item */}
                   <Link
@@ -151,6 +168,8 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                   {/* Desktop Mega Menu */}
                   {activeMenu === item.id && megaMenu && (
                     <div
+                      onMouseEnter={() => openMegaMenu(item.id)}
+                      onMouseLeave={scheduleCloseMegaMenu}
                       className={cn(
                         "absolute",
                         "left-0",

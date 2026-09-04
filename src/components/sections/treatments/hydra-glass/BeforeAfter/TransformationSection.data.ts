@@ -1,0 +1,29 @@
+import { asset } from "@/src/lib/assets";
+import { TransformationSectionProps } from "./TransformationSection.types";
+
+export const transformationData: TransformationSectionProps = {
+  eyebrow: "RESULTS",
+  heading: {
+    before: "Before",
+    highlight: "& after",
+    after: "",
+  },
+  description:
+    "Real patient results, unretouched, shown with consent. Individual results vary.",
+  transformations: [
+    {
+      title: "HydraGlass™ Skin Transformation",
+      category: "GLASS SKIN",
+      beforeImage: asset("/assets/waldor/before-1.png"),
+      afterImage: asset("/assets/waldor/after-1.png"),
+      duration: "AFTER · WEEK 12",
+    },
+    {
+      title: "HydraGlass™ Longevity Transformation",
+      category: "GLASS SKIN",
+      beforeImage: asset("/assets/waldor/before-2.png"),
+      afterImage: asset("/assets/waldor/after-2.png"),
+      duration: "AFTER · 6 SESSIONS",
+    },
+  ],
+};

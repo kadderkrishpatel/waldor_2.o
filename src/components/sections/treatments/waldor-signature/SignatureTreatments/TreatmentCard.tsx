@@ -31,14 +31,16 @@ export default function TreatmentCard({ card }: Props) {
         <p className="mt-4 text-[#9EA3A1]">{card.description}</p>
       </div>
 
-      {card.rows.map((row, index) => (
-        <TreatmentRow
-          key={row.id}
-          row={row}
-          isOpen={openIndex === index}
-          onToggle={() => handleToggle(index)}
-        />
-      ))}
+      <div className="scrollbar-hide max-h-[420px] overflow-y-auto">
+        {card.rows.map((row, index) => (
+          <TreatmentRow
+            key={row.id}
+            row={row}
+            isOpen={openIndex === index}
+            onToggle={() => handleToggle(index)}
+          />
+        ))}
+      </div>
     </article>
   );
 }
