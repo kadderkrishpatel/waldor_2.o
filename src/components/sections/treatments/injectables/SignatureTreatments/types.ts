@@ -13,6 +13,7 @@ export interface TreatmentCard {
   areas?: {};
   rows: TreatmentRow[];
   fullWidth?: boolean;
+  fromPrice?: string;
 }
 
 export interface InfoCard {

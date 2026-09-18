@@ -21,7 +21,7 @@ export const experienceData = {
       title: "Opulent Ritual",
       icon: asset("/assets/waldor/ritual-icon.png"),
       description:
-        "Unrivaled, elevated care that completely transforms your standard clinical experience.",
+        "Unrivalled, elevated care that completely transforms your standard clinical experience.",
     },
     {
       id: "left",

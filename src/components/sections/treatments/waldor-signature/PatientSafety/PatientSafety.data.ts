@@ -10,7 +10,7 @@ export const safetyData = {
   before: "Is This",
   highlight: "Right for You?",
   description:
-    "Every treatment begins with clinical suitability. Explore the circumstances where we may recommend postponing treatment or considering a safer alternative:",
+    "Every treatment begins with clinical suitability assessment. Explore the circumstances where we may recommend postponing treatment or considering a safer alternative:",
 };
 
 export const safetyPoints: SafetyPoint[] = [

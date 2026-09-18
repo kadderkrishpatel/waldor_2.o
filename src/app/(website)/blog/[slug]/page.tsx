@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import BlogDetailSection from "@/src/components/sections/blog/BlogDetailSection/BlogDetailSection";
 import RelatedBlogsSection from "@/src/components/sections/blog/RelatedBlogsSection/RelatedBlogsSection";
 import { getBlogBySlug, getBlogs } from "@/src/services/blogs";
@@ -8,6 +9,20 @@ interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+
+  if (!blog) {
+    return { title: "Blog | Waldor Clinic" };
+  }
+
+  return {
+    title: `${blog.title} | Waldor Clinic`,
+    description: blog.excerpt,
+  };
 }
 
 export default async function BlogDetailPage({ params }: Props) {

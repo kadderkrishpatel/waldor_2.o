@@ -19,37 +19,37 @@ export const faqData: FAQItem[] = [
   {
     id: 1,
     category: "treatments",
-    question: "[FAQ 1 — question about what injectables can and can’t achieve.]",
+    question: "How do I know which injectable treatment is best suited to my concerns?",
     answer:
-      "[Answer to be supplied — two to four sentences. Must not make efficacy claims that cannot be substantiated, and must not promote prescription-only medicines.]",
+      "The right treatment begins with understanding your facial anatomy, skin quality and aesthetic goals. During your consultation, our clinicians carefully assess your concerns before recommending a personalised treatment plan designed to achieve balanced, natural-looking results.",
   },
   {
     id: 2,
     category: "treatments",
-    question: "[FAQ 2 — question about comfort and anaesthetic.]",
+    question: "Will my injectable treatment enhance my features while maintaining a natural appearance?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "Yes. Our philosophy is centred on subtle refinement rather than noticeable change. Every injectable treatment is carefully planned and precisely administered to restore harmony, enhance your natural features and preserve your individual facial expressions.",
   },
   {
     id: 3,
     category: "treatments",
     question:
-      "[FAQ 3 — question about how long results last.]",
+      "Are injectable treatments clinically safe?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Patient safety is at the heart of every treatment we provide. Following a comprehensive medical consultation, our experienced clinicians ensure every injectable is appropriate for your needs, using evidence-based techniques and clinically approved products to prioritise safe, predictable outcomes.",
   },
   {
     id: 4,
     category: "treatments",
-    question: "[FAQ 4 — question about swelling, bruising and downtime.]",
+    question: "How long can I expect the results of my injectable treatment to last?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "The longevity of your results depends on the treatment performed, your metabolism, and individual lifestyle factors. During your consultation, we'll explain what to expect and recommend a personalised maintenance plan to help preserve your results over time.",
   },
   {
     id: 5,
     category: "treatments",
-    question: "[FAQ 5 — question about who administers the treatment and their qualifications.]",
+    question: "What does an injectable treatment feel like, and is it uncomfortable?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Most injectable treatments are well tolerated and involve minimal discomfort. Depending on the treatment, you may experience a brief pinching sensation, while topical numbing options and gentle techniques help ensure your experience remains as comfortable as possible.",
   },
 ];

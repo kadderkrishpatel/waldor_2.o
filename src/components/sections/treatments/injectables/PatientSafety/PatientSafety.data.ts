@@ -10,7 +10,7 @@ export const safetyData = {
   before: "Is This",
   highlight: "Right for You?",
   description:
-    "Every treatment begins with clinical suitability. Explore the circumstances where we may recommend postponing treatment or considering a safer alternative:",
+    "Every treatment begins with clinical suitability assessment. Explore the circumstances where we may recommend postponing treatment or considering a safer alternative:",
 };
 
 export const safetyPoints: SafetyPoint[] = [
@@ -28,9 +28,9 @@ export const safetyPoints: SafetyPoint[] = [
   },
   {
     id: "sun",
-    title: "Recent Sun Exposure",
+    title: "Recent Facial Procedures",
     description:
-      "Recently tanned or sunburnt skin may need time to recover before laser, light-based or resurfacing treatments can be performed safely.",
+      "If you've recently undergone surgery, laser treatments, chemical peels or other aesthetic procedures, your skin may need time to recover.",
   },
   {
     id: "infection",
@@ -43,13 +43,6 @@ export const safetyPoints: SafetyPoint[] = [
     title: "Allergies or Treatment Sensitivities",
     description:
       "Known allergies or sensitivities to treatment ingredients, topical anaesthetics or skincare products should be discussed during your consultation.",
-  },
-  {
-    id: "isotretinoin",
-    title: "Recent Isotretinoin Use",
-    description:
-      "Recent isotretinoin therapy may require a waiting period before undergoing laser resurfacing or advanced chemical peel treatments, subject to clinical assessment.",
-    width: "wide",
   },
   {
     id: "devices",

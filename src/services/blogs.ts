@@ -203,9 +203,23 @@ export async function getBlogs({
 
   if (category && category.toLowerCase() !== "all") {
     const categoryId = await resolveCategoryId(category);
-    if (categoryId) {
-      params.set("categories", String(categoryId));
+
+    if (!categoryId) {
+      return {
+        blogs: [],
+        categories: [],
+        pagination: {
+          page,
+          perPage,
+          total: 0,
+          totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
+        },
+      };
     }
+
+    params.set("categories", String(categoryId));
   }
 
   const url = `${getApiBase()}/posts?${params.toString()}`;

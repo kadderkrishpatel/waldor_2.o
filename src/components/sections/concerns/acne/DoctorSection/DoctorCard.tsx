@@ -18,8 +18,8 @@ export default function DoctorCard({
     <Link
       data-reveal
       data-direction="left"
-      href={`/doctors/${slug}`}
-      className="group relative block h-[530px] overflow-hidden rounded-[32px] bg-[#515D59]"
+      href="/doctors"
+      className="group relative block aspect-[411/530] overflow-hidden rounded-[32px] bg-[#515D59]"
     >
       <Image
         src={image}

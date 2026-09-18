@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
 import clsx from "clsx";
@@ -54,9 +54,7 @@ export default function FaqSection() {
     filters.find((filter) => filter.value === activeFilter)?.label ??
     "Treatments";
 
-  const filteredFAQs = useMemo(() => {
-    return faqData.filter((faq) => faq.category === activeFilter);
-  }, [activeFilter]);
+  const filteredFAQs = faqData;
 
   return (
     <section className="py-4">
@@ -169,7 +167,7 @@ export default function FaqSection() {
                         }}
                         className="pb-8 pr-20"
                       >
-                        <p className="text-[15px] leading-7 text-[#C5A375]">
+                        <p className="whitespace-pre-line text-[15px] leading-7 text-[#C5A375]">
                           {faq.answer}
                         </p>
                       </motion.div>

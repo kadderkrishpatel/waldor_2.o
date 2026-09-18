@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { contactSchema } from "@/src/lib/validations/contact.schema";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -9,13 +10,36 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASSWORD,
   },
+  pool: true,
 });
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, treatment, message } = body;
-    await transporter.verify();
+    const parsed = contactSchema.safeParse(body);
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: parsed.error.issues[0]?.message ?? "Invalid form data",
+        },
+        { status: 400 },
+      );
+    }
+
+    const { firstName, lastName, email, phone, treatment, message } =
+      parsed.data;
+    const treatmentList: string[] = treatment ?? [];
 
     const info = await transporter.sendMail({
       from: process.env.CONTACT_FROM_EMAIL,
@@ -33,32 +57,32 @@ export async function POST(req: NextRequest) {
         >
           <tr>
             <td><strong>First Name</strong></td>
-            <td>${firstName}</td>
+            <td>${escapeHtml(firstName)}</td>
           </tr>
 
           <tr>
             <td><strong>Last Name</strong></td>
-            <td>${lastName}</td>
+            <td>${escapeHtml(lastName || "-")}</td>
           </tr>
 
           <tr>
             <td><strong>Email</strong></td>
-            <td>${email}</td>
+            <td>${escapeHtml(email)}</td>
           </tr>
 
           <tr>
             <td><strong>Phone</strong></td>
-            <td>${phone || "-"}</td>
+            <td>${escapeHtml(phone)}</td>
           </tr>
 
           <tr>
-            <td><strong>Treatment</strong></td>
-            <td>${treatment || "-"}</td>
+            <td><strong>Treatment(s)</strong></td>
+            <td>${treatmentList.length ? escapeHtml(treatmentList.join(", ")) : "-"}</td>
           </tr>
 
           <tr>
             <td><strong>Message</strong></td>
-            <td>${message?.replace(/\n/g, "<br/>")}</td>
+            <td>${escapeHtml(message).replace(/\n/g, "<br/>")}</td>
           </tr>
         </table>
       `,

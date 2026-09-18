@@ -3,7 +3,7 @@ export interface OfferCardProps {
    * Small label displayed above the main title.
    */
   eyebrow: string;
-  eyebrowhref: string;
+  eyebrowhref?: string;
 
   /**
    * Main heading of the card.
@@ -18,13 +18,13 @@ export interface OfferCardProps {
   /**
    * Discount text, e.g. "10% off".
    */
-  discount: string;
+  discount?: string;
 
   /**
    * Text displayed below the discount.
    * Example: "your 6th session"
    */
-  discountTitle: string;
+  discountTitle?: string;
 
   /**
    * Description explaining the offer.

@@ -5,7 +5,7 @@ export const transformationData: TransformationSectionProps = {
   eyebrow: "RESULTS",
   heading: {
     before: "Before",
-    highlight: "& after",
+    highlight: "& After",
     after: "",
   },
   description:

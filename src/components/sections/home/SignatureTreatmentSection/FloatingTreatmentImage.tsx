@@ -20,11 +20,8 @@ export default function FloatingTreatmentImage({
         duration: 0.55,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="pointer-events-none absolute right-[85px] z-30"
-      style={{
-        width: 227.378,
-        height: 261.04,
-      }}
+      style={{ transform: "translateY(-50%)" }}
+      className="pointer-events-none absolute right-4 z-30 w-[150px] h-[172px] xl:right-[50px] xl:w-[190px] xl:h-[218px] 2xl:right-[85px] 2xl:w-[227px] 2xl:h-[261px]"
     >
       {/* Background Panel */}
       <div className="absolute -left-14 top-1/2 h-[210px] w-[310px] -translate-y-1/2 rounded-[32px]" />

@@ -3,7 +3,7 @@ import { TimelineStep } from "./types";
 export const approachData = {
   eyebrow: "OUR APPROACH",
   heading: {
-    before: "How Our HydraGlass",
+    before: "How Our HydraGlass™",
     highlight: "Facial Works",
   }
   };
@@ -14,7 +14,7 @@ export const timelineSteps: TimelineStep[] = [
     number: "01",
     title: "Reset the Skin's Surface",
     description:
-      "We begin by removing daily buildup and preparing the skin gently, creating the clean, receptive base needed for the HydraGlass sequence.",
+      "We begin by removing daily buildup and preparing the skin gently, creating the clean, receptive base needed for the HydraGlass™ sequence.",
   },
   {
     id: "refine",

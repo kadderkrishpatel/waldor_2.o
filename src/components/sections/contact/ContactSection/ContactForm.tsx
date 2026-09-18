@@ -8,7 +8,7 @@ import Link from "next/link";
 import {
   TextField,
   TextAreaField,
-  SelectField,
+  MultiSelectField,
 } from "@/src/components/ui/Form";
 import {
   contactSchema,
@@ -40,18 +40,21 @@ export default function ContactForm({
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
+    mode: "onBlur",
+    reValidateMode: "onChange",
 
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
-      treatment: "",
+      treatment: [],
       message: "",
     },
   });
 
   const parts = disclaimer.split(/privacy policy/i);
+  const phoneRegistration = register("phone");
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
@@ -126,16 +129,23 @@ export default function ContactForm({
         <TextField
           label="PHONE"
           type="tel"
-          placeholder="+44 7000 000 000"
-          registration={register("phone")}
+          placeholder="7000000000"
+          maxLength={10}
+          registration={{
+            ...phoneRegistration,
+            onChange: (e) => {
+              e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              return phoneRegistration.onChange(e);
+            },
+          }}
           error={errors.phone}
         />
 
         {/* Treatment */}
-        <SelectField
+        <MultiSelectField
           label="WHAT CAN WE HELP WITH?"
           options={treatmentOptions}
-          value={watch("treatment") ?? ""}
+          value={watch("treatment") ?? []}
           onChange={(value) => setValue("treatment", value, { shouldValidate: true })}
           onBlur={() => trigger("treatment")}
           error={errors.treatment}

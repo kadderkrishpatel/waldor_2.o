@@ -6,5 +6,5 @@ export const mapSectionData = {
   },
   address: "35 Great Portland Street, London W1W 8QQ",
   embedSrc:
-    "https://www.google.com/maps?q=35+Great+Portland+Street,+London+W1W+8QQ&output=embed",
+    "https://www.google.com/maps?q=Waldor+Clinic,+35+Great+Portland+Street,+London+W1W+8QQ&output=embed",
 };

@@ -6,9 +6,11 @@ export const treatmentData: TreatmentSectionProps = {
   topDecorationImg: asset("/assets/waldor/begin-top-left.png"),
   bottomDecorationImg: asset("/assets/waldor/begin-bottom.png"),
   heading: {
-    before: "What is Your",
-    highlight: "Focus Today?",
+    before: "What is Your Main Focus",
+    highlight: "Today?",
     after: "",
+
+     
   },
   description:
     "Every cellular concern requires a targeted intervention. Select your focus area below to unlock a bespoke, result-driven solution designed exclusively for you. ",
@@ -17,20 +19,20 @@ export const treatmentData: TreatmentSectionProps = {
       title: "Skin",
       description: "Dullness, Pigmentation & Texture",
       image: asset("/assets/waldor/skin-cat.jpg"),
-      href: "#",
+      href: "/treatments/hydra-glass",
     },
     {
       title: "Body",
-      description: "Muscle Growth & Chiseled Physiqu",
+      description: "Muscle Growth & Chiselled Physique",
       image: asset("/assets/waldor/body-cat.jpg"),
-      href: "#",
+      href: "/treatments/body-treatment",
       offset: true,
     },
     {
       title: "Face",
       description: "Acne, Scarring & Wrinkles",
       image: asset("/assets/waldor/face-cat.jpg"),
-      href: "#",
+      href: "/treatments/waldor-signature",
     },
   ],
 };

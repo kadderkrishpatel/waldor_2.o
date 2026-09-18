@@ -2,9 +2,9 @@ import { asset } from "@/src/lib/assets";
 import { DoctorSectionProps } from "./DoctorSection.types";
 
 export const doctorSectionData: DoctorSectionProps = {
-  eyebrow: "OUR SKIN VANGUARDS",
+  eyebrow: "Your Trusted Practitioner",
   heading: {
-    before: "Meet the Estheticians Behind",
+    before: "Meet the Aestheticians Behind",
     highlight: "Your Best Skin Days",
   },
   description:

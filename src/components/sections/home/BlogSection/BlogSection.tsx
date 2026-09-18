@@ -1,12 +1,20 @@
 "use client";
 import { blogSectionData } from "./BlogSection.data";
+import type { BlogPost } from "./BlogSection.types";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import Button from "@/src/components/ui/Button";
 import { BlogCard } from "@/src/components/ui/Cards";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
-export default function BlogSection() {
+interface BlogSectionProps {
+  posts?: BlogPost[];
+}
+
+export default function BlogSection({ posts }: BlogSectionProps) {
   const sectionRef = useSectionReveal();
+
+  // No real posts to show yet — hide the section rather than link to fake ones.
+  if (!posts || posts.length === 0) return null;
 
   return (
     <section
@@ -39,13 +47,14 @@ export default function BlogSection() {
 
         {/* Blog Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 lg:gap-8 justify-items-center">
-          {blogSectionData.posts.map((post) => (
+          {posts.map((post) => (
             <div key={post.id} className="w-full max-w-[420px] xl:max-w-none">
               <BlogCard
                 slug={post.slug}
                 image={post.image}
                 category={post.category}
                 title={post.title}
+                subtitle={post.subtitle}
                 readTime={post.readTime}
               />
             </div>

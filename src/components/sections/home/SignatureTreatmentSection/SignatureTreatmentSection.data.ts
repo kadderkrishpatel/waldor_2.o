@@ -5,11 +5,11 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
   eyebrow: "SIGNATURE SKINCARE TREATMENTS",
   heading: {
     before: "Our Most",
-    highlight: "Obsessed-Over Services",
+    highlight: "Requested at WALDOR",    
   },
   button: {
     label: "View Full Menu",
-    href: "#",
+    href: "/treatments/waldor-signature",
   },
   treatments: [
     {
@@ -19,6 +19,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
         "A smoothing dermal treatment that gently refines texture and locks in moisture to instantly unveil a flawless, poreless glass-skin glow.",
       image: asset("/assets/waldor/service-thumb.jpg"),
       slug: "hydraglass-facial",
+      href: "/treatments/hydra-glass",
     },
     {
       number: "02",
@@ -27,6 +28,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
         "Experience regenerative DNA therapy that repairs deep cellular damage, instantly boosting your skin’s hydration and youthful bounce.",
       image: asset("/assets/waldor/skin-cat.jpg"),
       slug: "salmon-sperm-polynucleotide",
+      href: "/treatments/waldor-signature",
     },
     {
       number: "03",
@@ -35,6 +37,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
         "Cellular molecules engineered to trigger collagen production, fortify your skin barrier and drive deep structural regeneration.",
       image: asset("/assets/waldor/service-thumb.jpg"),
       slug: "waldor-peptide-blends",
+      href: "/treatments/waldor-signature",
     },
     {
       number: "04",
@@ -43,6 +46,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
         "Advanced biological growth factors awaken resting roots, boosting circulation to deliver visibly thicker, fuller and healthier hair.",
       image: asset("/assets/waldor/skin-cat.jpg"),
       slug: "hair-growth-treatment",
+      href: "/treatments/hair-growth",
     },
   ],
 };

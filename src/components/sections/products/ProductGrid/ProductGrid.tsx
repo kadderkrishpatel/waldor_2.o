@@ -2,8 +2,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import ProductCard from "./ProductCard";
+import ProductDetailsModal from "./ProductDetailsModal";
 import { products, filterTabs, sortOptions } from "./ProductGrid.data";
-import type { ProductFilter, SortOption } from "./ProductGrid.types";
+import type { Product, ProductFilter, SortOption } from "./ProductGrid.types";
 import { cn } from "@/src/lib/utils";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
@@ -12,6 +13,7 @@ export default function ProductGrid() {
   const [activeCategory, setActiveCategory] = useState<ProductFilter>("skin-care");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
   const [sortOpen, setSortOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const sortRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -133,7 +135,11 @@ export default function ProductGrid() {
       {/* Grid */}
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            onOpenDetails={setSelectedProduct}
+          />
         ))}
       </div>
 
@@ -142,6 +148,11 @@ export default function ProductGrid() {
           No products in this category yet.
         </p>
       )}
+
+      <ProductDetailsModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }

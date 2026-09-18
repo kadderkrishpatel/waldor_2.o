@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import useHorizontalScroll from "@/src/components/hooks/useHorizontalScroll";
 import { successStoriesData } from "./SuccessStoriesSection.data";
+import { asset } from "@/src/lib/assets";
 import "swiper/css";
 import "swiper/css/pagination";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
@@ -26,20 +27,28 @@ export default function SuccessStoriesSection() {
   });
 
   return (
-    <section
-      ref={mergedRef}
-      className="relative overflow-hidden bg-[#3D4844] rounded-[24px] lg:rounded-[40px] "
-    >
+    <section ref={mergedRef} className="relative">
       <Image
-        src={successStoriesData.successRightImg}
+        src={asset("/assets/waldor/footer-left.png")}
         alt=""
-        width={320}
-        height={371}
-        className="absolute right-0 top-0 w-[120px] md:w-[180px] lg:w-[320px]"
-        priority
+        width={151}
+        height={363}
+        className="pointer-events-none absolute left-0 -top-16 w-[70px] md:-top-14 md:w-[100px] lg:-top-12 lg:w-[141px]"
+        sizes="(max-width: 768px) 70px, 141px"
+        loading="eager"
       />
 
-      <div className="rounded-[24px] px-5 lg:rounded-[32px] bg-[#515D59] py-16 md:py-20 lg:py-[120px] overflow-hidden">
+      <Image
+        src={asset("/assets/waldor/footer-top-right.png")}
+        alt=""
+        width={277}
+        height={345}
+        className="pointer-events-none absolute right-0 -top-6 w-[100px] md:-top-4 md:w-[150px] lg:top-0 lg:w-[210px]"
+        sizes="(max-width: 768px) 100px, 210px"
+        loading="eager"
+      />
+
+      <div className="px-5 pt-6 pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-[120px] overflow-hidden">
         {/* Heading */}
         <div className="mb-10 md:mb-14 lg:mb-20 flex flex-col gap-4 lg:gap-6 px-5 md:px-8 lg:px-[60px]">
           <Eyebrow variant="secondary">{successStoriesData.eyebrow}</Eyebrow>
@@ -89,9 +98,9 @@ export default function SuccessStoriesSection() {
               <article
                 data-reveal
                 data-direction="left"
-                className="flex min-h-[490px] md:min-h-[430px] lg:min-h-[490px] flex-col justify-between rounded-[20px] lg:rounded-[24px] bg-[#3D4844] p-6 md:p-8 lg:p-10"
+                className="flex min-h-[340px] md:min-h-[320px] lg:min-h-[340px] flex-col justify-between rounded-[20px] lg:rounded-[24px] bg-[#515D59] p-6 md:p-8 lg:p-10"
               >
-                <p className="font-fraunces text-[22px] md:text-[24px] lg:text-[28px] leading-[1.5] text-[#E3E5E5]">
+                <p className="font-fraunces text-base md:text-lg lg:text-xl leading-[1.5] text-[#E3E5E5]">
                   "{item.review}"
                 </p>
 

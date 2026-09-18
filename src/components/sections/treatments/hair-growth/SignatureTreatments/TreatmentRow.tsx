@@ -24,21 +24,17 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
     >
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-8 py-6 text-left"
+        className="flex w-full items-center justify-end px-8 py-6 text-left"
       >
-        {row.title ? (
+        {row.title && (
           <h4
             className={clsx(
-              "text-[20px] font-medium",
+              "mr-auto text-[20px] font-medium",
               isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
             )}
           >
             {row.title}
           </h4>
-        ) : (
-          <h5 className="font-hanken text-[11px] font-medium uppercase text-[#7e8582]">
-            Price
-          </h5>
         )}
 
         <div

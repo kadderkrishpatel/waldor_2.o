@@ -27,6 +27,7 @@ export default function HeroSection() {
             </Eyebrow>
 
             <Heading
+              as="h1"
               className="text-[#29302D]"
               before={heroData.heading.before}
               highlight={heroData.heading.highlight}

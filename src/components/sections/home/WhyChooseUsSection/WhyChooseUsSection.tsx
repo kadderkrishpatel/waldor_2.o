@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { whyChooseUsData } from "./WhyChooseUsSection.data";
 import Button from "@/src/components/ui/Button";
-import { Description, Heading } from "@/src/components/ui/Typography";
+import { Description } from "@/src/components/ui/Typography";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function WhyChooseUsSection() {
@@ -11,67 +11,66 @@ export default function WhyChooseUsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#3D4844] py-4 sm:py-6 m-2 lg:m-4 rounded-none lg:rounded-[40px]"
+      className="relative overflow-hidden pt-16 sm:pt-20 lg:pt-24"
     >
-      {/* Content Card */}
-      <div className="relative z-10 rounded-[24px] sm:rounded-[32px] bg-[#C5A375] min-h-[520px] sm:min-h-[600px] lg:min-h-[750px] px-5 sm:px-8 lg:px-16 py-16 sm:py-20 lg:py-30 flex items-center justify-center">
-        <div className="mx-auto flex max-w-[800px] flex-col items-center text-center">
-          {/* Heading */}
-          <Heading
-            highlightClassName="text-[#836D4E]"
-            before={whyChooseUsData.heading.before}
-            highlight={whyChooseUsData.heading.highlight}
-          />
-
-          {/* Description */}
-          <Description className="mt-4 max-w-[650px] text-sm sm:text-base lg:text-lg">
-            {whyChooseUsData.description}
-          </Description>
-
-          {/* CTA */}
-          <div data-reveal data-direction="top" className="mt-8 sm:mt-10">
-            <Button href={whyChooseUsData.button.href}>
-              {whyChooseUsData.button.label}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Left Decorative Image */}
+      {/* Left Decorative Leaf */}
       {whyChooseUsData.leftImage && (
-        <div className="pointer-events-none absolute left-0 bottom-0 z-10 md:block">
-          <div className="relative w-[160px] h-[280px] lg:w-[271px] lg:h-[450px] blur-[5px] lg:blur-[7px]">
+        <div className="pointer-events-none absolute left-0 top-0 z-0 hidden opacity-60 md:block">
+          <div className="relative w-[140px] h-[240px] lg:w-[220px] lg:h-[380px]">
             <Image
               src={whyChooseUsData.leftImage}
               alt=""
               fill
               className="object-contain"
-              sizes="(max-width:768px) 160px, 271px"
+              sizes="(max-width:768px) 140px, 220px"
               priority
             />
           </div>
-
-          <div className="absolute inset-0 from-[#3D4844] via-transparent to-transparent" />
         </div>
       )}
 
-      {/* Right Decorative Image */}
+      {/* Right Decorative Leaf */}
       {whyChooseUsData.rightImage && (
-        <div className="pointer-events-none absolute right-0 bottom-0 z-10 sm:block">
-          <div className="relative w-[220px] h-[380px] md:w-[320px] md:h-[540px] lg:w-[458px] lg:h-[761px] blur-[5px] lg:blur-[7px]">
+        <div className="pointer-events-none absolute right-0 bottom-0 z-0 hidden opacity-70 md:block">
+          <div className="relative w-[110px] h-[196px] lg:w-[180px] lg:h-[321px]">
             <Image
               src={whyChooseUsData.rightImage}
               alt=""
               fill
               className="object-contain"
-              sizes="(max-width:768px) 320px, 458px"
+              sizes="(max-width:768px) 110px, 180px"
               priority
             />
           </div>
-
-          <div className="absolute inset-0 from-[#3D4844] via-transparent to-transparent" />
         </div>
       )}
+
+      <div className="relative z-10 mx-auto flex max-w-[900px] flex-col items-center px-5 text-center">
+        {/* Heading — before/highlight forced onto their own line each, so the word count per line never shifts across screen widths */}
+        <h2 className="font-fraunces text-[26px] font-normal leading-[100%] tracking-[-1.76px] sm:text-[36px] md:text-[48px] lg:text-[56px]">
+          <span className="block sm:whitespace-nowrap text-[#C5A375]">
+            {whyChooseUsData.heading.before}
+          </span>
+          <span className="mt-2 block sm:whitespace-nowrap font-normal italic text-[#29302D]">
+            {whyChooseUsData.heading.highlight}
+          </span>
+        </h2>
+
+        {/* Description */}
+        <Description className="mt-4 max-w-[850px] text-sm sm:text-base lg:text-lg text-[#4E4A3F]">
+          {whyChooseUsData.description}
+        </Description>
+
+        {/* CTA */}
+        <div data-reveal data-direction="top" className="mt-8 sm:mt-10">
+          <Button href={whyChooseUsData.button.href}>
+            {whyChooseUsData.button.label}
+          </Button>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="relative z-10 mx-5 mt-14 sm:mt-16 lg:mt-20 border-t border-[#C8B99F]/50 sm:mx-10 lg:mx-16" />
     </section>
   );
 }

@@ -17,20 +17,23 @@ export default function ExperienceCard({
     <div
       data-reveal
       data-direction="left"
-      className={`z-12 w-full max-w-[300px] rounded-[20px] bg-[#F8F2EA] p-7 shadow-xl flex flex-col gap-[20px] ${className}`}
+      className={`group z-12 w-full rounded-[20px] bg-[#F8F2EA] p-6 shadow-xl flex flex-col gap-3 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:bg-white ${className}`}
     >
-      <Image
-        src={icon}
-        alt={title}
-        width={48}
-        height={48}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="eager"
-      />
+      <div className="flex items-center gap-3">
+        <Image
+          src={icon}
+          alt=""
+          width={40}
+          height={40}
+          className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-110"
+          sizes="40px"
+          loading="eager"
+        />
 
-      <h3 className="font-heading fmt-5 text-[28px] leading-[36px] text-[#2F302B]">
-        {title}
-      </h3>
+        <h3 className="font-heading text-[22px] leading-[28px] text-[#2F302B]">
+          {title}
+        </h3>
+      </div>
 
       <p className="font-hanken text-[15px] leading-7 text-[#7C6A56]">
         {description}

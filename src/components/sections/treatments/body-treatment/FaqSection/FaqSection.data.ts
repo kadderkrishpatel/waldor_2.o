@@ -28,27 +28,27 @@ export const faqData: FAQItem[] = [
     category: "treatments",
     question: "How many sessions will I need to achieve the best results?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "The number of sessions depends on your body composition, treatment goals, and the technology recommended. Following a comprehensive consultation, we create a personalised treatment plan, ensuring each session builds progressively towards natural, long-lasting improvements.",
   },
   {
     id: 3,
     category: "treatments",
     question: "How do I know which body treatment is right for me?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Selecting the right treatment begins with understanding your body rather than choosing a procedure. Our clinicians assess your concerns, skin quality, body composition and aesthetic goals before recommending the most appropriate treatment.",
   },
   {
     id: 4,
     category: "treatments",
     question: "Are body contouring treatments painful?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Most non-surgical body treatments are designed to be comfortable, allowing you to return to your daily routine with minimal interruption. Depending on the treatment, you may experience warmth, gentle muscle contractions, or temporary sensitivity during and shortly after your session.",
   },
   {
     id: 5,
     category: "treatments",
     question: "Are the treatments safe for all skin types?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Every treatment begins with a detailed clinical consultation to determine its suitability for your skin type, medical history, and individual concerns. Patient safety is central to every recommendation, ensuring your treatment is both appropriate and delivered with clinical precision.",
   },
 ];

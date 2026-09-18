@@ -9,7 +9,7 @@ export const transformationData: TransformationSectionProps = {
     after: "",
   },
   description:
-    "real patient results, unretouched, shown with consent. Individual results vary.",
+    "Real patient results, unretouched, shown with consent. Individual results vary.",
   transformations: [
     {
       title: "HydraGlass™ Skin Transformation",

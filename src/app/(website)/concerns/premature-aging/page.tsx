@@ -10,10 +10,20 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/premature-aging";
+import FAQSchema from "@/src/components/seo/FAQSchema";
+import { faqData } from "@/src/components/sections/concerns/premature-aging/FaqSection/FaqSection.data";
+import { serviceHeroData } from "@/src/components/sections/concerns/premature-aging/ServiceHero/ServiceHero.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Premature Ageing Treatment | Waldor Clinic",
+  description: serviceHeroData.description,
+};
 
 export default function unevenSkinTonePage() {
   return (
     <>
+      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />

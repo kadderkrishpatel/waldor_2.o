@@ -14,13 +14,13 @@ export interface ServiceHeroData {
 }
 
 export const serviceHeroData: ServiceHeroData = {
-  eyebrow: "HydraGlass Facial",
-  before: "HydraGlass Facial For",
+  eyebrow: "HydraGlass™ Facial",
+  before: "HydraGlass™ Facial For",
   highlight: "Glass-Like Skin",
   image: asset("/assets/waldor/hydra_hero.png"),
   description:
-    "What if a “good skin day” became your everyday? Meet Waldor’s HydraGlass Facial Treatment, combining considered exfoliation and layered hydration to reveal smoother, softer, naturally luminous-looking skin.",
-  imageAlt: "HydraGlass facial treatment",
+    "What if a “good skin day” became your everyday? Meet Waldor’s HydraGlass™ Facial Treatment, combining considered exfoliation and layered hydration to reveal smoother, softer, naturally luminous-looking skin.",
+  imageAlt: "HydraGlass™ facial treatment",
   cta: {
     label: "Book An Appointment",
     href: "/contact",

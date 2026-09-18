@@ -7,11 +7,9 @@ export interface ShopHeroData {
 
 export const shopHeroData: ShopHeroData = {
   eyebrow: "WALDOR.SKIN · SHOP",
-  before: "Skin",
-  highlight: "Care",
+  before: "Korean Bio-Fermented",
+  highlight: "Skincare by WALDOR",
   descriptionLines: [
-    "Powered by Korean biofermentation and clinical-grade actives, formulated to repair, strengthen and",
-    "transform your skin at a deeper level. Orders are completed on our shop,",
-    "waldor.skin.",
+    " What happens when Korean skincare precision meets the intelligence of bio-fermentation? Discover how WALDOR translates this philosophy into a considered collection shaped around what your skin truly needs. ",
   ],
 };

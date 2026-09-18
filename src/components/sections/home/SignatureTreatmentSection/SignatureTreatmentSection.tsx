@@ -15,16 +15,19 @@ export default function SignatureTreatmentSection() {
   const rowRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const activeTreatment = signatureTreatmentData.treatments[activeIndex];
 
+  const activeIndexRef = useRef(activeIndex);
+  activeIndexRef.current = activeIndex;
+
   const updateImagePosition = (index: number) => {
     const row = rowRefs.current[index];
     if (!row) return;
-    setImageTop(row.offsetTop + row.offsetHeight / 2 - 261.04 / 2);
+    setImageTop(row.offsetTop + row.offsetHeight / 2);
   };
 
   useEffect(() => {
     updateImagePosition(0);
 
-    const resize = () => updateImagePosition(activeIndex);
+    const resize = () => updateImagePosition(activeIndexRef.current);
     window.addEventListener("resize", resize);
 
     return () => window.removeEventListener("resize", resize);

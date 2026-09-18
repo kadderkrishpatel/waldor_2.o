@@ -6,13 +6,14 @@ import type { Product } from "./ProductGrid.types";
 
 interface Props {
   product: Product;
+  onOpenDetails: (product: Product) => void;
 }
 
 const formatPrice = (price: number) => `£${price.toFixed(2)}`;
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, onOpenDetails }: Props) {
   const handleCardClick = () => {
-    window.open(product.href, "_blank", "noopener,noreferrer");
+    onOpenDetails(product);
   };
 
   const handleCardKeyDown = (e: React.KeyboardEvent) => {
@@ -77,7 +78,10 @@ export default function ProductCard({ product }: Props) {
 
         <button
           type="button"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenDetails(product);
+          }}
           className="mt-4 flex items-center justify-center gap-2 rounded-full border border-[#3D4844] py-2.5 font-hanken text-sm font-medium text-[#ECE0D1] transition-colors duration-200 hover:border-[#C5A375] hover:bg-[#C5A375] hover:text-[#1F2422]"
         >
           <ShoppingCart size={16} strokeWidth={1.75} />

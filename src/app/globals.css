@@ -195,12 +195,29 @@
   margin: 0 auto;
 }
 
+.blog-content .has-text-align-left {
+  text-align: left;
+}
+
+.blog-content .has-text-align-center {
+  text-align: center;
+}
+
+.blog-content .has-text-align-right {
+  text-align: right;
+}
+
+.blog-content .has-text-align-justify {
+  text-align: justify;
+}
+
 .blog-content p {
   color: #28302d;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 27px;
   margin-bottom: 32px;
   font-family: "Hanken Grotesk";
+  text-align: justify;
 }
 
 .blog-content h2 {
@@ -210,6 +227,18 @@
   line-height: 1.3;
   margin: 56px 0 28px;
   font-family: 'Fraunces';
+}
+
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: #28302d;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 27px;
+  margin: 0 0 32px;
+  font-family: "Hanken Grotesk";
 }
 
 .blog-content blockquote p {
@@ -258,6 +287,104 @@
 
 .blog-content strong {
   font-weight: 600;
+}
+
+.blog-content .wp-block-table {
+  margin: 40px 0;
+  overflow-x: auto;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #29302d;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #29302d;
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  font-family: "Hanken Grotesk";
+  font-size: 15px;
+  line-height: 1.6;
+  color: #28302d;
+}
+
+.blog-content th {
+  font-weight: 700;
+  background: #f3ecdf;
+}
+
+.blog-content .callout {
+  position: relative;
+  background: #f3ecdf;
+  border-left: 3px solid #c5a375;
+  border-radius: 12px;
+  padding: 20px 24px 20px 52px;
+  margin: 40px 0;
+  font-style: italic;
+  color: #515d59;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.blog-content .callout::before {
+  content: "\24D8";
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-style: normal;
+  color: #c5a375;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.blog-content .wp-block-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.blog-content .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #c6a26d;
+  color: #29302d !important;
+  font-family: "Hanken Grotesk";
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: 16px 32px;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-content .wp-block-button__link:hover {
+  background: #d2b07c;
+  transform: scale(1.02);
+}
+
+.blog-content .wp-block-button__link::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  background-color: #29302d;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.blog-content .wp-block-button__link:hover::after {
+  transform: translate(2px, -2px);
 }
 
 .blog-content ul,

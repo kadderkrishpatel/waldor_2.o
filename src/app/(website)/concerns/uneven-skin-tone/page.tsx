@@ -10,10 +10,20 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/uneven-skin-tone";
+import FAQSchema from "@/src/components/seo/FAQSchema";
+import { faqData } from "@/src/components/sections/concerns/uneven-skin-tone/FaqSection/FaqSection.data";
+import { serviceHeroData } from "@/src/components/sections/concerns/uneven-skin-tone/ServiceHero/ServiceHero.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uneven Skin Tone Treatment | Waldor Clinic",
+  description: serviceHeroData.description,
+};
 
 export default function unevenSkinTonePage() {
   return (
     <>
+      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />

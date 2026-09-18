@@ -1,6 +1,7 @@
 export interface BlogPost {
   id: number;
   title: string;
+  subtitle?: string;
   category: string;
   readTime: string;
   image: string;

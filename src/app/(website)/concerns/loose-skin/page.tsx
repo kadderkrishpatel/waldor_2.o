@@ -10,10 +10,20 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/loose-skin";
+import FAQSchema from "@/src/components/seo/FAQSchema";
+import { faqData } from "@/src/components/sections/concerns/loose-skin/FaqSection/FaqSection.data";
+import { serviceHeroData } from "@/src/components/sections/concerns/loose-skin/ServiceHero/ServiceHero.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Loose & Sagging Skin Treatment | Waldor Clinic",
+  description: serviceHeroData.description,
+};
 
 export default function unevenSkinTonePage() {
   return (
     <>
+      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />

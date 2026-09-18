@@ -7,6 +7,7 @@ interface TextFieldProps {
   label: string;
   type?: string;
   placeholder?: string;
+  maxLength?: number;
 
   registration: UseFormRegisterReturn;
 
@@ -14,7 +15,7 @@ interface TextFieldProps {
 }
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ label, type = "text", placeholder, registration, error }, ref) => {
+  ({ label, type = "text", placeholder, maxLength, registration, error }, ref) => {
     return (
       <div className="flex flex-col gap-3">
         {/* Label */}
@@ -39,6 +40,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           }}
           type={type}
           placeholder={placeholder}
+          maxLength={maxLength}
           autoComplete="off"
           className={`w-full border-b bg-transparent pb-4 text-[15px] text-[#ECE0D1] placeholder:text-[#7E8582] outline-none transition-all duration-300
             ${

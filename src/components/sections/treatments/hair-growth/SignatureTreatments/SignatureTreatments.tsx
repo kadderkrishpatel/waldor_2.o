@@ -55,13 +55,10 @@ export default function SignatureTreatments() {
             <div className="mt-16">
               <OfferCard
                 eyebrow="Treatment Course"
-                eyebrowhref="#"
                 title="Course of 6 treatments"
-                description="For optimal outcomes and consistent results, treatments are recommended as a course of six sessions — either six sessions of a single treatment, or a tailored combination based on your scalp condition and response."
-                discount="10% off"
-                discountTitle="your 6th session"
-                offerDescription="Book a course of 5 treatments and your 6th session is 10% off."
-                buttonText="Book a course"
+                description={`For optimal outcomes and consistent results, treatments are recommended as a course of six sessions.\n\nThese can be:\n• Six sessions of a single treatment.\n• A tailored combination based on your scalp condition and response.`}
+                offerDescription="Exclusive Discount Offer: Purchase a course of 5 treatments and enjoy your 6th session on us."
+                buttonText="Start Your Hair Restoration Plan"
                 buttonHref="/contact"
               />
             </div>

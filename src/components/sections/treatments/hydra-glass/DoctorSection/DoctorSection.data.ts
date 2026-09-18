@@ -4,7 +4,7 @@ import { DoctorSectionProps } from "./DoctorSection.types";
 export const doctorSectionData: DoctorSectionProps = {
   eyebrow: "YOUR TRUSTED PRACTITIONER",
   heading: {
-    before: "Meet the Estheticians Behind",
+    before: "Meet the Aestheticians Behind",
     highlight: "Your Best Skin Days",
   },
   description:

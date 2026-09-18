@@ -3,34 +3,16 @@ import Image from "next/image";
 import { experienceData } from "./ExperienceSection.data";
 import ExperienceCard from "./ExperienceCard";
 import { Eyebrow, Heading, Description } from "@/src/components/ui/Typography";
-import { asset } from "@/src/lib/assets";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function ExperienceSection() {
   const sectionRef = useSectionReveal();
-  const cardPosition = {
-    top: "lg:top-[-40%] lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-10",
-    left: "lg:left-0 lg:top-1/2 lg:-translate-x-20 lg:-translate-y-1/2",
-    right: "lg:right-0 lg:top-1/2 lg:translate-x-20 lg:-translate-y-1/2",
-    bottom:
-      "lg:bottom-[-40%] lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-10",
-  };
 
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden rounded-[24px] lg:rounded-[40px] bg-[#EBE0D1] py-16 md:py-20 lg:py-[120px] m-2 lg:m-4"
+      className="relative overflow-hidden pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20"
     >
-      <Image
-        src={experienceData.topDecorationImage}
-        alt=""
-        width={254.672}
-        height={421.983}
-        className="absolute right-0 top-0 w-[120px] md:w-[180px] lg:w-auto"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="eager"
-      />
-
       <div className="mx-auto px-6 lg:px-[60px]">
         {/* Heading */}
         <div className="max-w-full">
@@ -47,65 +29,28 @@ export default function ExperienceSection() {
           </Description>
         </div>
 
-        {/* Main Area */}
-        <div className="relative mt-12 md:mt-16 lg:mt-[300px] mb-12 md:mb-16 lg:mb-[250px] flex justify-center">
-          <div className="relative w-full max-w-[1064px] lg:h-[554px]">
+        {/* Main Area — image left, cards stacked right, matched heights */}
+        <div className="relative mt-8 md:mt-10 flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10">
+          <div className="relative hidden aspect-4/3 w-full overflow-hidden rounded-[20px] lg:block lg:aspect-auto lg:w-1/2">
             <Image
-              src={asset("/assets/waldor/exp-star.svg")}
+              src={experienceData.image}
               alt=""
-              width={80}
-              height={80}
-              className="hidden lg:block absolute right-[13%] top-[-30%] bg-[#ebe0d1] z-20"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               loading="eager"
             />
+          </div>
 
-            {/* Golden Border */}
-            <div
-              className="hidden lg:block absolute inset-0 border-[3px] border-[#C8A66B] z-10"
-              style={{
-                borderRadius: "50%",
-                transform: "rotate(-49deg)",
-                borderRightWidth: "0",
-              }}
-            />
-
-            <div
-              className="hidden lg:block absolute inset-0 overflow-hidden"
-              style={{
-                clipPath: "ellipse(46% 48% at 50% 50%)",
-                transform: "rotate(-40deg)",
-              }}
-            >
-              {/* Counter Rotate Image */}
-              <div
-                className="relative h-[800px] w-full hidden sm:block"
-                style={{
-                  transform: "rotate(40deg) scale(1.2)",
-                }}
-              >
-                <Image
-                  src={experienceData.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  loading="eager"
-                />
-              </div>
-            </div>
-
-            {/* Cards */}
-            <div className="grid justify-items-center grid-cols-1 gap-5 md:grid-cols-2 lg:block">
-              {experienceData.cards.map((card) => (
-                <ExperienceCard
-                  key={card.id}
-                  title={card.title}
-                  description={card.description}
-                  icon={card.icon}
-                  className={`relative lg:absolute ${cardPosition[card.id as keyof typeof cardPosition]}`}
-                />
-              ))}
-            </div>
+          <div className="flex w-full flex-col gap-4 lg:w-1/2">
+            {experienceData.cards.map((card) => (
+              <ExperienceCard
+                key={card.id}
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -113,9 +58,9 @@ export default function ExperienceSection() {
       <Image
         src={experienceData.bottomDecorationImage}
         alt=""
-        width={343.993}
-        height={371.024}
-        className="absolute right-0 bottom-0 w-[160px] md:w-[220px] lg:w-auto"
+        width={200}
+        height={216}
+        className="pointer-events-none absolute right-0 bottom-0 w-[110px] opacity-70 md:w-[160px] lg:w-[200px]"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         loading="eager"
       />

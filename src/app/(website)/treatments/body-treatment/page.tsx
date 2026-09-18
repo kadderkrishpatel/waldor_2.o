@@ -12,10 +12,27 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/treatments/body-treatment";
+import ServiceSchema from "@/src/components/seo/ServiceSchema";
+import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/body-treatment/SignatureTreatments/SignatureTreatments.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Body Contouring Treatments | Waldor Clinic",
+  description: treatmentData.description,
+};
 
 export default function BodyTreatmentPage() {
   return (
     <>
+      <ServiceSchema
+        name={treatmentData.highlight}
+        description={treatmentData.description}
+        offers={treatmentCards.flatMap((card) => card.rows).map((row) => ({
+          name: row.title,
+          price: row.price,
+          description: row.description,
+        }))}
+      />
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />

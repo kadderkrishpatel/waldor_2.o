@@ -5,11 +5,11 @@ export const transformationData: TransformationSectionProps = {
   eyebrow: "RESULTS",
   heading: {
     before: "Before",
-    highlight: "& after",
+    highlight: "& After",
     after: "",
   },
   description:
-    "real patient results, unretouched, shown with consent. Individual results vary.",
+    "Real patient results, unretouched, shown with consent. Individual results vary.",
   transformations: [
     {
       title: "HydraGlass™ Skin Transformation",

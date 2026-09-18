@@ -7,10 +7,11 @@ import {
 } from "next/font/google";
 import AppProviders from "@/src/providers/AppProviders";
 import { Toaster } from "sonner";
+import LocalBusinessSchema from "@/src/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title: "Waldor Clinic",
-  description: "Luxury Skin and Hair Clinic",
+  description: "Luxury Skin, Hair and Longevity Clinic",
 };
 
 const inter = Inter({
@@ -50,6 +51,8 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable} ${hanken.variable} ${fraunces.variable}`}
     >
       <body className="max-w-[1920px] mx-auto">
+        <LocalBusinessSchema />
+
         <Toaster
           position="top-center"
           richColors

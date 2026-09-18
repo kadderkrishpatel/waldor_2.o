@@ -16,7 +16,7 @@ export default function Heading({
   after,
   className,
   highlightClassName,
-  as: Component = "h1",
+  as: Component = "h2",
 }: HeadingProps) {
   return (
     <Component

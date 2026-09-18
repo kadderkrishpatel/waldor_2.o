@@ -8,7 +8,7 @@ export const signatureTreatmentFooterCTA = {
     "Your skin is an investment, not an expense. Discover a bespoke consultation where innovation, expertise, and personalisation shape every recommendation.",
   highlightcolor: "#c5a375",
   button: {
-    label: "Book Consultation Now",
+    label: "Schedule Your Consultation Now",
     href: "/contact",
   },
 };

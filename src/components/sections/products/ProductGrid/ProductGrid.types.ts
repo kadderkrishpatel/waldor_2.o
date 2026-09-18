@@ -12,4 +12,18 @@ export interface Product {
   category: ProductCategory;
   href: string;
   badge?: string;
+  /** e.g. "5ml · two-part system" — shown next to the price in the details modal. */
+  variantLabel?: string;
+  /** Product-specific description, one paragraph per entry. */
+  description?: string[];
+  /** Checklist shown under "Key Benefits". */
+  keyBenefits?: string[];
+  /** Short note shown near the bottom of the modal (e.g. usage/storage instructions). */
+  usageNote?: string;
+  /** Overrides the shared shipping copy, if this product ships differently. */
+  shippingText?: string;
+  /** Overrides the shared manufacturing copy, if this product is made differently. */
+  manufacturingText?: string;
+  /** Overrides the shared certification badges (Vegan, Cruelty-free, etc.). */
+  certifications?: string[];
 }

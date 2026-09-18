@@ -22,7 +22,7 @@ export const serviceHeroData: ServiceHeroData = {
     "Discover personalised skin journeys combining advanced Korean and Japanese innovations with clinical expertise for naturally radiant, lasting skin health.",
   imageAlt: "Waldor signature treatment",
   cta: {
-    label: "Book a Consultation",
+    label: "Book Your Consultation",
     href: "/contact",
   },
 };

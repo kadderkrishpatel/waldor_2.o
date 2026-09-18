@@ -17,7 +17,7 @@ export const socialProfile: SocialProfile = {
   avatar: `${asset("/assets/waldor/waldor-profile.jpg")}`,
   posts: "100",
   followers: "5K",
-  href: "#",
+  href: "https://www.instagram.com/waldorclinic",
 };
 
 export const socialPosts: SocialPost[] = [
@@ -26,41 +26,41 @@ export const socialPosts: SocialPost[] = [
     type: "image",
     image: `${asset("/assets/waldor/post-01.jpg")}`,
     alt: "Waldor treatment experience",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
   {
     id: "post-02",
     type: "image",
     image: `${asset("/assets/waldor/post-02.jpg")}`,
     alt: "Waldor facial treatment",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
   {
     id: "post-03",
     type: "video",
     image: `${asset("/assets/waldor/post-03.mp4")}`,
     alt: "Waldor skincare treatment",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
   {
     id: "post-04",
     type: "image",
     image: `${asset("/assets/waldor/post-04.jpg")}`,
     alt: "Waldor treatment",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
   {
     id: "post-05",
     type: "image",
     image: `${asset("/assets/waldor/post-05.jpg")}`,
     alt: "Waldor skincare experience",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
   {
     id: "post-06",
     type: "image",
     image: `${asset("/assets/waldor/post-06.jpg")}`,
     alt: "Waldor clinic experience",
-    href: "#",
+    href: "https://www.instagram.com/waldorclinic",
   },
 ];

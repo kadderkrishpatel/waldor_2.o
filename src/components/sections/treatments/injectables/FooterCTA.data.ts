@@ -1,14 +1,14 @@
 export const injectableTreatmentFooterCTA = {
   heading: {
-    before: "Not Sure What",
-    highlight: "Your Skin Needs?",
-  },
+    before: "Looking for Natural-Looking",
+    highlight: "Injectable Results?",
+  }, 
 
   description:
-    "Great skin isn't luck; it's a discipline. Discover the specialists who sculpt, refine and deliver the glowing transformations our clients rave about.",
+    "Thoughtful treatment begins with expert assessment. Discover a bespoke injectable plan designed to subtly enhance your features while preserving your natural facial character. ",
   highlightcolor: "#c5a375",
   button: {
-    label: "Book An Appointment",
+    label: "Schedule Your Consultation Now",
     href: "/contact",
   },
 };

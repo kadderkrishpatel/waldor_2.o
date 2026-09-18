@@ -28,7 +28,7 @@ export const faqData: FAQItem[] = [
     category: "treatments",
     question: "Are WALDOR Signature Treatments painful?",
     answer:
-      "Some treatments provide visible improvements within days, while others may take several weeks depending on your treatment plan.",
+      "Most WALDOR Signature Treatments are designed to be comfortable, with the sensation varying depending on the technologies used and your individual skin sensitivity. Before your treatment begins, your practitioner will explain what to expect and tailor your experience wherever possible, ensuring you feel informed, comfortable and supported throughout your visit.",
   },
   {
     id: 3,
@@ -36,20 +36,20 @@ export const faqData: FAQItem[] = [
     question:
       "Is there any downtime after treatment and when will I see results?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Downtime and results depend on the technologies selected for your personalised treatment journey. While many treatments offer little to no downtime with an immediate boost in radiance, others continue improving your skin over the following weeks as natural collagen production is stimulated. Your practitioner will always provide clear guidance on what to expect.",
   },
   {
     id: 4,
     category: "treatments",
     question: "Are these treatments suitable for sensitive skin?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes, many WALDOR Signature Treatments can be adapted for sensitive skin, provided they are clinically appropriate. Every journey begins with a detailed consultation and skin assessment, allowing our practitioners to carefully select technologies that respect your skin's condition while supporting safe, effective and naturally beautiful results.",
   },
   {
     id: 5,
     category: "treatments",
     question: "Can different technologies be combined during one appointment?",
     answer:
-      "Downtime varies by treatment. Many treatments allow you to return to your routine immediately.",
+      "Yes. One of the defining features of WALDOR Signature Treatments is the thoughtful integration of complementary technologies. Rather than treating concerns in isolation, we create a personalised treatment journey that addresses your skin as a whole, ensuring every technology is selected with intention and clinical expertise.",
   },
 ];

@@ -34,6 +34,7 @@ export default function HeroSection() {
             </Eyebrow>
 
             <Heading
+              as="h1"
               before={heroData.heading.before}
               highlight={heroData.heading.highlight}
               after={heroData.heading.after}

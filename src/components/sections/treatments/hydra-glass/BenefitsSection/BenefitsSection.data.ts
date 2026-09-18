@@ -28,7 +28,7 @@ export const benefits: BenefitItem[] = [
     number: "03",
     title: "Smoother Skin Texture",
     description:
-      "By removing accumulated dead skin cells, HydraGlass creates a smoother surface, helping uneven texture and dry, flaky areas appear less pronounced.",
+      "By removing accumulated dead skin cells, HydraGlass™ creates a smoother surface, helping uneven texture and dry, flaky areas appear less pronounced.",
   },
   {
     id: "naturally-luminous-skin",
@@ -40,7 +40,7 @@ export const benefits: BenefitItem[] = [
   {
     id: "smooth-makeup-application",
     number: "05",
-    title: "Smooth Makeup Application",
+    title: " Smoother Makeup Application",
     description:
       "A smoother, well-hydrated surface provides a better base for makeup, helping foundation apply more evenly and reducing emphasis on dry patches.",
   },

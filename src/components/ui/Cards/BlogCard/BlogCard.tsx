@@ -9,6 +9,7 @@ export default function BlogCard({
   image,
   category,
   title,
+  subtitle,
   readTime,
   className,
 }: BlogCardProps) {
@@ -20,7 +21,7 @@ export default function BlogCard({
     >
       <Link href={`/blog/${slug}`}>
         {/* Image */}
-        <div className="relative mb-6 h-[530px] overflow-hidden rounded-[28px]">
+        <div className="relative mb-6 aspect-square w-full overflow-hidden rounded-[28px]">
           <Image
             src={image}
             alt={title}
@@ -35,7 +36,15 @@ export default function BlogCard({
         <div className="flex flex-col gap-[14px]">
           <Eyebrow variant="secondary">{category}</Eyebrow>
 
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="text-[20px] leading-6.5">
+            {title}
+            {subtitle && (
+              <>
+                {" "}
+                <span className="italic text-[#C5A375]">{subtitle}</span>
+              </>
+            )}
+          </CardTitle>
 
           <p
             data-reveal

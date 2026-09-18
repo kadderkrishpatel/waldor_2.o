@@ -41,6 +41,8 @@ export default function SocialPost({ post }: Props) {
   return (
     <Link
       href={post.href ?? "#"}
+      target="_blank"
+      rel="noopener noreferrer"
       className="
         group
         relative

@@ -40,10 +40,8 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "exosomes-for-hair-item",
-        title: "Microneedling X Hair Growth Exosome",
+        title: "",
         price: "£495",
-        description:
-          "Our Exosome Hair Regeneration treatment delivers billions of stem-cell–derived exosomes to awaken dormant follicles, reduce inflammation, and promote thicker, healthier hair. The exosome serum is microneedled into the scalp to enhance absorption and accelerate visible results.",
       },
     ],
   },

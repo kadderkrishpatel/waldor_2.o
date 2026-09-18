@@ -15,11 +15,11 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Skin",
-          href: "#",
+          href: "/treatments/hydra-glass",
         },
         {
           label: "Face",
-          href: "#",
+          href: "/treatments/waldor-signature",
         },
         {
           label: "Body",
@@ -84,8 +84,8 @@ export const footerData: FooterDataProps = {
           href: "/doctors",
         },
         {
-          label: "Blogs",
-          href: "/blogs",
+          label: "Blog",
+          href: "/blog",
         },
         {
           label: "Contact Us",
@@ -96,8 +96,12 @@ export const footerData: FooterDataProps = {
           href: "/faq",
         },
         {
+          label: "Careers",
+          href: "/careers",
+        },
+        {
           label: "Book a Consultation",
-          href: "#",
+          href: "/contact",
         },
       ],
     },
@@ -112,7 +116,7 @@ export const footerData: FooterDataProps = {
     {
       name: "Instagram",
       icon: asset("/assets/waldor/insta-icon.png"),
-      href: "#",
+      href: "https://www.instagram.com/waldorclinic",
     },
     {
       name: "Facebook",

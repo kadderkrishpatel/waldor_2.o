@@ -3,6 +3,7 @@ export interface BlogCardProps {
   image: string;
   category: string;
   title: string;
+  subtitle?: string;
   readTime: string;
   className?: string;
 }

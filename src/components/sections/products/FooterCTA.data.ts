@@ -1,11 +1,11 @@
 export const productsFooterCTA = {
   heading: {
-    before: "What Could Healthier Hair",
-    highlight: "Look Like for You?",
+    before: "Your Skin Tells a Story.",
+    highlight: "Treat It with Kindness.",
   },
   highlightcolor: "#c5a375",
   description:
-    "Begin with a comprehensive hair assessment and discover a personalised restoration plan designed to strengthen hair, support scalp health and deliver lasting improvements.",
+    " Every complexion has its own needs and history. Discover WALDOR’s considered skincare collection, created to meet skin’s changing needs with care, precision and understanding. ",
   button: {
     label: "Schedule Your Consultation Now",
     href: "/contact",

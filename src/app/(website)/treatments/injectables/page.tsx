@@ -12,10 +12,27 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/treatments/injectables";
+import ServiceSchema from "@/src/components/seo/ServiceSchema";
+import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/injectables/SignatureTreatments/SignatureTreatments.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Injectable Treatments | Waldor Clinic",
+  description: treatmentData.description,
+};
 
 export default function InjectablesPage() {
   return (
     <>
+      <ServiceSchema
+        name={treatmentData.highlight}
+        description={treatmentData.description}
+        offers={treatmentCards.flatMap((card) => card.rows).map((row) => ({
+          name: row.title,
+          price: row.price,
+          description: row.description,
+        }))}
+      />
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />

@@ -4,8 +4,8 @@ import { HowItWorksSectionProps } from "./HowItWorksSection.types";
 export const howItWorksData: HowItWorksSectionProps = {
   eyebrow: "The Methodology",
   heading: {
-    before: "Four Steps to",
-    highlight: "Your Metamorphosis",
+    before: " Four Steps to Your",
+    highlight: "Metamorphosis", 
   },
   steps: [
     {

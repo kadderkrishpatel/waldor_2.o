@@ -28,8 +28,8 @@ export const headerData: HeaderData = {
     },
     {
       id: 3,
-      label: "Success Stories",
-      href: "#",
+      label: "About Us",
+      href: "/about",
     },
     {
       id: 4,
@@ -69,7 +69,7 @@ export const headerData: HeaderData = {
         },
         {
           id: 5,
-          label: "HydraGlass",
+          label: "HydraGlass™",
           description: "Deep hydration facial for glass-like skin",
           href: "/treatments/hydra-glass",
         },
@@ -106,12 +106,18 @@ export const headerData: HeaderData = {
         },
         {
           id: 5,
+          label: "Dull Skin",
+          description: "Brighten and revive tired-looking skin",
+          href: "/concerns/dull-skin",
+        },
+        {
+          id: 6,
           label: "Sagging & Loose Skin",
           description: "Firm and lift for a more youthful contour",
           href: "/concerns/loose-skin",
         },
         {
-          id: 6,
+          id: 7,
           label: "Premature Aging",
           description: "Turn back the clock on early signs of aging",
           href: "/concerns/premature-aging",

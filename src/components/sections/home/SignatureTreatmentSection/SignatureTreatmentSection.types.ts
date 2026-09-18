@@ -4,6 +4,7 @@ export interface SignatureTreatment {
   description: string;
   image: string;
   slug: string;
+  href: string;
 }
 
 export interface HeroHeading {

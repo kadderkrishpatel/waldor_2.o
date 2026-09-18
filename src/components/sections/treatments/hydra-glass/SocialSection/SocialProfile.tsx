@@ -60,6 +60,8 @@ export default function SocialProfile({ profile }: Props) {
       {/* Follow */}
       <Link
         href={profile.href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex shrink-0 items-center gap-3 rounded-full bg-[#C5A375] px-[26px] py-[16px] text-[14px] font-[700] uppercase tracking-[0.12em] text-[#1F2422] transition-opacity hover:opacity-80"
       >
         <svg

@@ -15,7 +15,7 @@ export default function TeamCard({ member }: Props) {
 
   return (
     <article data-reveal data-direction="left" className="flex flex-col">
-      <div className="relative h-[530px] w-full overflow-hidden rounded-[32px] bg-[#515D59] lg:h-[750px]">
+      <div className="relative aspect-[411/530] w-full overflow-hidden rounded-[32px] bg-[#515D59]">
         <Image
           src={member.image}
           alt={member.name}

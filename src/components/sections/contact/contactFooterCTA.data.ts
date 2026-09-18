@@ -5,10 +5,10 @@ export const contactFooterCTA = {
   },
 
   description:
-    "45-minute consultation · written plan · fixed pricing · booked via Zenoti",
+    "45-minute consultation · written plan · fixed pricing ",
 
   button: {
-    label: "Book Consultation",
+    label: "Book a Consultation",
     href: "/contact",
   },
 };

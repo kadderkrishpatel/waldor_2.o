@@ -56,7 +56,7 @@ export default function SuccessStoriesSection() {
           modules={[Pagination]}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            //setReady(true);
+            // setReady(true);
           }}
           navigation
           pagination={{

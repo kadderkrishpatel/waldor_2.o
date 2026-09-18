@@ -129,9 +129,14 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                   onMouseEnter={() => openMegaMenu(item.id)}
                   onMouseLeave={scheduleCloseMegaMenu}
                 >
-                  {/* Navigation Item */}
-                  <Link
-                    href={item.href}
+                  {/* Navigation Item — no standalone destination, opens the mega menu only */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveMenu((current) =>
+                        current === item.id ? null : item.id,
+                      )
+                    }
                     className={cn(
                       "menu-nav relative z-20",
                       "font-hanken",
@@ -163,7 +168,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                         "group-hover:scale-x-100",
                       )}
                     />
-                  </Link>
+                  </button>
 
                   {/* Desktop Mega Menu */}
                   {activeMenu === item.id && megaMenu && (
@@ -176,7 +181,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                         "right-0",
                         "top-full",
                         "z-50",
-                        "pt-10",
+                        "pt-3",
                       )}
                     >
                       {/* Mega Menu Panel */}
@@ -188,18 +193,19 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                           "bg-[#ECE0D1]",
                           "shadow-[0_20px_50px_rgba(0,0,0,0.18)]",
                         )}
-                        style={{ padding: "20px" }}
+                        style={{ padding: "12px" }}
                       >
                         {/* Mega Menu Header */}
-                        <div className="px-6 pb-4 pt-6">
+                        <div className="px-6 pb-2 pt-3">
                           <span
                             className={cn(
+                              "text-stone-500",
+                              "text-xs",
+                              "font-semibold",
                               "font-hanken",
-                              "text-[12px]",
-                              "font-medium",
                               "uppercase",
-                              "tracking-[0.18em]",
-                              "text-[#836D4E]",
+                              "leading-3",
+                              "tracking-widest",
                             )}
                           >
                             {megaMenu.label}
@@ -207,35 +213,34 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                         </div>
 
                         {/* Mega Menu Items */}
-                        <div className="grid grid-cols-2 gap-3 px-4 pb-4">
+                        <div className="grid grid-cols-2 gap-1 px-2 pb-2">
                           {megaMenu.items.map((subItem) => (
                             <Link
                               key={subItem.id}
                               href={subItem.href}
+                              onClick={() => setActiveMenu(null)}
                               className={cn(
                                 "sub-menu-items group",
                                 "flex items-center",
                                 "gap-2",
                                 "self-stretch",
                                 "rounded-[10px]",
-                                "bg-[#E2D1BA]",
-                                "px-3 py-2",
+                                "bg-transparent",
+                                "px-3 py-1.5",
                                 "transition-colors duration-200",
-                                "hover:bg-[#D8C5A9]",
+                                "hover:bg-[#E2D1BA]",
                               )}
                             >
                               <div className="min-w-0 flex-1">
                                 {/* Subitem Label */}
                                 <p
                                   className={cn(
-                                    "font-fraunces",
-                                    "text-[22px]",
+                                    "text-zinc-600",
+                                    "text-xl",
                                     "font-normal",
-                                    "not-italic",
-                                    "leading-[135%]",
-                                    "text-[#515D59]",
+                                    "font-fraunces",
+                                    "leading-7",
                                   )}
-                                  style={{ color: "#515D59" }}
                                 >
                                   {subItem.label}
                                 </p>
@@ -244,12 +249,11 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                                 <p
                                   className={cn(
                                     "mt-1",
-                                    "font-hanken",
-                                    "text-[15px]",
+                                    "text-gold-muted",
+                                    "text-base",
                                     "font-normal",
-                                    "not-italic",
-                                    "leading-[160%]",
-                                    "text-[#836D4E]",
+                                    "font-hanken",
+                                    "leading-6",
                                   )}
                                 >
                                   {subItem.description}
@@ -259,14 +263,15 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                               {/* Arrow */}
                               <span
                                 className={cn(
-                                  "hidden flex h-8 w-8 shrink-0",
+                                  "flex h-8 w-8 shrink-0",
                                   "items-center justify-center",
                                   "rounded-full",
                                   "border border-[#836D4E]/30",
                                   "text-[#fff]",
                                   "opacity-0",
+                                  "translate-x-2",
                                   "transition-all duration-200",
-                                  "group-hover:-translate-x-2",
+                                  "group-hover:translate-x-0",
                                   "group-hover:opacity-100",
                                 )}
                               >

@@ -1,11 +1,11 @@
 import type { TreatmentCard, InfoCard } from "./types";
 
 export const treatmentData = {
-  eyebrow: "CLINICAL PLANS",
+  eyebrow: "Curated Expertise",
   before: "Explore Our",
   highlight: "Injectable Treatments",
   description:
-    "Every injectable treatment at WALDOR begins with a medical consultation. Prescription-only treatments are discussed and prescribed in clinic only, never sold in advance.",
+    "All injectable treatments are performed exclusively by qualified doctors.",
   cta: {
     href: "/contact",
     label: "Book an appointment",
@@ -18,6 +18,7 @@ export const treatmentCards: TreatmentCard[] = [
     title: "Dermal / Facial Fillers",
     description:
       "Enhance facial contours, restore lost volume, and smooth wrinkles with precision-placed hyaluronic acid-based fillers for a youthful and refreshed appearance.",
+    fromPrice: "From £300",
 
     rows: [
       {
@@ -29,7 +30,7 @@ export const treatmentCards: TreatmentCard[] = [
       },
       {
         id: "chin",
-        title: "chin",
+        title: "Chin",
         price: "£350",
         description:
           "Our Chin Filler treatment refines and balances facial proportions by enhancing the chin’s projection and shape. Ideal for improving profile harmony and defining the lower face.",
@@ -84,6 +85,13 @@ export const treatmentCards: TreatmentCard[] = [
           "Our Non-Surgical BBL uses high-density dermal filler to shape, lift, and enhance the buttocks without surgery. Adds volume, projection, and contour for a smoother, more sculpted silhouette. ",
       },
       {
+        id: "non-surgical-bbl-2",
+        title: "Non-Surgical BBL",
+        price: "£2,000",
+        description:
+          "Enhance and sculpt the buttocks with hyaluronic acid fillers for a fuller, lifted, and more contoured appearance without surgery.",
+      },
+      {
         id: "nonsurgical-rhinoplasty",
         title: "Nonsurgical Rhinoplasty",
         price: "£550",
@@ -112,6 +120,7 @@ export const treatmentCards: TreatmentCard[] = [
     title: "Anti-Wrinkle Injections",
     description:
       "Relax fine lines and dynamic wrinkles with expertly administered botulinum toxin, providing a smoother and more rejuvenated look.",
+    fromPrice: "From £195",
     rows: [
       {
         id: "anti-wrinkle-1-areas",
@@ -144,7 +153,7 @@ export const treatmentCards: TreatmentCard[] = [
       {
         id: "dimpled-chin",
         title: "Dimpled Chin",
-        price: "£195",
+        price: "£200",
         description:
           "Targeted anti-wrinkle injections to relax the chin muscle and smooth dimpling or ‘orange peel’ texture for a softer, more refined lower face.",
       },
@@ -211,6 +220,7 @@ export const treatmentCards: TreatmentCard[] = [
         description:
           "An advanced anti-wrinkle technique targeting the lower face and neck to lift, tighten, and redefine the jawline. Smooths platysmal bands and restores a graceful, youthful profile.",
       },
+      
     ],
   },
 
@@ -219,6 +229,7 @@ export const treatmentCards: TreatmentCard[] = [
     title: "Mole & Skin Tag Removal",
     description:
       "Safe and effective injectable solutions to remove unwanted moles and skin tags with minimal discomfort and downtime.",
+    fromPrice: "From £100",
     rows: [
       {
         id: "mole-removal",
@@ -250,6 +261,101 @@ export const treatmentCards: TreatmentCard[] = [
         description:
           "Our Profhilo Skin Booster is an injectable treatment that deeply hydrates and remodels the skin from within. Using high-concentration hyaluronic acid, it stimulates collagen and elastin to improve firmness, elasticity, and overall luminosity. Ideal for dull, tired, or sagging skin on the face, neck, or décolletage. Results develop gradually, leaving the skin plumper, smoother, and naturally refreshed.",
       },
+      
     ],
+  },
+
+  {
+    id: "salmon-sperm-polynucleotide",
+    title: "Salmon Sperm Polynucleotide",
+    description:
+      "A regenerative treatment rich in DNA fragments to repair and rejuvenate the skin, improving hydration and elasticity.",
+    rows: [
+      {
+        id: "salmon-sperm-polynucleotide-treatment",
+        title: "",
+        price: "From £500",
+      },
+    ],
+  },
+
+  {
+    id: "facial-balancing",
+    title: "Facial Balancing",
+    description:
+      "Achieve harmonious facial proportions with a customised combination of injectables designed to enhance symmetry and natural beauty.",
+    rows: [],
+  },
+
+  {
+    id: "exosomes",
+    title: "Exosomes",
+    description:
+      "Advanced regenerative therapy that enhances cell communication to promote skin repair, collagen production, and a youthful complexion.",
+    rows: [
+      {
+        id: "exosomes-treatment",
+        title: "",
+        price: "£395 | £495 | £595",
+      },
+    ],
+  },
+
+  {
+    id: "hyaluronic-acid",
+    title: "Hyaluronic Acid",
+    description:
+      "Provides deep skin hydration and nourishment, improving texture, plumpness, and overall skin health.",
+    rows: [
+      {
+        id: "hyaluronic-acid-treatment",
+        title: "",
+        price: "£280",
+      },
+    ],
+  },
+
+  {
+    id: "fat-dissolving-injectables",
+    title: "Fat Dissolving Injectables",
+    description:
+      "Non-surgical solution to target stubborn fat pockets in areas such as the chin, jawline, and body, creating a more contoured appearance.",
+    rows: [],
+  },
+
+  {
+    id: "prp",
+    title: "PRP (Platelet-Rich Plasma)",
+    description:
+      "Harness your body's natural growth factors to stimulate collagen production, improve skin texture, and promote hair growth.",
+    rows: [
+      {
+        id: "prp-treatment",
+        title: "",
+        price: "From £375",
+      },
+    ],
+  },
+
+  {
+    id: "nefertiti-neck-lift-standalone",
+    title: "Nefertiti Neck Lift",
+    description:
+      "Tightens and defines the jawline & neck by relaxing key muscles for a sleeker profile.",
+    rows: [
+      {
+        id: "nefertiti-neck-lift-standalone-treatment",
+        title: "",
+        price: "£500",
+      },
+    ],
+  },
+
+  {
+    id: "non-surgical-bbl-standalone",
+    title: "Non-Surgical BBL",
+    description:
+      "Enhance and sculpt the buttocks with hyaluronic acid fillers for a fuller, lifted, and more contoured appearance without surgery.",
+    rows: [],
   },
 ];

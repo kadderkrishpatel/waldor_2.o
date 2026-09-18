@@ -10,10 +10,20 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/dull-skin";
+import FAQSchema from "@/src/components/seo/FAQSchema";
+import { faqData } from "@/src/components/sections/concerns/dull-skin/FaqSection/FaqSection.data";
+import { serviceHeroData } from "@/src/components/sections/concerns/dull-skin/ServiceHero/ServiceHero.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dull Skin Treatment | Waldor Clinic",
+  description: serviceHeroData.description,
+};
 
 export default function WrinklesPage() {
   return (
     <>
+      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />

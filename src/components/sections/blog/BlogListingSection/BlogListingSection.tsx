@@ -108,7 +108,11 @@ export default function BlogListingSection() {
         ) : blogs.length > 0 ? (
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog) => (
-              <BlogCard key={blog.id} {...blog} />
+              <BlogCard
+                key={blog.id}
+                {...blog}
+                category={category !== "All" ? category : blog.category}
+              />
             ))}
           </div>
         ) : (

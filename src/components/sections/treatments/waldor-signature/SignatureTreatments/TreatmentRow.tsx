@@ -11,6 +11,8 @@ interface Props {
 }
 
 export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
+  const hasDescription = Boolean(row.description);
+
   return (
     <motion.div
       layout
@@ -22,9 +24,14 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
       }}
       className="overflow-hidden border-t border-[#3D4844]"
     >
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between px-8 py-6 text-left"
+      <div
+        onClick={hasDescription ? onToggle : undefined}
+        role={hasDescription ? "button" : undefined}
+        tabIndex={hasDescription ? 0 : undefined}
+        className={clsx(
+          "flex w-full items-center justify-between px-8 py-6 text-left",
+          hasDescription && "cursor-pointer",
+        )}
       >
         <h4
           className={clsx(
@@ -43,16 +50,17 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
         >
           <p>{row.price}</p>
 
-          {isOpen ? (
-            <ChevronUp size={24} className="text-[#C5A375]" />
-          ) : (
-            <ChevronDown size={24} className="text-[#ECE0D1]" />
-          )}
+          {hasDescription &&
+            (isOpen ? (
+              <ChevronUp size={24} className="text-[#C5A375]" />
+            ) : (
+              <ChevronDown size={24} className="text-[#ECE0D1]" />
+            ))}
         </div>
-      </button>
+      </div>
 
       <AnimatePresence initial={false}>
-        {isOpen && (
+        {hasDescription && isOpen && (
           <motion.div
             initial={{
               height: 0,

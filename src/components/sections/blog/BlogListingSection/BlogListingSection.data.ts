@@ -8,6 +8,7 @@ export const blogCategories = [
   "Pigmentation",
   "Anti-Aging",
   "Hydration",
+  "Media",
 ];
 
 export const blogs: Blog[] = [
@@ -82,7 +83,7 @@ export const blogs: Blog[] = [
     bannerImage: asset("/assets/waldor/blog-2.jpg"),
 
     excerpt:
-      "Everything you should know before your first HydraGlass treatment.",
+      "Everything you should know before your first HydraGlass™ treatment.",
 
     readTime: "5 MIN READ",
 
@@ -94,7 +95,7 @@ export const blogs: Blog[] = [
 
     content: `
       <p>
-        HydraGlass is one of the most requested skin treatments today because it delivers immediate hydration and luminosity.
+        HydraGlass™ is one of the most requested skin treatments today because it delivers immediate hydration and luminosity.
       </p>
 
       <h2>How does it work?</h2>

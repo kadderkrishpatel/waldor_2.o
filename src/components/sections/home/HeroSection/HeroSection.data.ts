@@ -5,9 +5,10 @@ export const heroData: HeroSectionProps = {
   eyebrow: "London Hair and Skin Clinic",
 
   heading: {
-    before: "Re-Code Your",
-    highlight: "Skin Chemistry",
-    after: "at Waldor",
+    before: "Korean Glass Skin",
+    highlight: "with Longevity",
+    after: "Clinic Expertise ", 
+
   },
 
   description:
@@ -15,15 +16,11 @@ export const heroData: HeroSectionProps = {
 
   buttons: [
     {
-      label: "Book a Consultation",
+      label: "Start the Conversation",
       href: "/contact",
       variant: "primary",
     },
-    {
-      label: "Explore Plans",
-      href: "#",
-      variant: "secondary",
-    },
+    
   ],
 
   backgroundImage: asset("/assets/waldor/hero-bg.png"),

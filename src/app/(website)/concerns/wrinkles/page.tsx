@@ -10,10 +10,20 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/wrinkles";
+import FAQSchema from "@/src/components/seo/FAQSchema";
+import { faqData } from "@/src/components/sections/concerns/wrinkles/FaqSection/FaqSection.data";
+import { serviceHeroData } from "@/src/components/sections/concerns/wrinkles/ServiceHero/ServiceHero.data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fine Lines & Wrinkles Treatment | Waldor Clinic",
+  description: serviceHeroData.description,
+};
 
 export default function WrinklesPage() {
   return (
     <>
+      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />

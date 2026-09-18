@@ -121,6 +121,7 @@ export default function OfferCard({
             className="
               mt-4
               max-w-[570px]
+              whitespace-pre-line
 
               font-['Hanken_Grotesk']
               font-normal
@@ -169,35 +170,65 @@ export default function OfferCard({
           "
         >
           {/* Discount */}
-          <div
-            data-reveal
-            data-direction="right"
-            className="
-              font-['Fraunces']
-              font-light
-              leading-none
-              tracking-[-0.03em]
-              text-[#C5A375]
+          {discount && (
+            <div
+              data-reveal
+              data-direction="right"
+              className="
+                font-['Fraunces']
+                font-light
+                leading-none
+                tracking-[-0.03em]
+                text-[#C5A375]
 
-              text-[48px]
+                text-[48px]
 
-              sm:text-[54px]
+                sm:text-[54px]
 
-              md:text-[60px]
+                md:text-[60px]
 
-              lg:text-[64px]
-              lg:leading-[70.4px]
-            "
-          >
-            {discount}
-          </div>
+                lg:text-[64px]
+                lg:leading-[70.4px]
+              "
+            >
+              {discount}
+            </div>
+          )}
 
           {/* Discount title */}
+          {discountTitle && (
+            <p
+              data-reveal
+              data-direction="right"
+              className="
+                mt-2
+
+                font-['Fraunces']
+                font-normal
+                italic
+                text-[#ECE0D1]
+
+                text-[20px]
+                leading-[26px]
+
+                sm:text-[22px]
+                sm:leading-[29px]
+
+                lg:mt-3
+                lg:text-2xl
+                lg:leading-[31.2px]
+              "
+            >
+              {discountTitle}
+            </p>
+          )}
+
+          {/* Offer description */}
           <p
             data-reveal
             data-direction="right"
             className="
-              mt-2
+              max-w-[260px]
 
               font-['Fraunces']
               font-normal
@@ -205,37 +236,14 @@ export default function OfferCard({
               text-[#ECE0D1]
 
               text-[20px]
-              leading-[26px]
+              leading-[27px]
 
               sm:text-[22px]
               sm:leading-[29px]
 
-              lg:mt-3
-              lg:text-2xl
-              lg:leading-[31.2px]
-            "
-          >
-            {discountTitle}
-          </p>
-
-          {/* Offer description */}
-          <p
-            data-reveal
-            data-direction="right"
-            className="
-              mt-3
-              max-w-[260px]
-
-              font-['Hanken_Grotesk']
-              text-[13px]
-              font-normal
-              leading-[20.8px]
-              text-[#9EA3A1]
-
-              sm:text-sm
-              sm:leading-[22.4px]
-
               lg:max-w-full
+              lg:text-2xl
+              lg:leading-[31px]
             "
           >
             {offerDescription}

@@ -5,7 +5,7 @@ export const teamData = {
   before: "The people",
   highlight: "who listen first",
   description:
-    "Every WALDOR practitioner is trained across our full range of Korean and Japanese technologies, and our signature protocols, HydraGlass  ™ included, are performed by all of them. Your treatment is never limited by who you see. What you will notice is what each of them is drawn to.",
+    "Every WALDOR practitioner is trained across our full range of Korean and Japanese technologies, and our signature protocols, HydraGlass™ included, are performed by all of them. Your treatment is never limited by who you see. What you will notice is what each of them is drawn to.",
   image: asset("/assets/waldor/about-hero.jpg"), // Replace with your image
 };
 
