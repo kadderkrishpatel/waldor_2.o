@@ -126,7 +126,7 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "ems-rf-item",
-        title: "",
+        title: "EMS + RF",
         price: "£295",
         description:
           "Our EMS with Radio Frequency Body Treatment combines muscle stimulation and skin tightening in one powerful session. The EMS technology contracts and sculpts targeted muscles, while radio frequency gently heats the skin to boost collagen, tighten, and smooth. This dual-action treatment helps tone, lift, and contour the body while improving firmness and overall skin texture. Ideal for the abdomen, thighs, buttocks, or arms.",

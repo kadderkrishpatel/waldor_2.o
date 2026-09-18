@@ -4,8 +4,6 @@ export const treatmentData = {
   eyebrow: "CURATED EXPERTISE",
   before: "Explore Our",
   highlight: "HydraGlass™ Facial Treatments",
-  description:
-    "Explore WALDOR's HydraGlass™ facial treatments — tailored, non-invasive protocols combining exfoliation and deep hydration to reveal smoother, radiant, glass-skin.",
   cta: {
     href: "/contact",
     label: "Book an appointment",
