@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
+import { Eyebrow, Heading } from "@/src/components/ui/Typography";
 import { treatmentRows, treatmentData } from "./SignatureTreatments.data";
 import { asset } from "@/src/lib/assets";
 import Button from "@/src/components/ui/Button";
@@ -35,10 +35,6 @@ export default function SignatureTreatments() {
                 before={treatmentData.before}
                 highlight={treatmentData.highlight}
               />
-
-              <Description className="mt-6 max-w-5xl text-[#D9D2C8]">
-                {treatmentData.description}
-              </Description>
             </div>
 
             {/* Cards */}
