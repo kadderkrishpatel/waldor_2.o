@@ -2,9 +2,9 @@ import { asset } from "@/src/lib/assets";
 import { AboutSectionProps } from "./AboutSection.types";
 
 export const aboutData: AboutSectionProps = {
-  eyebrow: "Who Are We?",
+  eyebrow: "Who We Are?",
   title: "",
   description:
-    "At WALDOR Clinic, we elevate aesthetics to an art form where advanced technology, bespoke care and refined luxury converge to craft transformative experiences that transcend beauty and embody a way of life.",
+    "At WALDOR Clinic, science, artistry and bespoke care converge to redefine beauty.",
   image: asset("/assets/waldor/about-decorative.png"),
 };

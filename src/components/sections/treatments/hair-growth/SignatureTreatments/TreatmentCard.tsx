@@ -25,10 +25,11 @@ export default function TreatmentCard({ card }: Props) {
         card.fullWidth && "lg:col-span-2 h-auto",
       )}
     >
-      <div className="p-8" style={{ minHeight: "225px" }}>
-        <h3 className="text-[32px] text-[#ECE0D1]">{card.title}</h3>
-
-        <p className="mt-4 text-[#9EA3A1]">{card.description}</p>
+      <div className="p-8 flex flex-col justify-between min-h-56">
+        <div>
+          <h3 className="text-[32px] text-[#ECE0D1] leading-tight">{card.title}</h3>
+          <p className="mt-4 text-[#9EA3A1] text-[15px]">{card.description}</p>
+        </div>
       </div>
 
       <div className="scrollbar-hide max-h-[420px] overflow-y-auto">

@@ -2,17 +2,17 @@ import { asset } from "@/src/lib/assets";
 import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
-  eyebrow: "London Hair and Skin Clinic",
+  eyebrow: "LONDON SKIN, HAIR AND LONGEVITY CLINIC",
 
   heading: {
-    before: "Korean Glass Skin",
-    highlight: "with Longevity",
-    after: "Clinic Expertise ", 
+    before: "Korean Glass Skin,",
+    highlight: "Engineered in London",
+    // after: "Clinic Expertise ", 
 
   },
 
   description:
-    "No two skins are the same hence, your journey shouldn’t be either. Powered by AI and advanced South Korean and Japanese innovations, we deliver a luxury experience that’s redefining modern London beauty aesthetics.",
+    "Advanced Korean and Japanese technology, AI skin analysis, and a protocol built for no one but you.",
 
   buttons: [
     {

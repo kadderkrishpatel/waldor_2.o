@@ -228,22 +228,21 @@ export default function OfferCard({
             data-reveal
             data-direction="right"
             className="
-              max-w-[260px]
+              mt-4
 
               font-['Fraunces']
               font-normal
               italic
               text-[#ECE0D1]
 
-              text-[20px]
-              leading-[27px]
+              text-[18px]
+              leading-[24px]
 
-              sm:text-[22px]
-              sm:leading-[29px]
+              sm:text-[19px]
+              sm:leading-[25px]
 
-              lg:max-w-full
-              lg:text-2xl
-              lg:leading-[31px]
+              lg:text-xl
+              lg:leading-[27px]
             "
           >
             {offerDescription}
@@ -254,15 +253,15 @@ export default function OfferCard({
             <Link
               href={buttonHref}
               className="
-              mt-5
+              mt-6
               inline-flex
-              min-h-[44px]
-              w-fit
+              min-h-[48px]
               items-center
               justify-center
               rounded-full
               bg-[#C5A375]
-              px-6
+              px-5
+              py-3
 
               font-['Hanken_Grotesk']
               text-[11px]
@@ -277,9 +276,12 @@ export default function OfferCard({
 
               hover:bg-[#D5B98D]
 
-              sm:px-7
+              sm:px-6
               sm:text-[12px]
               sm:leading-[17px]
+
+              md:px-7
+              md:py-3
 
               lg:text-[13px]
               lg:leading-[17.6px]

@@ -1,7 +1,7 @@
 import { asset } from "@/src/lib/assets";
 
 export const heroData = {
-  tagline: "London Hair and Skin Clinic",
+  tagline: "LONDON SKIN, HAIR AND LONGEVITY CLINIC",
   title: "Re-Code Your Skin Chemistry at Waldor",
   description:
     "No two skins are the same hence, your journey shouldn’t be either.",

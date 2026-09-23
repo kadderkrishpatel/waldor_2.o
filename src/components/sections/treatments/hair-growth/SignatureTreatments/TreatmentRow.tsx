@@ -24,12 +24,12 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
     >
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-end px-8 py-6 text-left"
+        className="flex w-full items-center justify-between px-8 py-6 text-left"
       >
         {row.title && (
           <h4
             className={clsx(
-              "mr-auto text-[20px] font-medium",
+              "text-[20px] font-medium flex-1",
               isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
             )}
           >
@@ -39,7 +39,7 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
 
         <div
           className={clsx(
-            "flex items-center font-fraunces gap-2 text-[18px]",
+            "flex items-center font-fraunces gap-2 text-[18px] flex-shrink-0 ml-4",
             isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
           )}
         >

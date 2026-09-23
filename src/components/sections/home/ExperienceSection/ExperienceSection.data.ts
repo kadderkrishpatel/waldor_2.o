@@ -11,7 +11,7 @@ export const experienceData = {
   },
 
   description:
-    "We didn't enter the industry to follow the rules; we came to redefine them. Here is how we elevate your experience beyond the ordinary.",
+    "We didn't enter the industry to follow the rules; we came to personalize them. Here is how we elevate your experience beyond the ordinary.",
 
   video: asset("/assets/waldor/waldor_hero_vid.mp4"),
 

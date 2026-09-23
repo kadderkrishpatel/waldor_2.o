@@ -13,7 +13,7 @@ export const treatmentData: TreatmentSectionProps = {
      
   },
   description:
-    "Every cellular concern requires a targeted intervention. Select your focus area below to unlock a bespoke, result-driven solution designed exclusively for you. ",
+    "Every cellular concern requires a targeted treatment. Select your focus area below to unlock a costume, result-driven solution designed exclusively for you. ",
   treatments: [
     {
       title: "Skin",

@@ -10,6 +10,8 @@ export const treatmentData = {
   },
 };
 
+
+
 export const treatmentRows: TreatmentRow[] = [
   {
     id: "microneedling-peptide",

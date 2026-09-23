@@ -5,7 +5,7 @@ export const doctorSectionData: DoctorSectionProps = {
   eyebrow: "Your Trusted Practitioner",
   heading: {
     before: "Meet the Aestheticians Behind",
-    highlight: "Your Best Skin Days",
+    highlight: "Your Glass Skin",
   },
   description:
     "Great skin isn’t luck; it’s a discipline. Discover the specialists who sculpt, refine and deliver the glowing transformations our clients rave about.",
