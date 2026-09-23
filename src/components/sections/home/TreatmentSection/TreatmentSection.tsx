@@ -36,10 +36,10 @@ export default function TreatmentSection() {
         alt=""
         width={131}
         height={174}
-        className="absolute top-0 left-1/2 -translate-x-1/2 lg:left-[12%] lg:translate-x-0 pointer-events-none z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 lg:left-[12%] lg:translate-x-0 pointer-events-none z-0"
       />
 
-      <div className="mx-auto px-5 sm:px-8 lg:px-[60px]">
+      <div className="relative z-10 mx-auto px-5 sm:px-8 lg:px-[60px]">
         {/* Header */}
         <div className="mb-14 lg:mb-24 flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
           <div className="max-w-3xl flex flex-col gap-5">

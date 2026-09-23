@@ -21,7 +21,7 @@ export default function Eyebrow({
       data-reveal
       data-direction="left"
       className={cn(
-        "font-hanken text-xs font-bold uppercase tracking-[0.16em]",
+        "font-hanken text-sm font-bold uppercase tracking-[0.16em]",
         variants[variant],
         className,
       )}

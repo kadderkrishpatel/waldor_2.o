@@ -23,7 +23,6 @@ export default function WhyChooseUsSection() {
               fill
               className="object-contain"
               sizes="(max-width:768px) 140px, 220px"
-              priority
             />
           </div>
         </div>
@@ -39,7 +38,6 @@ export default function WhyChooseUsSection() {
               fill
               className="object-contain"
               sizes="(max-width:768px) 110px, 180px"
-              priority
             />
           </div>
         </div>

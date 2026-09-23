@@ -41,6 +41,9 @@ export default function HeroBackgroundVideo({
         muted
         loop
         playsInline
+        preload="auto"
+        // @ts-expect-error -- fetchPriority is a valid DOM attribute (Priority Hints API) not yet in React's video element types
+        fetchPriority="high"
         className="h-full w-full object-cover object-center"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}

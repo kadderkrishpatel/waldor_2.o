@@ -35,7 +35,6 @@ export default function SuccessStoriesSection() {
         height={363}
         className="pointer-events-none absolute left-0 -top-16 w-[70px] md:-top-14 md:w-[100px] lg:-top-12 lg:w-[141px]"
         sizes="(max-width: 768px) 70px, 141px"
-        loading="eager"
       />
 
       <Image
@@ -45,7 +44,6 @@ export default function SuccessStoriesSection() {
         height={345}
         className="pointer-events-none absolute right-0 -top-6 w-[100px] md:-top-4 md:w-[150px] lg:top-0 lg:w-[210px]"
         sizes="(max-width: 768px) 100px, 210px"
-        loading="eager"
       />
 
       <div className="px-5 pt-6 pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-[120px] overflow-hidden">

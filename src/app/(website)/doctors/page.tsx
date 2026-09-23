@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function DoctorsPage() {
   return (
     <section className="p-2 lg:p-4 overflow-hidden">
-      <DoctorSection headingAs="h1" />
+      <DoctorSection headingAs="h1" layout="grid" />
     </section>
   );
 }

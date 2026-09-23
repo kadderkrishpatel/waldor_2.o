@@ -9,7 +9,7 @@ import {
 } from "@/src/components/sections/about";
 
 export const metadata: Metadata = {
-  title: "About Us | Waldor Clinic",
+  title: "Why I Built WALDOR | Our Story and Clinic Team",
   description:
     "Meet the practitioners behind Waldor Clinic. Discover our story, values and commitment to safe, results-led aesthetic medicine in London.",
 };

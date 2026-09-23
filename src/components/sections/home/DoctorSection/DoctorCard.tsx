@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 interface DoctorCardProps {
   slug: string;
@@ -15,10 +14,9 @@ export default function DoctorCard({
   role,
 }: DoctorCardProps) {
   return (
-    <Link
+    <div
       data-reveal
       data-direction="left"
-      href="/doctors"
       className="group relative block aspect-[411/530] overflow-hidden rounded-[32px] bg-[#515D59]"
     >
       <Image
@@ -26,7 +24,6 @@ export default function DoctorCard({
         alt={name}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="eager"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
@@ -37,6 +34,6 @@ export default function DoctorCard({
 
         <p className="mt-2 text-sm text-[#7D8582]">{role}</p>
       </div>
-    </Link>
+    </div>
   );
 }

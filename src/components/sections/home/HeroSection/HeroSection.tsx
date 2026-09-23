@@ -80,7 +80,7 @@ export default function HeroSection() {
                   }
                 `}
               >
-                <p className="text-[#E2D1BA] text-[11px] sm:text-[13px] font-hanken leading-snug">
+                <p className="text-[#E2D1BA] text-sm font-hanken leading-snug">
                   {stat.label}
                 </p>
 

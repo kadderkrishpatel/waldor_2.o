@@ -27,7 +27,6 @@ export default function ExperienceCard({
           height={40}
           className="shrink-0 transition-transform duration-300 ease-out group-hover:scale-110"
           sizes="40px"
-          loading="eager"
         />
 
         <h3 className="font-heading text-[22px] leading-[28px] text-[#2F302B]">

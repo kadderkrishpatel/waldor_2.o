@@ -29,16 +29,17 @@ export default function ExperienceSection() {
           </Description>
         </div>
 
-        {/* Main Area — image left, cards stacked right, matched heights */}
+        {/* Main Area — video left, cards stacked right, matched heights */}
         <div className="relative mt-8 md:mt-10 flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10">
           <div className="relative hidden aspect-4/3 w-full overflow-hidden rounded-[20px] lg:block lg:aspect-auto lg:w-1/2">
-            <Image
-              src={experienceData.image}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              loading="eager"
+            <video
+              src={experienceData.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover"
             />
           </div>
 
@@ -62,7 +63,6 @@ export default function ExperienceSection() {
         height={216}
         className="pointer-events-none absolute right-0 bottom-0 w-[110px] opacity-70 md:w-[160px] lg:w-[200px]"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="eager"
       />
     </section>
   );

@@ -7,6 +7,34 @@ import { asset } from "@/src/lib/assets";
 
 const WORDPRESS_URL = process.env.NEXT_PUBLIC_WORDPRESS_BLOGS_URL || "";
 
+/**
+ * WordPress.com's public API gateway occasionally answers slowly or drops a
+ * request. A single retry after a short delay absorbs that without visitors
+ * ever seeing "Failed to fetch blogs". Successful responses are also cached
+ * for a minute (see callers' `next.revalidate`) so most page loads don't hit
+ * WordPress.com at all.
+ */
+async function fetchWithRetry(
+  url: string,
+  init: RequestInit & { next?: { revalidate?: number } },
+  retries = 1,
+): Promise<Response> {
+  try {
+    const response = await fetch(url, init);
+    if (!response.ok && retries > 0) {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      return fetchWithRetry(url, init, retries - 1);
+    }
+    return response;
+  } catch (error) {
+    if (retries > 0) {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      return fetchWithRetry(url, init, retries - 1);
+    }
+    throw error;
+  }
+}
+
 /** Used when a WordPress post has no featured image, so cards never render broken. */
 const FALLBACK_BLOG_IMAGE = asset("/assets/waldor/blog-1.jpg");
 
@@ -175,9 +203,9 @@ function mapPost(post: WordPressPost): Blog {
 async function resolveCategoryId(category: string): Promise<number | null> {
   const slug = slugify(category);
 
-  const response = await fetch(
+  const response = await fetchWithRetry(
     `${getApiBase()}/categories?slug=${encodeURIComponent(slug)}`,
-    { cache: "no-store" },
+    { next: { revalidate: 60 } },
   );
 
   if (!response.ok) return null;
@@ -223,7 +251,7 @@ export async function getBlogs({
   }
 
   const url = `${getApiBase()}/posts?${params.toString()}`;
-  const response = await fetch(url, { cache: "no-store" });
+  const response = await fetchWithRetry(url, { next: { revalidate: 60 } });
 
   if (!response.ok) {
     throw new Error(`WordPress blog API failed: ${response.status}`);
@@ -255,9 +283,9 @@ export async function getBlogCategories(): Promise<BlogCategory[]> {
     throw new Error("WORDPRESS_URL is not configured");
   }
 
-  const response = await fetch(
+  const response = await fetchWithRetry(
     `${getApiBase()}/categories?per_page=100&hide_empty=true`,
-    { cache: "no-store" },
+    { next: { revalidate: 60 } },
   );
 
   if (!response.ok) {
@@ -273,9 +301,9 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
     throw new Error("WORDPRESS_URL is not configured");
   }
 
-  const response = await fetch(
+  const response = await fetchWithRetry(
     `${getApiBase()}/posts?slug=${encodeURIComponent(slug)}&_embed=true`,
-    { cache: "no-store" },
+    { next: { revalidate: 60 } },
   );
 
   if (!response.ok) {

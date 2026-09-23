@@ -34,7 +34,6 @@ export default function AboutSection() {
               src={aboutData.image}
               alt="Waldor Clinic"
               fill
-              priority
               sizes="(max-width:1024px) 0vw, (max-width:1280px) 120px, (max-width:1536px) 150px, 170px"
               className="object-contain object-bottom"
             />

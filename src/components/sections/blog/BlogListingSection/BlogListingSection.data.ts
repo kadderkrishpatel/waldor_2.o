@@ -8,7 +8,8 @@ export const blogCategories = [
   "Pigmentation",
   "Anti-Aging",
   "Hydration",
-  "Media",
+  "Press",
+  
 ];
 
 export const blogs: Blog[] = [

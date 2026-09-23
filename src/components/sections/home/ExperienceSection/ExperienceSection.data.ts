@@ -13,7 +13,7 @@ export const experienceData = {
   description:
     "We didn't enter the industry to follow the rules; we came to redefine them. Here is how we elevate your experience beyond the ordinary.",
 
-  image: asset("/assets/waldor/experience-image.png"),
+  video: asset("/assets/waldor/waldor_hero_vid.mp4"),
 
   cards: [
     {

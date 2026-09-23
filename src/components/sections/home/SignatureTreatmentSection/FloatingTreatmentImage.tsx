@@ -52,9 +52,7 @@ export default function FloatingTreatmentImage({
               src={image}
               alt=""
               fill
-              priority
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              loading="eager"
             />
           </motion.div>
         </AnimatePresence>

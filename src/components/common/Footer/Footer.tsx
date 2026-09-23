@@ -34,7 +34,6 @@ export default function Footer({
         height={316.48}
         className="absolute right-0 top-0"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="eager"
       />
 
       <Image
@@ -96,7 +95,7 @@ export default function Footer({
           <p
             data-reveal
             data-direction="left"
-            className="flex flex-wrap items-center gap-1 text-xs text-[#C5A375]"
+            className="flex flex-wrap items-center gap-1 text-sm text-[#C5A375]"
           >
             <span>© {currentYear} Waldor Clinic</span>
 
@@ -143,7 +142,6 @@ export default function Footer({
                   height={24}
                   className="opacity-70 transition-opacity duration-300 hover:opacity-100"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="eager"
                 />
               </Link>
             ))}
@@ -155,10 +153,8 @@ export default function Footer({
             src={footerImg}
             alt="Waldor Clinic"
             fill
-            priority
             className="object-fill opacity-70 transition-opacity duration-300 hover:opacity-100"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            loading="eager"
           />
         </div>
       </div>

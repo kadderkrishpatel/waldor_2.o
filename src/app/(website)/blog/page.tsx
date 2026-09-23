@@ -3,7 +3,7 @@ import BlogListingSection from "@/src/components/sections/blog/BlogListingSectio
 import HeroSection from "@/src/components/sections/blog/HeroSection";
 
 export const metadata: Metadata = {
-  title: "Blog | Waldor Clinic",
+  title: "Skin, Explained | Skincare Advice from WALDOR Clinic",
   description:
     "Skincare tips, treatment insights and expert advice from the practitioners at Waldor Clinic, London.",
 };

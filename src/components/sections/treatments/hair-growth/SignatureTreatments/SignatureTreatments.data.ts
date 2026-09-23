@@ -40,8 +40,10 @@ export const treatmentCards: TreatmentCard[] = [
     rows: [
       {
         id: "exosomes-for-hair-item",
-        title: "",
+        title: "Exosomes for Hair",
         price: "£495",
+        description:
+          "Our Exosome Hair treatment uses tiny, cell-derived messengers in a targeted approach to thinning hair. Designed to support scalp health and the environment around the follicles, the treatment aims to encourage healthier, fuller-looking hair over time.",
       },
     ],
   },

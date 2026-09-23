@@ -41,7 +41,8 @@ export default function ServiceHero() {
             alt={imageAlt}
             height={794}
             width={640}
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="(max-width: 1024px) 100vw, 38vw"
             className="object-cover object-center w-full rounded-[24px] h-full"
           />

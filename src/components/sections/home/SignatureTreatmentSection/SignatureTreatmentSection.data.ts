@@ -5,7 +5,7 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
   eyebrow: "SIGNATURE SKINCARE TREATMENTS",
   heading: {
     before: "Our Most",
-    highlight: "Requested at WALDOR",    
+    highlight: "Requested Treatments",    
   },
   button: {
     label: "View Full Menu",

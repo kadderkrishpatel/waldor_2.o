@@ -19,9 +19,9 @@ const variants = {
 };
 
 const sizes = {
-  sm: `min-h-10 px-4 py-2 text-[11px] tracking-[1.4px] sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 lg:text-xs lg:tracking-[1.6px]`,
-  md: `min-h-11 px-5 py-3 text-xs tracking-[1.6px] sm:px-6 lg:px-7 lg:py-4 lg:text-sm lg:tracking-[1.8px]`,
-  lg: `min-h-12 px-6 py-3 text-xs tracking-[1.8px] sm:px-7 sm:py-3.5 lg:px-8 lg:py-5 lg:text-sm lg:tracking-[1.96px] xl:px-9 2xl:px-10`,
+  sm: `min-h-10 px-4 py-2 text-xs tracking-[1.4px] sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 lg:text-sm lg:tracking-[1.6px]`,
+  md: `min-h-11 px-5 py-3 text-sm tracking-[1.6px] sm:px-6 lg:px-7 lg:py-4 lg:text-sm lg:tracking-[1.8px]`,
+  lg: `min-h-12 px-6 py-3 text-sm tracking-[1.8px] sm:px-7 sm:py-3.5 lg:px-8 lg:py-5 lg:text-sm lg:tracking-[1.96px] xl:px-9 2xl:px-10`,
 };
 
 export default function Button({

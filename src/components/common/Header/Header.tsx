@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { headerData } from "./Header.data";
 import type { HeaderProps } from "./Header.types";
@@ -13,9 +13,35 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [mobileSubMenu, setMobileSubMenu] = useState<number | null>(null);
+  const [hidden, setHidden] = useState(false);
   const closeMenuTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
     null,
   );
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (mobileOpen || activeMenu !== null) {
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (currentScrollY < 80) {
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileOpen, activeMenu]);
 
   const getMegaMenu = (id: number) => {
     return headerData.megaMenus?.find((menu) => menu.id === id);
@@ -45,7 +71,12 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 mx-auto max-w-[1440px] px-5 pt-8 lg:px-[60px]">
+    <header
+      className={cn(
+        "fixed left-0 right-0 top-0 z-50 mx-auto max-w-[1440px] px-5 pt-8 transition-transform duration-300 ease-in-out lg:px-[60px]",
+        hidden ? "translate-y-[-150%]" : "translate-y-0",
+      )}
+    >
       <div className="relative">
         {/* Header */}
         <div
@@ -70,7 +101,8 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
               height={40}
               className="h-[20px] w-auto lg:h-[28px]"
               sizes="160px"
-              priority
+              loading="eager"
+              fetchPriority="high"
             />
           </Link>
 
@@ -90,7 +122,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                     href={item.href}
                     className={cn(
                       "group relative font-hanken",
-                      "text-[12px]",
+                      "text-sm",
                       "font-medium",
                       "uppercase",
                       "tracking-[0.08em]",
@@ -140,7 +172,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                     className={cn(
                       "menu-nav relative z-20",
                       "font-hanken",
-                      "text-[12px]",
+                      "text-sm",
                       "font-medium",
                       "uppercase",
                       "tracking-[0.08em]",
@@ -200,7 +232,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                           <span
                             className={cn(
                               "text-stone-500",
-                              "text-xs",
+                              "text-sm",
                               "font-semibold",
                               "font-hanken",
                               "uppercase",
@@ -350,7 +382,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                         "border-b border-white/10",
                         "py-4",
                         "font-hanken",
-                        "text-[12px]",
+                        "text-sm",
                         "font-medium",
                         "uppercase",
                         "tracking-[0.08em]",
@@ -375,7 +407,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                         "py-4",
                         "text-left",
                         "font-hanken",
-                        "text-[12px]",
+                        "text-sm",
                         "font-medium",
                         "uppercase",
                         "tracking-[0.08em]",
@@ -438,7 +470,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
                                   className={cn(
                                     "mt-1",
                                     "font-hanken",
-                                    "text-[13px]",
+                                    "text-sm",
                                     "font-normal",
                                     "not-italic",
                                     "leading-[160%]",
