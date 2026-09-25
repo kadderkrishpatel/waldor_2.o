@@ -1,0 +1,253 @@
+[
+  {
+    "id": "schema.public",
+    "label": "Create schema \"public\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres"
+    },
+    "precheck": [],
+    "execute": [
+      {
+        "description": "Create schema \"public\"",
+        "sql": "CREATE SCHEMA IF NOT EXISTS \"public\"",
+        "params": []
+      }
+    ],
+    "postcheck": []
+  },
+  {
+    "id": "table.careers_submissions",
+    "label": "Create table \"careers_submissions\"",
+    "summary": "Creates table \"careers_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "careers_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"careers_submissions\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"careers_submissions\"",
+        "sql": "CREATE TABLE \"public\".\"careers_submissions\" (\n  \"createdAt\" timestamp(3) DEFAULT (now()) NOT NULL,\n  \"email\" character varying(100) NOT NULL,\n  \"firstName\" character varying(50) NOT NULL,\n  \"id\" text NOT NULL,\n  \"lastName\" character varying(50),\n  \"message\" text NOT NULL,\n  \"status\" text DEFAULT 'new' NOT NULL,\n  \"subject\" character varying(150) NOT NULL,\n  \"updatedAt\" timestamp(3) NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"careers_submissions\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.contact_submissions",
+    "label": "Create table \"contact_submissions\"",
+    "summary": "Creates table \"contact_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "contact_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"contact_submissions\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"contact_submissions\"",
+        "sql": "CREATE TABLE \"public\".\"contact_submissions\" (\n  \"createdAt\" timestamp(3) DEFAULT (now()) NOT NULL,\n  \"email\" character varying(100) NOT NULL,\n  \"firstName\" character varying(50) NOT NULL,\n  \"id\" text NOT NULL,\n  \"lastName\" character varying(50),\n  \"message\" text NOT NULL,\n  \"phone\" character varying(20) NOT NULL,\n  \"status\" text DEFAULT 'new' NOT NULL,\n  \"treatment\" text[],\n  \"updatedAt\" timestamp(3) NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"contact_submissions\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.careers_submissions.careers_submissions_createdAt_idx",
+    "label": "Create index \"careers_submissions_createdAt_idx\" on \"careers_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "careers_submissions_createdAt_idx",
+        "table": "careers_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"careers_submissions_createdAt_idx\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions_createdAt_idx\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"careers_submissions_createdAt_idx\"",
+        "sql": "CREATE INDEX \"careers_submissions_createdAt_idx\" ON \"public\".\"careers_submissions\" (\"createdAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"careers_submissions_createdAt_idx\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions_createdAt_idx\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.careers_submissions.careers_submissions_email_idx",
+    "label": "Create index \"careers_submissions_email_idx\" on \"careers_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "careers_submissions_email_idx",
+        "table": "careers_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"careers_submissions_email_idx\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions_email_idx\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"careers_submissions_email_idx\"",
+        "sql": "CREATE INDEX \"careers_submissions_email_idx\" ON \"public\".\"careers_submissions\" (\"email\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"careers_submissions_email_idx\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"careers_submissions_email_idx\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.contact_submissions.contact_submissions_createdAt_idx",
+    "label": "Create index \"contact_submissions_createdAt_idx\" on \"contact_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "contact_submissions_createdAt_idx",
+        "table": "contact_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"contact_submissions_createdAt_idx\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions_createdAt_idx\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"contact_submissions_createdAt_idx\"",
+        "sql": "CREATE INDEX \"contact_submissions_createdAt_idx\" ON \"public\".\"contact_submissions\" (\"createdAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"contact_submissions_createdAt_idx\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions_createdAt_idx\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.contact_submissions.contact_submissions_email_idx",
+    "label": "Create index \"contact_submissions_email_idx\" on \"contact_submissions\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "contact_submissions_email_idx",
+        "table": "contact_submissions"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"contact_submissions_email_idx\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions_email_idx\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"contact_submissions_email_idx\"",
+        "sql": "CREATE INDEX \"contact_submissions_email_idx\" ON \"public\".\"contact_submissions\" (\"email\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"contact_submissions_email_idx\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"contact_submissions_email_idx\""
+        ]
+      }
+    ]
+  }
+]
