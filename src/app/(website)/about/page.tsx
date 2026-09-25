@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import {
   AboutHero,
   StorySection,
-  TeamSection,
   CredentialsSection,
   ValuesSection,
   GoalQuoteSection,
+  TeamCarouselSection,
 } from "@/src/components/sections/about";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <StorySection />
-      <TeamSection />
+      <TeamCarouselSection />
       <CredentialsSection />
       <ValuesSection />
       <GoalQuoteSection />

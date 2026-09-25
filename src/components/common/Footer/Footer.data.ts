@@ -72,7 +72,7 @@ export const footerData: FooterDataProps = {
       title: "CLINIC",
       links: [
         {
-          label: "About Us",
+          label: "About",
           href: "/about",
         },
         {

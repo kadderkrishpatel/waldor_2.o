@@ -12,10 +12,15 @@ interface Props {
 
 export default function TeamCard({ member }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <article data-reveal data-direction="left" className="flex flex-col">
-      <div className="relative aspect-[411/530] w-full overflow-hidden rounded-[32px] bg-[#515D59]">
+    <article data-reveal data-direction="left">
+      <div
+        className="relative aspect-[411/530] w-full overflow-hidden rounded-[32px] bg-[#515D59] cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <Image
           src={member.image}
           alt={member.name}
@@ -24,44 +29,52 @@ export default function TeamCard({ member }: Props) {
           loading="eager"
           className="object-cover"
         />
-      </div>
 
-      <h3 className="mt-6 font-fraunces text-xl text-[#F3ECE3] sm:text-2xl">
-        {member.name}
-      </h3>
+        {/* Overlay - Only visible on hover */}
+        <div
+          className={cn(
+            "absolute inset-0 bg-gradient-to-t from-[#1A1F1D] via-[#1A1F1D]/40 to-transparent flex flex-col justify-end p-6 transition-opacity duration-300",
+            isHovered ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <h3 className="font-fraunces text-2xl text-[#F3ECE3] sm:text-3xl">
+            {member.name}
+          </h3>
 
-      <p className="mt-1 font-hanken text-xs font-semibold uppercase tracking-[0.14em] text-[#C5A375]">
-        {member.designation}
-      </p>
-
-      {member.description && (
-        <>
-          <p
-            className={cn(
-              "mt-3 font-hanken text-sm leading-6 text-[#9FA6A2]",
-              !expanded && "line-clamp-3",
-            )}
-          >
-            {member.description}
+          <p className="mt-2 font-hanken text-xs font-semibold uppercase tracking-[0.14em] text-[#C5A375]">
+            {member.designation}
           </p>
 
-          <button
-            type="button"
-            onClick={() => setExpanded((prev) => !prev)}
-            className="mt-3 flex w-fit items-center gap-1.5 font-hanken text-xs font-semibold uppercase tracking-[0.14em] text-[#C5A375] cursor-pointer"
-          >
-            {expanded ? "View Less" : "View More"}
+          {member.description && (
+            <>
+              <p
+                className={cn(
+                  "mt-3 font-hanken text-sm leading-5 text-[#BEC2C1]",
+                  !expanded && "line-clamp-2",
+                )}
+              >
+                {member.description}
+              </p>
 
-            <ChevronDown
-              size={14}
-              className={cn(
-                "transition-transform duration-300",
-                expanded && "rotate-180",
-              )}
-            />
-          </button>
-        </>
-      )}
+              <button
+                type="button"
+                onClick={() => setExpanded((prev) => !prev)}
+                className="mt-3 flex w-fit items-center gap-1.5 font-hanken text-xs font-semibold uppercase tracking-[0.14em] text-[#C5A375] hover:text-[#D5B98D] transition-colors"
+              >
+                {expanded ? "View Less" : "View More"}
+
+                <ChevronDown
+                  size={14}
+                  className={cn(
+                    "transition-transform duration-300",
+                    expanded && "rotate-180",
+                  )}
+                />
+              </button>
+            </>
+          )}
+        </div>
+      </div>
     </article>
   );
 }

@@ -3,10 +3,8 @@ import {
   HeroSection,
   AboutSection,
   TreatmentSection,
-  DoctorSection,
   WhyChooseUsSection,
   ExperienceSection,
-  TransformationSection,
   SignatureTreatmentSection,
   SuccessStoriesSection,
   HowItWorksSection,
@@ -53,11 +51,7 @@ export default async function HomePage() {
         id="success-stories"
         className="relative scroll-mt-24 overflow-hidden rounded-[24px] lg:scroll-mt-32 lg:rounded-[40px] bg-[#3D4844] m-2 lg:m-4"
       >
-        <DoctorSection />
         <SuccessStoriesSection />
-      </section>
-      <section className="p-2 lg:p-4 overflow-hidden">
-        <TransformationSection />
       </section>
       <SignatureTreatmentSection />
       <section className="p-2 lg:p-4 overflow-hidden">

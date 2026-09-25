@@ -2,7 +2,7 @@ import { asset } from "@/src/lib/assets";
 import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
-  eyebrow: "LONDON SKIN, HAIR AND LONGEVITY CLINIC",
+  eyebrow: "London skin and hair clinic",
 
   heading: {
     before: "Korean Glass Skin,",
@@ -12,7 +12,7 @@ export const heroData: HeroSectionProps = {
   },
 
   description:
-    "Advanced Korean and Japanese technology, AI skin analysis, and a protocol built for no one but you.",
+    "A longevity clinic powered by advanced Korean and Japanese technology, AI skin analysis, and a protocol built for no one but you.",
 
   buttons: [
     {

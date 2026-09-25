@@ -3,6 +3,7 @@ export interface Doctor {
   role: string;
   image: string;
   slug: string;
+  description?: string;
 }
 
 export interface HeroHeading {

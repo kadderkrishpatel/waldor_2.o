@@ -5,11 +5,11 @@ export const transformationData: TransformationSectionProps = {
   eyebrow: "THE TRANSFORMATION ARCHIVES",
   heading: {
     before: "Showcasing",
-    highlight: "The WALDOR Effect",
+    highlight: "The WALDOR Effect using WALDOR.Skin",
     after: "",
   },
   description:
-    "We don't just promise a change; we document it. Explore the undeniable, unfiltered evolutions that prove exactly what happens when clinical precision meets couture radiance.",
+    "Move them to Product pages which needs to be related to a specific product that helped that transformation.",
   transformations: [
     {
       title: "HydraGlass™ Skin Transformation",

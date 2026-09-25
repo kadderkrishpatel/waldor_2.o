@@ -2,9 +2,11 @@
 import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { cn } from "@/src/lib/utils";
 import DoctorCard from "./DoctorCard";
 import { doctorSectionData } from "./DoctorSection.data";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
@@ -18,6 +20,21 @@ export default function DoctorSection() {
   const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const syncNavState = (swiper: SwiperType) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
+  const navButtonClass = (disabled: boolean) =>
+    cn(
+      "flex h-11 w-11 items-center justify-center rounded-xl border transition-colors duration-300",
+      disabled
+        ? "border-[#B8A898] bg-[#E8E0D5] text-[#9B8B7E] cursor-not-allowed"
+        : "border-[#3D4844] bg-[#3D4844]/8 text-[#3D4844] hover:bg-[#3D4844]/15",
+    );
 
   useHorizontalScroll({
     section: sectionRef,
@@ -32,27 +49,53 @@ export default function DoctorSection() {
     >
       <div className="mx-auto px-6 lg:px-[60px]">
         {/* Heading */}
-        <div className="mb-10 md:mb-12 lg:mb-16 max-w-[850px] flex flex-col gap-4 md:gap-5 lg:gap-6">
-          <Eyebrow variant="secondary">{doctorSectionData.eyebrow}</Eyebrow>
+        <div className="mb-10 md:mb-12 lg:mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-[850px] flex flex-col gap-4 md:gap-5 lg:gap-6">
+            <Eyebrow variant="secondary">{doctorSectionData.eyebrow}</Eyebrow>
 
-          <Heading
-            className="text-[#3D4844] lg:text-[64px] leading-[115%]"
-            before={doctorSectionData.heading.before}
-            highlight={doctorSectionData.heading.highlight}
-          />
+            <Heading
+              className="text-[#3D4844] lg:text-[64px] leading-[115%]"
+              before={doctorSectionData.heading.before}
+              highlight={doctorSectionData.heading.highlight}
+            />
 
-          <Description className="text-[#423627]">
-            {doctorSectionData.description}
-          </Description>
+            <Description className="text-[#423627]">
+              {doctorSectionData.description}
+            </Description>
+          </div>
+
+          {/* Nav Arrows */}
+          <div className="flex shrink-0 items-center gap-3 mt-6 lg:mt-0">
+            <button
+              type="button"
+              aria-label="Previous"
+              disabled={isBeginning}
+              onClick={() => swiperRef.current?.slidePrev()}
+              className={navButtonClass(isBeginning)}
+            >
+              <FiArrowLeft size={18} />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next"
+              disabled={isEnd}
+              onClick={() => swiperRef.current?.slideNext()}
+              className={navButtonClass(isEnd)}
+            >
+              <FiArrowRight size={18} />
+            </button>
+          </div>
         </div>
 
         {/* Swiper */}
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
+            syncNavState(swiper);
             //setReady(true);
           }}
-          navigation
+          onSlideChange={syncNavState}
           pagination={{
             clickable: true,
           }}

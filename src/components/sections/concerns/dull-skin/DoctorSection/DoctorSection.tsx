@@ -2,9 +2,11 @@
 import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { cn } from "@/src/lib/utils";
 import DoctorCard from "./DoctorCard";
 import { doctorSectionData } from "./DoctorSection.data";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
@@ -18,6 +20,21 @@ export default function DoctorSection() {
   const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const syncNavState = (swiper: SwiperType) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
+  const navButtonClass = (disabled: boolean) =>
+    cn(
+      "flex h-11 w-11 items-center justify-center rounded-xl border transition-colors duration-300",
+      disabled
+        ? "border-[#B8A898] bg-[#E8E0D5] text-[#9B8B7E] cursor-not-allowed"
+        : "border-[#3D4844] bg-[#3D4844]/8 text-[#3D4844] hover:bg-[#3D4844]/15",
+    );
 
   useHorizontalScroll({
     section: sectionRef,
